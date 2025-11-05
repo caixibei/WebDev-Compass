@@ -35,9 +35,9 @@
 
 这些容器管理的问题统称为 **容器编排问题**，为了解决这些容器编排问题，就产生了一些容器编排的软件：
 
-- **Swarm：**Docker自己的容器编排工具；
-- **Mesos：**Apache的一个资源统一管控的工具，需要和Marathon结合使用；
-- **Kubernetes：**Google开源的的容器编排工具；
+- **Swarm：** Docker自己的容器编排工具；
+- **Mesos：** Apache的一个资源统一管控的工具，需要和Marathon结合使用；
+- **Kubernetes：** Google开源的的容器编排工具；
 
 <img src="./assets/image-20251030165307229-1761814449108-1.png" alt="市场份额图" title="2019年市场份额图" style="zoom:80%;" />
 
@@ -66,7 +66,7 @@ kubernetes 是一个全新的基于容器技术的分布式架构领先方案，
 >
 >   **Scheduler:**  负责集群资源调度，按照预定的调度策略将Pod调度到相应的node节点上;
 >
->   **ControllerManager: **  负责维护集群的状态，比如程序部署安排、故障检测、自动扩展、滚动更新等;
+>   **ControllerManager:**  负责维护集群的状态，比如程序部署安排、故障检测、自动扩展、滚动更新等;
 >
 >   **Etcd:**  负责存储集群中各种资源对象的信息;
 
@@ -98,7 +98,7 @@ kubernetes 是一个全新的基于容器技术的分布式架构领先方案，
 -   **Node：** 工作负载节点，由 master 分配容器到这些 node 工作节点上，然后 node 节点上的 docker 负责容器的运行；
 -   **Pod：** kubernetes 的最小控制单元，容器都是运行在 pod 中的，一个 pod 中可以有1个或者多个容器；
 -   **Controller：** 控制器，通过它来实现对 pod 的管理，比如启动 pod、停止 pod、伸缩 pod 的数量等等；
--   **Service： ** pod 对外服务的统一入口，下面可以维护者同一类的多个 pod；
+-   **Service：** pod 对外服务的统一入口，下面可以维护者同一类的多个 pod；
 -   **Label：** 标签，用于对 pod 进行分类，同一类 pod 会拥有相同的标签；
 
 -   **NameSpace：** 命名空间，用来隔离 pod 的运行环境；
