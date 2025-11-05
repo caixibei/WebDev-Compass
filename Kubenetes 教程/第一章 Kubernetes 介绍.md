@@ -95,25 +95,10 @@ kubernetes 是一个全新的基于容器技术的分布式架构领先方案，
 下面我们稍微介绍一下 Kubernetes 的一些组件概念。
 
 -   **Master：** 集群控制节点，每个集群需要至少一个 master 节点负责集群的管控；
-
-<<<<<<< HEAD
 -   **Node：** 工作负载节点，由 master 分配容器到这些 node 工作节点上，然后 node 节点上的 docker 负责容器的运行；
-
 -   **Pod：** kubernetes 的最小控制单元，容器都是运行在 pod 中的，一个 pod 中可以有1个或者多个容器；
-
 -   **Controller：** 控制器，通过它来实现对 pod 的管理，比如启动 pod、停止 pod、伸缩 pod 的数量等等；
-
--   **Service：** pod 对外服务的统一入口，下面可以维护者同一类的多个 pod；
-=======
--   **Node： **工作负载节点，由 master 分配容器到这些 node 工作节点上，然后 node 节点上的 docker 负责容器的运行；
-
--   **Pod： **kubernetes 的最小控制单元，容器都是运行在 pod 中的，一个 pod 中可以有1个或者多个容器；
-
--   **Controller：** 控制器，通过它来实现对 pod 的管理，比如启动 pod、停止 pod、伸缩 pod 的数量等等；
-
--   **Service： **pod 对外服务的统一入口，下面可以维护者同一类的多个 pod；
->>>>>>> df462fdfeb09a045b1a988e0722d0323e6b40a8f
-
+-   **Service： ** pod 对外服务的统一入口，下面可以维护者同一类的多个 pod；
 -   **Label：** 标签，用于对 pod 进行分类，同一类 pod 会拥有相同的标签；
 
 -   **NameSpace：** 命名空间，用来隔离 pod 的运行环境；
