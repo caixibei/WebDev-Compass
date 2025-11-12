@@ -1,3 +1,5 @@
+<div style="width:100%;display:flex;"><img src="assets/640.gif" alt="640" style="width:200px;margin-left:auto;" /></div>
+
 # Spring 基础篇
 
 ## 一、概述
@@ -2716,8 +2718,4 @@ log4j.appender.Dail_ROLLING_FILE.layout.ConversionPattern=[NoPua-Admin] %d - %c 
 ```
 
 至此，Spring基础篇完结。
-
-
-
-<div style="width:100%;display:flex;"><img src="assets/640.gif" alt="640" style="width:200px;margin-left:auto;" /></div>
 
