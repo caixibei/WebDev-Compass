@@ -1,3 +1,5 @@
+<div style="width:100%;display:flex;"><img src="assets/640.gif" alt="640" style="width:200px;margin-left:auto;" /></div>
+
 本章节主要介绍应用程序在服务器上部署方式演变以及 Kubernetes 的概念、组件和工作原理。
 
 ## 应用部署方式的演变过程

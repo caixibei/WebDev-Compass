@@ -1,0 +1,1 @@
+<div style="width:100%;display:flex;"><img src="assets/640.gif" alt="640" style="width:200px;margin-left:auto;" /></div>

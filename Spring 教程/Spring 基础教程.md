@@ -2717,5 +2717,7 @@ log4j.appender.Dail_ROLLING_FILE.layout.ConversionPattern=[NoPua-Admin] %d - %c 
 
 至此，Spring基础篇完结。
 
-<img src="assets/640.gif" alt="640" style="zoom:50%;float:right;" />
+
+
+<div style="width:100%;display:flex;"><img src="assets/640.gif" alt="640" style="width:200px;margin-left:auto;" /></div>
 

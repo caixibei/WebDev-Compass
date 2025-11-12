@@ -1,3 +1,5 @@
+<div style="width:100%;display:flex;"><img src="assets/640.gif" alt="640" style="width:200px;margin-left:auto;" /></div>
+
 ## 四种操作 Oracle 数据库的方式
 
 无论是为了以后的就业亦或者是现在的学习，我们都或多或少的了解下常见的操作 Oracle 数据库的方式，简单的列一下（但不限于这些）：
