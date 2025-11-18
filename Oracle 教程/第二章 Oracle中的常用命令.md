@@ -48,7 +48,7 @@
 - **system：** 没有 sys 账户的权限大，通常用于创建一些用于查看管理信息的表或者视图，同样也不建议使用 system 架构来创建一些与管理无关的表或者视图；
 
 - **sysman：** 是 Oracle 数据库中用于 EM 管理的用户，如果你不使用该用户，也可以删除；
-- **scott：** 是 Oracle 提供的实例用户，里面存在一些供初学者学习操作的表；
+- **scott：** 是 Oracle 提供的实例用户，里面存在一些供初学者学习操作的表，其默认口令为 `tiger` 。
 
 ### Oracle 用户登录的语法格式
 
@@ -81,11 +81,17 @@ conn 用户/口令 @实例名 as [sysdba | sysoper]
 
 ```sh
 # 若未解锁状态下直接连接
- 
+SQL> conn scott/scott
+ERROR: ORA-28000: the account is locked
 # 解锁用户
- 
+SQL> alter user scott account unlock;
+User altered.
 # 连接用户
+SQL> conn scott/scott;
+Connected.
 ```
+
+<img src="assets/image-20251118112324544.png" alt="image-20251118112324544" style="zoom:67%;" />
 
 2. 启用 scott 用户
 
@@ -109,6 +115,141 @@ conn 用户/口令 @实例名 as [sysdba | sysoper]
 </div>
 
 ```shell
-alter user <用户名> account unlock
+alter user <用户名> account unlock;
 ```
+
+**示例：** 
+
+```sql
+SQL> alter user scott account unlock;
+User altered.
+```
+
+检查下 `scott` 用户下由 Oracle 提供用于学习的四张表。
+
+```sql
+SQL> select table_name from user_tables;
+TABLE_NAME
+------------------------------
+SALGRADE
+BONUS
+EMP
+DEPT
+```
+
+![image-20251118113104755](assets/image-20251118113104755.png)
+
+## Oracle 表空间
+
+### 数据库与表空间的关系
+
+表空间实际上是数据库上的逻辑存储结构，可以把表空间理解为在数据库中开辟的一个空间，用于存放我们数据库的对象，一个数据库可以有多个表空间。
+
+### 表空间与数据文件的关系
+
+表空间实际上是由一个或者多个数据库文件构成，数据文件的位置和大小可以由我们自己定义。
+
+### 表空间的分类
+
+Oracle 中，表空间大致有三种类型。
+
+- 永久表空间
+- 临时表空间
+- UNDO 表空间（也称为：回退表空间）
+
+### 表空间的创建语法
+
+#### 永久表空间
+
+```sql
+create tablespace <表空间名称> datafile '<数据文件存放路径>' size 10m;
+```
+
+**示例：**
+
+```sql
+SQL> create tablespace tbs_temp_001 datafile 'D:\protable\oracle\datafile\tbs_temp_001.dbf' size 10m;
+```
+
+![image-20251118114252404](assets/image-20251118114252404.png)
+
+#### 临时表空间
+
+```sql
+create temporary tablespace <临时表空间名称> tempfile '<数据文件存放路径>' size 10m;
+```
+
+**示例：**
+
+```sql
+SQL> create temporary tablespace tbs_temp_002 tempfile 'D:\protable\oracle\tempfile\tbs_temp_002.dbf' size 10m;
+Tablespace created.
+```
+
+![image-20251118134326987](assets/image-20251118134326987.png)
+
+#### 回退表空间
+
+```sql
+create undo tablespace <回退表空间名称> datafile '<数据文件存放路径>' size 10m;
+```
+
+**示例：**
+
+```sql
+SQL> create undo tablespace tbs_temp_003 datafile 'D:\protable\oracle\datafile\tbs_temp_003.dbf' size 10m;
+Tablespace created.
+```
+
+### 查看表空间
+
+#### 永久表空间
+
+```sql
+SELECT file_name, tablespace_name, bytes/1024/1024 as size_mb
+FROM dba_data_files 
+WHERE tablespace_name LIKE 'TBS%';
+```
+
+**示例：**
+
+![image-20251118140820011](assets/image-20251118140820011.png)
+
+#### 临时表空间
+
+```sql
+SELECT file_name, tablespace_name, bytes/1024/1024 as size_mb
+FROM dba_temp_files 
+WHERE tablespace_name LIKE 'TBS%';
+```
+
+**示例：**
+
+![image-20251118140535456](assets/image-20251118140535456.png)
+
+#### 回退表空间
+
+- 查询所有回退表空间
+
+```sql
+SELECT tablespace_name, status, contents 
+FROM dba_tablespaces 
+WHERE contents = 'UNDO';
+```
+
+**示例：**
+
+![image-20251118140019025](assets/image-20251118140019025.png)
+
+- 查询当前正在使用的回退表空间
+
+```sql
+show parameter undo_tablespace;
+```
+
+**示例：**
+
+![image-20251118140216209](assets/image-20251118140216209.png)
+
+## Oracle 用户管理
 
