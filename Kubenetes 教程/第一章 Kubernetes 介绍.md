@@ -1,4 +1,6 @@
-<div style="width:100%;display:flex;"><img src="assets/640.gif" alt="640" style="width:200px;margin-left:auto;" /></div>
+<div style="display:flex;">
+    <div style="margin-left:auto;color:#3795f7;"><strong>作者：</strong>蔡熙贝</div>
+</div>
 
 本章节主要介绍应用程序在服务器上部署方式演变以及 Kubernetes 的概念、组件和工作原理。
 

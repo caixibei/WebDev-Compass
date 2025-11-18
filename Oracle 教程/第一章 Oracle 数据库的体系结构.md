@@ -1,4 +1,6 @@
-<div style="width:100%;display:flex;"><img src="assets/640.gif" alt="640" style="width:200px;margin-left:auto;" /></div>
+<div style="display:flex;">
+    <div style="margin-left:auto;color:#3795f7;"><strong>作者：</strong>蔡熙贝</div>
+</div>
 
 平常说的 Oracle 或者 Oracle 数据库指的就是 Oracle 数据库管理系统，它主要由两部分组成：
 
