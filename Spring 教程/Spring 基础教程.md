@@ -1249,9 +1249,9 @@ Spring 的 IOC 容器虽然功能强大，但它本身不过只是一个空壳�
 
 对于只包含少量 Bean 的应用来说，这种方式已经足够满足我们的需求了。但随着应用的不断发展，容器中包含的 Bean 会越来越多，Bean 和 Bean 之间的依赖关系也越来越复杂，这就使得我们所编写的 XML 配置也越来越复杂，越来越繁琐。
 
-我们知道，过于复杂的 ` XML ` 配置不但可读性差，而且编写起来极易出错，严重的降低了开发人员的开发效率。为了解决这一问题，Spring 还为我们提供了**“自动装配”**功能。
+我们知道，过于复杂的 ` XML ` 配置不但可读性差，而且编写起来极易出错，严重的降低了开发人员的开发效率。为了解决这一问题，Spring 还为我们提供了 **“自动装配”** 功能。
 
-**自动装配**
+ **自动装配** 
 
 Spring 的自动装配功能可以让 Spring 容器依据某种规则（自动装配的规则，有五种），为指定的 Bean 从应用的上下文（AppplicationContext 容器）中查找它所依赖的 Bean，并自动建立 Bean 之间的依赖关系。而这一过程是在完全不使用任何 <constructor-arg>和 <property> 元素 ref 属性的情况下进行的。
 
@@ -1278,7 +1278,7 @@ Spring 框架式默认不支持自动装配的，要想使用自动装配，则�
 
 添加了装配规则 `autowire="byName"` 声明。
 
-**自动装配规则**
+ **自动装配规则** 
 
 Spring 共提供了 5 中自动装配规则，它们分别与 autowire 属性的 5 个取值对应，具体说明如下表。
 
@@ -1290,7 +1290,7 @@ Spring 共提供了 5 中自动装配规则，它们分别与 autowire 属性的
 | default     | 表示默认采用上一级元素 ` <beans> ` 设置的自动装配规则（default-autowire）进行装配。 |
 | no          | 默认值，表示不使用自动装配，Bean 的依赖关系必须通过  `<constructor-arg>` 和  `<property>`  元素的 ref 属性来定义。 |
 
-**基于注解的自动装配**
+ **基于注解的自动装配** 
 
 <div style="border: 1px solid rgba(255, 165, 0,.1);
     padding: 10px;
@@ -1322,7 +1322,7 @@ Spring 通过注解实现自动装配的步骤如下：
 3. 使用注解定义 Bean
 4. 依赖注入
 
-**1、开启注解扫描**
+ **1、开启注解扫描** 
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -1338,7 +1338,7 @@ Spring 通过注解实现自动装配的步骤如下：
 </beans>
 ```
 
-**2、使用注解注入Bean**
+ **2、使用注解注入Bean** 
 
 Spring 提供了以下多个注解，这些注解可以直接标注在 Java 类上，将它们定义成 Spring Bean。
 
@@ -1349,7 +1349,7 @@ Spring 提供了以下多个注解，这些注解可以直接标注在 Java 类�
 | @Service    | 该注解通常作用在业务层（Service 层），用于将业务层的类标识为 Spring 中的 Bean，其功能与 @Component 相同。 |
 | @Controller | 该注解通常作用在控制层（如 Struts2 的 Action、SpringMVC 的 Controller），用于将控制层的类标识为 Spring 中的 Bean，其功能与 @Component 相同。 |
 
-**3、依赖注入（DI）**
+ **3、依赖注入（DI）** 
 
 常用的注解如下：
 
@@ -1359,7 +1359,7 @@ Spring 提供了以下多个注解，这些注解可以直接标注在 Java 类�
 | @Resource  | 作用与 Autowired 相同，区别在于 @Autowired 默认按照 Bean 类型装配，而 @Resource 默认按照 Bean 的名称进行装配。  @Resource 中有两个重要属性：name 和 type。 Spring 将 name 属性解析为 Bean 的实例名称，type 属性解析为 Bean 的实例类型。如果指定 name 属性，则按实例名称进行装配；如果指定 type 属性，则按 Bean 类型进行装配；如果都不指定，则先按 Bean 实例名称装配，如果不能匹配，则再按照 Bean 类型进行装配；如果都无法匹配，则抛出 NoSuchBeanDefinitionException 异常。 |
 | @Qualifier | 与 @Autowired 注解配合使用，会将默认的按 Bean 类型装配修改为按 Bean 的实例名称装配，Bean 的实例名称由 @Qualifier 注解的参数指定。 |
 
-**4、案例**
+ **4、案例** 
 
 实体类上加上 `@Component` 注解
 
@@ -1391,7 +1391,7 @@ Student(id=null, name=null, age=null, gender=null, birthday=null, studentdNumber
 
 Spring AOP 是 Spring 框架的核心模块之一，它使用纯 Java 实现，因此不需要专门的编译过程和类加载器，可以在程序运行期通过代理方式向目标类织入增强代码。
 
-**AOP代理机制**
+ **AOP代理机制** 
 
 Spring 在运行期会为目标对象生成一个动态代理对象，并在代理对象中实现对目标对象的增强。
 
@@ -1404,13 +1404,13 @@ Spring AOP 的底层是通过以下 2 种动态代理机制，为目标对象（
 
 ⚠️ 注意：由于被标记为 final 的方法是无法进行覆盖的，因此这类方法不管是通过 JDK 动态代理机制还是 CGLIB 动态代理机制都是无法完成代理的。
 
-**AOP 连接点**
+ **AOP 连接点** 
 
 Spring AOP 并没有像其他 AOP 框架（例如 AspectJ）一样提供了完成的 AOP 功能，它是 Spring 提供的一种简化版的 AOP 组件。其中最明显的简化就是，Spring AOP 只支持一种连接点类型：方法调用。您可能会认为这是一个严重的限制，但实际上 Spring AOP 这样设计的原因是为了让 Spring 更易于访问。
 
 方法调用连接点是迄今为止最有用的连接点，通过它可以实现日常编程中绝大多数与 AOP 相关的有用的功能。如果需要使用其他类型的连接点（例如成员变量连接点），我们可以将 Spring AOP 与其他的 AOP 实现一起使用，最常见的组合就是 Spring AOP + ApectJ。 
 
-**AOP 通知类型**
+ **AOP 通知类型** 
 
 AOP 联盟为通知（Advice）定义了一个 ` org.aopalliance.aop.Interface.Advice`  接口。
 
@@ -1425,7 +1425,7 @@ Spring AOP 按照通知（Advice）织入到目标类方法的连接点位置，
 | 异常通知     | org.springframework.aop.ThrowsAdvice            | 在方法抛出异常后实施增强。                       |
 | 引入通知     | org.springframework.aop.IntroductionInterceptor | 在目标类中添加一些新的方法和属性。               |
 
-**AOP 切面类型**
+ **AOP 切面类型** 
 
 Spring 使用 org.springframework.aop.Advisor 接口表示切面的概念，实现对通知（Adivce）和连接点（Joinpoint）的管理。
 
@@ -1439,7 +1439,7 @@ Spring 使用 org.springframework.aop.Advisor 接口表示切面的概念，实�
 
 ### 1 一般切面
 
-编写一个前置增强类（看**通知类型**）
+编写一个前置增强类（看 **通知类型** ）
 
 ```java
 @Component(value = "beforeAdvice")
@@ -1504,7 +1504,7 @@ Oh hhhhhh~ before!
 play play
 ```
 
-**🤓 注意：** Advisor : 代表一般切面，Advice 本身就是一个切面，对目标类所有方法进行拦截。换句话说，不带有切点的切面，针对所有方法进行拦截
+ **🤓 注意：**  Advisor : 代表一般切面，Advice 本身就是一个切面，对目标类所有方法进行拦截。换句话说，不带有切点的切面，针对所有方法进行拦截
 
 ### 2 切点切面
 
@@ -1878,7 +1878,7 @@ JdbcTemplate 的全限定命名为 ` org.springframework.jdbc.core.JdbcTemplate`
 | public <T> T queryForObject(String sql, RowMapper<T> rowMapper, @Nullable Object... args) | 用于执行查询语句；sql：需要执行的 SQL 语句；rowMapper：用于确定返回的集合（List）的类型；args：表示需要传入到 SQL 语句的参数。 |
 | public int[] batchUpdate(String sql, List<Object[]> batchArgs, final int[] argTypes) | 用于批量执行新增、更新、删除等语句；sql：需要执行的 SQL 语句；argTypes：需要注入的 SQL 参数的 JDBC 类型；batchArgs：表示需要传入到 SQL 语句的参数。 |
 
-要使用 `JdbcTemplate` ，同样的需要引入对应的jar包 `spring-jdbc-**.jar` 、 `spring-tx-***.jar` 、 `mysql-connector-java-***.jar` 
+要使用 `JdbcTemplate` ，同样的需要引入对应的jar包 `spring-jdbc- **.jar` 、 `spring-tx-** *.jar` 、 `mysql-connector-java-***.jar` 
 
 创建数据库、测试表
 
@@ -1971,7 +1971,7 @@ url=jdbc:mysql://127.0.0.1:3306/spring_test
 driver5=com.mysql.jdbc.Driver
 driver8=com.mysql.cj.jdbc.Driver
 user=root
-password=****
+password= **** 
 ```
 
 修改XML配置
@@ -2028,7 +2028,7 @@ password=****
 
 作为一款优秀的开源框架和应用平台，Spring 也对事务提供了很好的支持。Spring 借助 IoC 容器强大的配置能力，为事务提供了丰富的功能支持。
 
-**事务管理方式**
+ **事务管理方式** 
 
 Spring 支持以下 2 种事务管理方式：
 
@@ -2043,7 +2043,7 @@ Spring 支持以下 2 种事务管理方式：
 - 编程式对事物控制的细粒度更高，我们能够精确的控制事务的边界，事务的开始和结束完全取决于我们的需求，但这种方式存在一个致命的缺点，那就是事务规则与业务代码耦合度高，难以维护，因此我们很少使用这种方式对事务进行管理。
 - 声明式事务易用性更高，对业务代码没有侵入性，耦合度低，易于维护，因此这种方式也是我们最常用的事务管理方式。
 
-**事务管理器**
+ **事务管理器** 
 
 Spring 为不同的持久化框架或平台（例如 JDBC、Hibernate、JPA 以及 JTA 等）提供了不同的 PlatformTransactionManager 接口实现，这些实现类被称为事务管理器实现。
 
@@ -2058,7 +2058,7 @@ Spring 为不同的持久化框架或平台（例如 JDBC、Hibernate、JPA 以�
 
 这些事务管理器的使用方式十分简单，我们只要根据持久化框架（或平台）选用相应的事务管理器实现，即可实现对事物的管理，而不必关心实际事务实现到底是什么。
 
-**事务的隔离级别**
+ **事务的隔离级别** 
 
 事务的隔离级别定义了一个事务可能受其他并发事务影响的程度。
 
@@ -2076,7 +2076,7 @@ Spring 中提供了以下隔离级别，我们可以根据自身的需求自行�
 | ISOLATION_REPEATABLE_READ  | MySQL 默认级别，多次读取相同字段的结果是一致的，防止脏读和不可重复读，可能出现幻读 |
 | ISOLATION_SERIALIZABLE     | 完全服从 ACID 的隔离级别，防止脏读、不可重复读和幻读         |
 
-**事务传播行为**
+ **事务传播行为** 
 
 事务传播行为（propagation behavior）指的是，当一个事务方法被另一个事务方法调用时，这个事务方法应该如何运行。例如，事务方法 A 在调用事务方法 B 时，B 方法是继续在调用者 A 方法的事务中运行呢，还是为自己开启一个新事务运行，这就是由事务方法 B 的事务传播行为决定的。
 
@@ -2094,11 +2094,11 @@ Spring 提供了以下 7 种不同的事务传播行为。
 | PROPAGATION_REQUIRES_NEW  | 创建新事务，如果已经存在事务则暂停当前事务。                 |
 | PROPAGATION_SUPPORTS      | 支持当前事务，如果不存在事务，则以非事务方式执行。           |
 
-♨️ **题外话**
+♨️  **题外话** 
 
-在2021年，我所入职的一家公司，有一个很老很老的项目，所使用的事务并不是JDBC事务，也不是Spring事务，而是传说中才会出现的 **JTA事务**。
+在2021年，我所入职的一家公司，有一个很老很老的项目，所使用的事务并不是JDBC事务，也不是Spring事务，而是传说中才会出现的  **JTA事务** 。
 
-**但是是什么现象呢？**
+ **但是是什么现象呢？** 
 
 同事A所遇到的情况就是添加 `@Transcation` 注解后，写在 `Action` 层和 `Service` 层的时候，注解并不会生效。当时，同事B给他的建议就是，所有的业务逻辑都挪到 `dao` 层写。我听完，妈妈咪呀，这代码得多乱啊！还好我不需要用到，果真是事不关己，高高挂起，然而有一天，我也遇到了这个问题！艹了，我又不想全部的业务逻辑都堆到一个方法，所以我就开始搜🐕、度娘一把梭，但是并不如意。
 
@@ -2446,7 +2446,7 @@ log4j.appender.R.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss,SSS} [%t] [%c] 
 
 然后控制台就会按照配置文件中设定的格式输出我们的日志，下面我们需要对配置文件中的参数简单的做个说明。
 
-**日志级别**
+ **日志级别** 
 
 ```shell
 # 配置语法
@@ -2461,7 +2461,7 @@ INFO 	为一般要显示的信息，比如登录登出
 DEBUG 	为程序的调试信息
 ```
 
-**输出目的地**
+ **输出目的地** 
 
 ```shell
 # 配置语法
@@ -2477,7 +2477,7 @@ org.apache.log4j.RollingFileAppender		（文件大小到达指定尺寸的时候
 org.apache.log4j.WriterAppender				（将日志信息以流格式发送到任意指定的地方）
 ```
 
-**日志信息格式**
+ **日志信息格式** 
 
 ```shell
 # 配置语法
@@ -2520,7 +2520,7 @@ org.apache.log4j.TTCCLayout			（包含日志产生的时间、线程、类别�
  %20.30c:如果category的名称小于20就补空格，并且右对齐，如果其名称长于30字符，就从左边较远输出的字符截掉。
 ```
 
-**常见的几种配置**
+ **常见的几种配置** 
 
 下面配置了完整的Log4J全套
 
