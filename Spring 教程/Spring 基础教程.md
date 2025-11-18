@@ -1,7 +1,7 @@
 # Spring 基础篇
 
 
-## 一、概述
+## 第一章 概述
 
 Spring 是 Java EE 编程领域的一款轻量级的开源框架，由被称为 “ Spring 之父 ” 的 Rod Johnson 于 2002 年提出并创立，它的目标就是要简化 Java 企业级应用程序的开发难度和周期。
 
@@ -108,7 +108,7 @@ AOP 编程的支持：Spring 提供面向切面编程，可以方便地实现对
 
 声明式事务的支持：只需要通过配置就可以完成对事务的管理，而无须手动编程。
 
-## 二、体系结构
+## 第二章 体系结构
 
 Spring 框架基本涵盖了企业级应用开发的各个方面，它包含了 20 多个不同的模块，如下所示：
 
@@ -178,7 +178,7 @@ Spring 的核心容器是其他模块建立的基础，由 Beans 模块、Core �
 
 - Test 模块：Spring 支持 Junit 和 TestNG 测试框架，而且还额外提供了一些基于 Spring 的测试功能，比如在测试 Web 框架时，模拟 Http 请求的功能。
 
-## 三、开发环境搭建
+## 第三章 开发环境搭建
 
 <div style="border: 1px solid #1d63edb5;
     padding: 10px;
@@ -234,7 +234,7 @@ Common Logging 日志组件是使用 Spring 的必要组件，所以我们还需
 
 使用 Spring 框架时，只需将 Spring 的 4 个基础包以及 commons-logging-1.2.jar 包复制到项目的 lib 目录，并发布到类路径中即可。
 
-## 四、第一个Spring程序
+## 第四章 第一个Spring程序
 
 打开IDEA，创建一个最简单的 Java 项目：
 
@@ -316,7 +316,7 @@ User(id=null, name=null, age=null, gender=null, birthday=null)
 
 实体类上的注解   `@Data`   是 Lombok 插件，到这里，我们的第一个 Spring 程序就完成了。
 
-## 五、Spring IoC
+## 第五章 Spring IoC
 
 IoC 是  `Inversion of Control`  的简写，译为“控制反转”，它不是一门技术，而是一种设计思想，是一个重要的面向对象编程法则，能够指导我们如何设计出松耦合、更优良的程序。Spring 通过 IoC 容器来管理所有 Java 对象的实例化和初始化，控制对象与对象之间的依赖关系。我们将由 IoC 容器管理的 Java 对象称为 Spring Bean，它与使用关键字 new 创建的 Java 对象没有任何区别。IoC 容器是 Spring 框架中最重要的核心组件之一，它贯穿了 Spring 从诞生到成长的整个过程。
 
@@ -413,7 +413,7 @@ ApplicationContext 是 BeanFactory 接口的子接口，是对 BeanFactory 的�
 
 在上表的示例代码中，参数  `configLocation`  用于指定 Spring 配置文件的名称和位置，如  spring-context.xml。
 
-## 六、Bean的属性注入
+## 第六章 Bean的属性注入
 
 ### 构造注入
 
@@ -919,7 +919,7 @@ public class TestApplication {
 - Java 类中必须包含对应的带参构造器；
 - 在使用 c 命名空间实现属性注入前，XML 配置的 ` <beans>`  元素内必须先导入 c 命名空间的 XML 约束。
 
-## 七、Bean的作用域
+## 第七章 Bean的作用域
 
 默认情况下，所有的 Spring Bean 都是单例的，也就是说在整个 Spring 应用中， Bean 的实例只有一个。
 
@@ -1037,7 +1037,7 @@ public class TestApplication {
 
 可见两个Bean实例的内存不一样，也就意味着创建了两个Bean的实例。
 
-## 八、Bean的继承
+## 第八章 Bean的继承
 
 在 Spring 中，Bean 和 Bean 之间也存在继承关系。我们将被继承的 Bean 称为父 Bean，将继承父 Bean 配置信息的 Bean 称为子 Bean。
 
@@ -1105,7 +1105,7 @@ User(id=9527, name=Tom, age=23, gender=f, birthday=Mon Jun 05 10:51:52 CST 2023)
 Student(id=9527, name=Tom, age=23, gender=f, birthday=Mon Jun 05 10:51:52 CST 2023, studentdNumber=null, gradeLevel=null, className=null)
 ```
 
-## 九、Bean定义模板
+## 第九章 Bean定义模板
 
 在父 Bean 的定义中，有一个十分重要的属性，那就是 abstract 属性。如果一个父 Bean 的 abstract 属性值为 true，则表明这个 Bean 是抽象的。
 
@@ -1133,7 +1133,7 @@ public static void main(String[] args) {
 
 这就说明抽象的父 Bean 只能作为模板被子 Bean 继承，并且它不能被实例化。同时，对应的 `xml` 配置上，也必须指定  `abstract="true"`  ，而不能是  `abstract="false"` ，这个时候就是意味着，只能作为一个定义模板给子类使用。
 
-## 十、自动装配
+## 第十章 自动装配
 
 我们把 Spring 在 Bean 与 Bean 之间建立依赖关系的行为称为“装配”。
 
@@ -1386,7 +1386,7 @@ Student(id=null, name=null, age=null, gender=null, birthday=null, studentdNumber
 
 至于几个装配类型的区别，可以直接去查看 `getBean()` 获取Bean的时候的传入参数。
 
-## 十一、AOP面向切面编程（超重点！）
+## 第十一章 AOP面向切面编程（超重点！）
 
 Spring AOP 是 Spring 框架的核心模块之一，它使用纯 Java 实现，因此不需要专门的编译过程和类加载器，可以在程序运行期通过代理方式向目标类织入增强代码。
 
@@ -1602,7 +1602,7 @@ jump jump
 
 可见， `play()` 方法并没有增强通知...其他类型的通知类型，自己看文档实现吧！
 
-## 十二、集成AspectJ
+## 第十二章 集成AspectJ
 
 我们知道，Spring AOP 是一个简化版的 AOP 实现，并没有提供完整版的 AOP 功能。通常情况下，Spring AOP 是能够满足我们日常开发过程中的大多数场景的，但在某些情况下，我们可能需要使用 Spring AOP 范围外的某些 AOP 功能。
 
@@ -1853,7 +1853,7 @@ jump jump
 
 至于更多类型的增强，请自行尝试！
 
-## 十三、JdbcTemplate
+## 第十三章 JdbcTemplate
 
 Spring 提供了一个 Spring JDBC 模块，它对 JDBC API 进行了封装，其的主要目的降低 JDBC API 的使用难度，以一种更直接、更简洁的方式使用 JDBC API。
 
@@ -2011,7 +2011,7 @@ password= ****
 </beans>
 ```
 
-## 十四、Transcation（事务）
+## 第十四章 Transcation（事务）
 
 事务（Transaction）是基于关系型数据库（RDBMS）的企业应用的重要组成部分。在软件开发领域，事务扮演者十分重要的角色，用来确保应用程序数据的完整性和一致性。
 
@@ -2413,9 +2413,11 @@ public class Student implements Serializable {
 
 添加了 `@Transactional` 注解即可！
 
-## 十五、Log4j（日志）
+## 第十五章 Log4j 日志
 
-Log4j(log for java)是 [Apache](https://link.zhihu.com/?target=https%3A//baike.baidu.com/item/Apache/8512995) 的一个开源项目，通过使用Log4j，我们可以控制日志信息输送的目的地是[控制台](https://link.zhihu.com/?target=https%3A//baike.baidu.com/item/%E6%8E%A7%E5%88%B6%E5%8F%B0)、文件、[GUI](https://link.zhihu.com/?target=https%3A//baike.baidu.com/item/GUI)组件，甚至是套接口服务器、[NT](https://link.zhihu.com/?target=https%3A//baike.baidu.com/item/NT/3443842)的事件记录器、[UNIX](https://link.zhihu.com/?target=https%3A//baike.baidu.com/item/UNIX) [Syslog](https://link.zhihu.com/?target=https%3A//baike.baidu.com/item/Syslog)[守护进程](https://link.zhihu.com/?target=https%3A//baike.baidu.com/item/%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B)等；我们也可以控制每一条日志的输出格式；通过定义每一条日志信息的级别，我们能够更加细致地控制日志的生成过程。最令人感兴趣的就是，这些可以通过一个[配置文件](https://link.zhihu.com/?target=https%3A//baike.baidu.com/item/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)来灵活地进行配置，而不需要修改应用的代码。
+Log4j(log for java)是 Apache 的一个开源项目，通过使用Log4j，我们可以控制日志信息输送的目的地是控制台、文件、GUI组件，甚至是套接口服务器、NT 的事件记录器、UNIX Syslog守护进程等。
+
+我们也可以控制每一条日志的输出格式，通过定义每一条日志信息的级别，我们能够更加细致地控制日志的生成过程。最令人感兴趣的就是，这些可以通过一个配置文件来灵活地进行配置，而不需要修改应用的代码。
 
 下面我们来一起看看如何在Spring中使用Log4J日志框架。
 
