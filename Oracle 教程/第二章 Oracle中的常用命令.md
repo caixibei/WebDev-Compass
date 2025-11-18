@@ -285,3 +285,53 @@ grant connect to <用户名>;
 **示例：**
 
 ![image-20251118145538421](assets/image-20251118145538421.png)
+
+### 删除用户
+
+```sql
+drop user <用户名> cascade;
+```
+
+**示例：**
+
+![image-20251118151104322](assets/image-20251118151104322.png)
+
+### 修改用户
+
+```sql
+alter user <用户名> identified by <口令>;
+```
+
+**示例：**
+
+![image-20251118153202323](assets/image-20251118153202323.png)
+
+### 锁定用户
+
+```sql
+alter user <用户名> account lock;
+```
+
+**示例：**
+
+![image-20251118155825911](assets/image-20251118155825911.png)
+
+### 解锁用户
+
+```sql
+alter user <用户名> account unlock;
+```
+
+**示例：**
+
+![image-20251118155925645](assets/image-20251118155925645.png)
+
+### 查看用户
+
+```sql
+select username from dba_users;
+```
+
+**示例：**
+
+![image-20251118160106799](assets/image-20251118160106799.png)
