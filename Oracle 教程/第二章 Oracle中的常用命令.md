@@ -253,3 +253,35 @@ show parameter undo_tablespace;
 
 ## Oracle 用户管理
 
+### 创建用户
+
+```sql
+create user <用户名>
+identified by <口令>
+default tablespace <表空间名>
+temporary tablespace <临时表空间名>;
+```
+
+**示例：**
+
+![image-20251118144053185](assets/image-20251118144053185.png)
+
+### 连接用户
+
+```sql
+conn <用户名>/<口令>
+```
+
+**示例：**
+
+![image-20251118144622627](assets/image-20251118144622627.png)
+
+### 用户授权
+
+```sql
+grant connect to <用户名>;
+```
+
+**示例：**
+
+![image-20251118145538421](assets/image-20251118145538421.png)
