@@ -1,6 +1,5 @@
 # Spring 基础篇
 
-
 ## 第一章 概述
 
 Spring 是 Java EE 编程领域的一款轻量级的开源框架，由被称为 “ Spring 之父 ” 的 Rod Johnson 于 2002 年提出并创立，它的目标就是要简化 Java 企业级应用程序的开发难度和周期。
@@ -26,48 +25,48 @@ Rod Johnson 在其 2004 年编著的畅销书《Expert One-on-One J2EE Developme
 #### 广义的 Spring: Spring 技术栈
 
 <div style="border: 1px solid #1d63edb5;
-    padding: 10px;
-    border-left: 5px solid #1d63edb5;
-    background: #bed2fa63;
-    border-radius: 0 3px 3px 0;
-    color: #1d63ed;
-    font-family: menlo;
-    font-size: 12px;
-    margin: 10px 0;
-    display: flex;
-    align-items: center;
-    gap: 8px;">
-    <svg viewBox="0 0 24 24" style="flex-shrink: 0;" width="14px" height="14px" fill="none" xmlns="http://www.w3.org/2000/svg" class="MuiSvgIcon-root MuiSvgIcon-colorInfo MuiSvgIcon-fontSizeSmall css-1bqouqa" focusable="false" aria-hidden="true" data-testid="InfoCircleIcon"><path d="M12 16V12M12 8H12.01M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-    <span style="line-height: 16px;">广义上的 Spring 泛指以 Spring Framework 为核心的 Spring 技术栈。</span>
+	padding: 10px;	
+	border-left: 5px solid #1d63edb5;
+	background: #bed2fa63;
+	border-radius: 0 3px 3px 0;
+	color: #1d63ed;
+	font-family: menlo;
+	font-size: 12px;
+	margin: 10px 0;
+	display: flex;
+	align-items: center;
+	gap: 8px;">
+	<svg viewBox="0 0 24 24" style="flex-shrink: 0;" width="14px" height="14px" fill="none" xmlns="http://www.w3.org/2000/svg" class="MuiSvgIcon-root MuiSvgIcon-colorInfo MuiSvgIcon-fontSizeSmall css-1bqouqa" focusable="false" aria-hidden="true" data-testid="InfoCircleIcon"><path d="M12 16V12M12 8H12.01M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+	<span style="line-height: 16px;">广义上的 Spring 泛指以 Spring Framework 为核心的 Spring 技术栈。</span>
 </div>
 
 经过十多年的发展，Spring 已经不再是一个单纯的应用框架，而是逐渐发展成为一个由多个不同子项目（模块）组成的成熟技术，例如 Spring Framework、Spring MVC、SpringBoot、Spring Cloud、Spring Data、Spring Security 等，其中 Spring Framework 是其他子项目的基础。这些子项目涵盖了从企业级应用开发到云计算等各方面的内容，能够帮助开发人员解决软件发展过程中不断产生的各种实际问题，给开发人员带来了更好的开发体验。
 
-|    项目名称     | 描述                                                         |
+|	项目名称	 | 描述														 |
 | :-------------: | :----------------------------------------------------------- |
 |   Spring Data   | Spring 提供的数据访问模块，对 JDBC 和 ORM 提供了很好的支持。通过它，开发人员可以使用一种相对统一的方式，来访问位于不同类型数据库中的数据。 |
 |  Spring Batch   | 一款专门针对企业级系统中的日常批处理任务的轻量级框架，能够帮助开发人员方便的开发出健壮、高效的批处理应用程序。 |
 | Spring Security | 前身为 Acegi，是 Spring 中较成熟的子模块之一。它是一款可以定制化的身份验证和访问控制框架。 |
-|  Spring Mobile  | 是对 Spring MVC 的扩展，用来简化移动端 Web 应用的开发。      |
+|  Spring Mobile  | 是对 Spring MVC 的扩展，用来简化移动端 Web 应用的开发。	  |
 |   Spring Boot   | 是 Spring 团队提供的全新框架，它为 Spring 以及第三方库一些开箱即用的配置，可以简化 Spring 应用的搭建及开发过程。 |
 |  Spring Cloud   | 一款基于 Spring Boot 实现的微服务框架。它并不是某一门技术，而是一系列微服务解决方案或框架的有序集合。它将市面上成熟的、经过验证的微服务框架整合起来，并通过 Spring Boot 的思想进行再封装，屏蔽调其中复杂的配置和实现原理，最终为开发人员提供了一套简单易懂、易部署和易维护的分布式系统开发工具包。 |
 
 #### 狭义的 Spring: Spring 框架
 
 <div style="border: 1px solid #1d63edb5;
-    padding: 10px;
-    border-left: 5px solid #1d63edb5;
-    background: #bed2fa63;
-    border-radius: 0 3px 3px 0;
-    color: #1d63ed;
-    font-family: menlo;
-    font-size: 12px;
-    margin: 10px 0;
-    display: flex;
-    align-items: center;
-    gap: 8px;">
-    <svg viewBox="0 0 24 24" style="flex-shrink: 0;" width="14px" height="14px" fill="none" xmlns="http://www.w3.org/2000/svg" class="MuiSvgIcon-root MuiSvgIcon-colorInfo MuiSvgIcon-fontSizeSmall css-1bqouqa" focusable="false" aria-hidden="true" data-testid="InfoCircleIcon"><path d="M12 16V12M12 8H12.01M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-    <span style="line-height: 16px;">狭义的 Spring 特指 Spring Framework，通常我们将它称为 Spring 框架。Spring 框架是一个分层的、面向切面的 Java 应用程序的一站式轻量级解决方案，它是 Spring 技术栈的核心和基础，是为了解决企业级应用开发的复杂性而创建的。</span>
+	padding: 10px;
+	border-left: 5px solid #1d63edb5;
+	background: #bed2fa63;
+	border-radius: 0 3px 3px 0;
+	color: #1d63ed;
+	font-family: menlo;
+	font-size: 12px;
+	margin: 10px 0;
+	display: flex;
+	align-items: center;
+	gap: 8px;">
+	<svg viewBox="0 0 24 24" style="flex-shrink: 0;" width="14px" height="14px" fill="none" xmlns="http://www.w3.org/2000/svg" class="MuiSvgIcon-root MuiSvgIcon-colorInfo MuiSvgIcon-fontSizeSmall css-1bqouqa" focusable="false" aria-hidden="true" data-testid="InfoCircleIcon"><path d="M12 16V12M12 8H12.01M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+	<span style="line-height: 16px;">狭义的 Spring 特指 Spring Framework，通常我们将它称为 Spring 框架。Spring 框架是一个分层的、面向切面的 Java 应用程序的一站式轻量级解决方案，它是 Spring 技术栈的核心和基础，是为了解决企业级应用开发的复杂性而创建的。</span>
 </div>
 
 Spring 两大核心部分：
@@ -75,7 +74,7 @@ Spring 两大核心部分：
 - IOC
 - AOP
 
-| 核心 | 描述                                                         |
+| 核心 | 描述														 |
 | ---- | ------------------------------------------------------------ |
 | IOC  | Inverse of Control 的简写，译为“控制反转”，指把创建对象过程交给 Spring 进行管理。 |
 | AOP  | Aspect Oriented Programming 的简写，译为“面向切面编程”。AOP 用来封装多个类的公共行为，将那些与业务无关，却为业务模块所共同调用的逻辑封装起来，减少系统的重复代码，降低模块间的耦合度。另外，AOP 还解决一些系统层面上的问题，比如日志、事务、权限等。 |
@@ -113,11 +112,11 @@ Spring 框架具有以下几个特点：
 Spring 框架基本涵盖了企业级应用开发的各个方面，它包含了 20 多个不同的模块，如下所示。
 
 ```bash
-spring-aop      	                  spring-context-indexer               spring-instrument                spring-orm                   spring-web
-spring-aspects  	                  spring-context-support               spring-jcl                       spring-oxm                   spring-webflux
-spring-beans    	                  spring-core                          spring-jdbc                      spring-r2dbc                 spring-webmvc
-spring-context  	                  spring-expression                    spring-jms                       spring-test                  spring-websocket
-spring-messaging   	                  spring-tx                                            
+spring-aop	  					  spring-context-indexer			   spring-instrument				spring-orm				   spring-web
+spring-aspects  					  spring-context-support			   spring-jcl					   spring-oxm				   spring-webflux
+spring-beans						  spring-core						  spring-jdbc					  spring-r2dbc				 spring-webmvc
+spring-context  					  spring-expression					spring-jms					   spring-test				  spring-websocket
+spring-messaging   					  spring-tx											
 ```
 
 ![image-20230602143613024](assets/image-20230602143613024-16856877749521-17485930775611-17485943838961.png)
@@ -181,19 +180,19 @@ Spring 的核心容器是其他模块建立的基础，由 Beans 模块、Core �
 ## 第三章 开发环境搭建
 
 <div style="border: 1px solid #1d63edb5;
-    padding: 10px;
-    border-left: 5px solid #1d63edb5;
-    background: #bed2fa63;
-    border-radius: 0 3px 3px 0;
-    color: #1d63ed;
-    font-family: menlo;
-    font-size: 12px;
-    margin: 10px 0;
-    display: flex;
-    align-items: center;
-    gap: 8px;">
-    <svg viewBox="0 0 24 24" style="flex-shrink: 0;" width="14px" height="14px" fill="none" xmlns="http://www.w3.org/2000/svg" class="MuiSvgIcon-root MuiSvgIcon-colorInfo MuiSvgIcon-fontSizeSmall css-1bqouqa" focusable="false" aria-hidden="true" data-testid="InfoCircleIcon"><path d="M12 16V12M12 8H12.01M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-    <span style="line-height: 16px;">本节主要介绍如何搭建 Spring 开发环境。</span>
+	padding: 10px;
+	border-left: 5px solid #1d63edb5;
+	background: #bed2fa63;
+	border-radius: 0 3px 3px 0;
+	color: #1d63ed;
+	font-family: menlo;
+	font-size: 12px;
+	margin: 10px 0;
+	display: flex;
+	align-items: center;
+	gap: 8px;">
+	<svg viewBox="0 0 24 24" style="flex-shrink: 0;" width="14px" height="14px" fill="none" xmlns="http://www.w3.org/2000/svg" class="MuiSvgIcon-root MuiSvgIcon-colorInfo MuiSvgIcon-fontSizeSmall css-1bqouqa" focusable="false" aria-hidden="true" data-testid="InfoCircleIcon"><path d="M12 16V12M12 8H12.01M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+	<span style="line-height: 16px;">本节主要介绍如何搭建 Spring 开发环境。</span>
 </div>
 
 首先，需要确认 JDK 版本的信息，顺带检查环境变量是否配置正确：
@@ -211,18 +210,18 @@ Java HotSpot(TM) 64-Bit Server VM (build 20.0.1+9-29, mixed mode, sharing)
 
 简单的对文件内容介绍下：
 
-|  名称  |                             作用                             |
+|  名称  |							 作用							 |
 | :----: | :----------------------------------------------------------: |
-|  docs  |              包含 Spring 的 API 文档和开发规范               |
-|  libs  |                包含开发需要的 jar 包和源码包                 |
+|  docs  |			  包含 Spring 的 API 文档和开发规范			   |
+|  libs  |				包含开发需要的 jar 包和源码包				 |
 | schema | 包含开发所需要的 schema 文件，在这些文件中定义了 Spring 相关配置文件的约束 |
 
 并且在 libs 目录中，涵盖了开发所需要的所有依赖包：
 
-|          名称           |                             作用                             |
+|		  名称		   |							 作用							 |
 | :---------------------: | :----------------------------------------------------------: |
-|    spring-core-*.jar    | 包含 Spring 框架基本的核心工具类，Spring 其他组件都要用到这个包中的类，是其他组件的基本核心。 |
-|   spring-beans-*.jar    | 所有应用都要用到的，它包含访问配置文件、创建和管理 Bean 以及进行 Inversion of Control（IoC）或者 Dependency Injection（DI）操作相关的所有类。 |
+|	spring-core-*.jar	| 包含 Spring 框架基本的核心工具类，Spring 其他组件都要用到这个包中的类，是其他组件的基本核心。 |
+|   spring-beans-*.jar	| 所有应用都要用到的，它包含访问配置文件、创建和管理 Bean 以及进行 Inversion of Control（IoC）或者 Dependency Injection（DI）操作相关的所有类。 |
 |  spring-context-*.jar   | Spring 提供在基础 IoC 功能上的扩展服务，此外还提供许多企业级服务的支持，如邮件服务、任务调度、JNDI 定位、EJB 集成、远程访问、缓存以及各种视图层框架的封装等。 |
 | spring-expression-*.jar | 定义了 Spring 的表达式语言。  需要注意的是，在使用 Spring 开发时，除了 Spring 自带的 JAR 包以外，还需要一个第三方 JAR 包 commons.logging 处理日志信息。 |
 
@@ -251,12 +250,12 @@ Common Logging 日志组件是使用 Spring 的必要组件，所以我们还需
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <!--无参构造注入-->
-    <bean name="user_01" class="ioc.User"></bean>
+	<!--无参构造注入-->
+	<bean name="user_01" class="ioc.User"></bean>
 </beans>
 ```
 
@@ -273,38 +272,38 @@ import java.util.Date;
 @ToString
 @EqualsAndHashCode
 public class User implements Serializable {
-    private static final long seriaVersionUID = 1723L;
-    /**
-     * 主键
-     */
-    private Integer id;
-    /**
-     * 姓名
-     */
-    private String name;
-    /**
-     * 年龄
-     */
-    private Integer age;
-    /**
-     * 性别
-     */
-    private String gender;
-    /**
-     * 出生日期
-     */
-    private Date birthday;
+	private static final long seriaVersionUID = 1723L;
+	/**
+	 * 主键
+	 */
+	private Integer id;
+	/**
+	 * 姓名
+	 */
+	private String name;
+	/**
+	 * 年龄
+	 */
+	private Integer age;
+	/**
+	 * 性别
+	 */
+	private String gender;
+	/**
+	 * 出生日期
+	 */
+	private Date birthday;
 }
 ```
 
 ```java
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class TestApplication {
-    public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
-        User user_01 = context.getBean("user_01",User.class);
-        System.out.println(user_01.toString());
-    }
+	public static void main(String[] args) {
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
+		User user_01 = context.getBean("user_01",User.class);
+		System.out.println(user_01.toString());
+	}
 }
 ```
 
@@ -337,22 +336,22 @@ IoC 带来的最大改变不是代码层面的，而是从思想层面上发生�
 ### 依赖注入（DI）
 
 <div style="border: 1px solid rgba(255, 165, 0,.1);
-    padding: 10px;
-    border-left: 5px solid rgba(255, 165, 0);
-    background: rgba(255, 165, 0,.1);
-    border-radius: 0 3px 3px 0;
-    color: rgba(255, 165, 0);
-    font-family: menlo;
-    font-size: 12px;
-    margin: 10px 0;
-    display: flex;
-    align-items: center;
-    gap: 8px;">
-    <svg viewBox="0 0 24 24" width="14px" height="14px" fill="none" style="flex-shrink: 0;" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 8.00008V12.0001M12 16.0001H12.01M3 7.94153V16.0586C3 16.4013 3 16.5726 3.05048 16.7254C3.09515 16.8606 3.16816 16.9847 3.26463 17.0893C3.37369 17.2077 3.52345 17.2909 3.82297 17.4573L11.223 21.5684C11.5066 21.726 11.6484 21.8047 11.7985 21.8356C11.9315 21.863 12.0685 21.863 12.2015 21.8356C12.3516 21.8047 12.4934 21.726 12.777 21.5684L20.177 17.4573C20.4766 17.2909 20.6263 17.2077 20.7354 17.0893C20.8318 16.9847 20.9049 16.8606 20.9495 16.7254C21 16.5726 21 16.4013 21 16.0586V7.94153C21 7.59889 21 7.42756 20.9495 7.27477C20.9049 7.13959 20.8318 7.01551 20.7354 6.91082C20.6263 6.79248 20.4766 6.70928 20.177 6.54288L12.777 2.43177C12.4934 2.27421 12.3516 2.19543 12.2015 2.16454C12.0685 2.13721 11.9315 2.13721 11.7985 2.16454C11.6484 2.19543 11.5066 2.27421 11.223 2.43177L3.82297 6.54288C3.52345 6.70928 3.37369 6.79248 3.26463 6.91082C3.16816 7.01551 3.09515 7.13959 3.05048 7.27477C3 7.42756 3 7.59889 3 7.94153Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    </path>
+	padding: 10px;
+	border-left: 5px solid rgba(255, 165, 0);
+	background: rgba(255, 165, 0,.1);
+	border-radius: 0 3px 3px 0;
+	color: rgba(255, 165, 0);
+	font-family: menlo;
+	font-size: 12px;
+	margin: 10px 0;
+	display: flex;
+	align-items: center;
+	gap: 8px;">
+	<svg viewBox="0 0 24 24" width="14px" height="14px" fill="none" style="flex-shrink: 0;" xmlns="http://www.w3.org/2000/svg">
+	<path d="M12 8.00008V12.0001M12 16.0001H12.01M3 7.94153V16.0586C3 16.4013 3 16.5726 3.05048 16.7254C3.09515 16.8606 3.16816 16.9847 3.26463 17.0893C3.37369 17.2077 3.52345 17.2909 3.82297 17.4573L11.223 21.5684C11.5066 21.726 11.6484 21.8047 11.7985 21.8356C11.9315 21.863 12.0685 21.863 12.2015 21.8356C12.3516 21.8047 12.4934 21.726 12.777 21.5684L20.177 17.4573C20.4766 17.2909 20.6263 17.2077 20.7354 17.0893C20.8318 16.9847 20.9049 16.8606 20.9495 16.7254C21 16.5726 21 16.4013 21 16.0586V7.94153C21 7.59889 21 7.42756 20.9495 7.27477C20.9049 7.13959 20.8318 7.01551 20.7354 6.91082C20.6263 6.79248 20.4766 6.70928 20.177 6.54288L12.777 2.43177C12.4934 2.27421 12.3516 2.19543 12.2015 2.16454C12.0685 2.13721 11.9315 2.13721 11.7985 2.16454C11.6484 2.19543 11.5066 2.27421 11.223 2.43177L3.82297 6.54288C3.52345 6.70928 3.37369 6.79248 3.26463 6.91082C3.16816 7.01551 3.09515 7.13959 3.05048 7.27477C3 7.42756 3 7.59889 3 7.94153Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+	</path>
 </svg>
-    <span style="line-height: 12px;">在了解了 IoC 之后，我们还需要了解另外一个非常重要的概念：依赖注入</span>
+	<span style="line-height: 12px;">在了解了 IoC 之后，我们还需要了解另外一个非常重要的概念：依赖注入</span>
 </div>
 
 依赖注入（Denpendency Injection，简写为 DI）是 Martin Fowler 在 2004 年在对“控制反转”进行解释时提出的。Martin Fowler 认为“控制反转”一词很晦涩，无法让人很直接的理解“到底是哪里反转了”，因此他建议使用 “ 依赖注入” 来代替 “ 控制反转 ”。
@@ -363,8 +362,8 @@ IoC 带来的最大改变不是代码层面的，而是从思想层面上发生�
 
 ```java
 public class B {
-    String bid;
-    A a;
+	String bid;
+	A a;
 }
 ```
 
@@ -406,7 +405,7 @@ BeanFactory context = new ClassPathXmlApplicationContext("spring-context.xml");
 
 ApplicationContext 是 BeanFactory 接口的子接口，是对 BeanFactory 的扩展。ApplicationContext 在 BeanFactory 的基础上增加了许多企业级的功能，例如 AOP（面向切面编程）、国际化、事务支持等。ApplicationContext 接口有两个常用的实现类，具体如下表：
 
-| 实现类                          | 描述                                                         | 示例代码                                                     |
+| 实现类						  | 描述														 | 示例代码													 |
 | ------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | ClassPathXmlApplicationContext  | 加载类路径 ClassPath 下指定的 XML 配置文件，并完成 ApplicationContext 的实例化工作 | ApplicationContext applicationContext = new ClassPathXmlApplicationContext(String configLocation); |
 | FileSystemXmlApplicationContext | 加载指定的文件系统路径中指定的 XML 配置文件，并完成 ApplicationContext 的实例化工作 | ApplicationContext applicationContext = new FileSystemXmlApplicationContext(String configLocation); |
@@ -430,27 +429,27 @@ import java.util.Date;
 @ToString
 @EqualsAndHashCode
 public class User implements Serializable {
-    private static final long seriaVersionUID = 1723L;
-    /**
-     * 主键
-     */
-    private Integer id;
-    /**
-     * 姓名
-     */
-    private String name;
-    /**
-     * 年龄
-     */
-    private Integer age;
-    /**
-     * 性别
-     */
-    private String gender;
-    /**
-     * 出生日期
-     */
-    private Date birthday;
+	private static final long seriaVersionUID = 1723L;
+	/**
+	 * 主键
+	 */
+	private Integer id;
+	/**
+	 * 姓名
+	 */
+	private String name;
+	/**
+	 * 年龄
+	 */
+	private Integer age;
+	/**
+	 * 性别
+	 */
+	private String gender;
+	/**
+	 * 出生日期
+	 */
+	private Date birthday;
 }
 ```
 
@@ -459,23 +458,23 @@ public class User implements Serializable {
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:c="http://www.springframework.org/schema/c"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:c="http://www.springframework.org/schema/c"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <!--无参构造注入-->
-    <bean name="user_01" class="ioc.User"></bean>
+	<!--无参构造注入-->
+	<bean name="user_01" class="ioc.User"></bean>
 
-    <!--带参构造注入-->
-    <bean name="date" class="java.util.Date"></bean>
-    <bean name="user_02" class="ioc.User">
-        <constructor-arg value="9527" index="0"></constructor-arg>
-        <constructor-arg value="Pitter" index="1"></constructor-arg>
-        <constructor-arg value="12" index="2"></constructor-arg>
-        <constructor-arg value="f" index="3"></constructor-arg>
-        <constructor-arg ref="date" index="4"></constructor-arg>
-    </bean>
+	<!--带参构造注入-->
+	<bean name="date" class="java.util.Date"></bean>
+	<bean name="user_02" class="ioc.User">
+		<constructor-arg value="9527" index="0"></constructor-arg>
+		<constructor-arg value="Pitter" index="1"></constructor-arg>
+		<constructor-arg value="12" index="2"></constructor-arg>
+		<constructor-arg value="f" index="3"></constructor-arg>
+		<constructor-arg ref="date" index="4"></constructor-arg>
+	</bean>
 
 </beans>
 ```
@@ -485,13 +484,13 @@ public class User implements Serializable {
 ```java
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class TestApplication {
-    public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
-        User user_01 = context.getBean("user_01",User.class);
-        User user_02 = context.getBean("user_02",User.class);
-        System.out.println(user_01.toString());//User(id=null, name=null, age=null, gender=null, birthday=null)
-        System.out.println(user_02.toString());//User(id=9527, name=Pitter, age=12, gender=f, birthday=Fri Jun 02 16:30:36)
-    }
+	public static void main(String[] args) {
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
+		User user_01 = context.getBean("user_01",User.class);
+		User user_02 = context.getBean("user_02",User.class);
+		System.out.println(user_01.toString());//User(id=null, name=null, age=null, gender=null, birthday=null)
+		System.out.println(user_02.toString());//User(id=9527, name=Pitter, age=12, gender=f, birthday=Fri Jun 02 16:30:36)
+	}
 }
 ```
 
@@ -502,19 +501,19 @@ public class TestApplication {
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:c="http://www.springframework.org/schema/c"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:c="http://www.springframework.org/schema/c"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <!--setter、getter注入-->
-    <bean name="user_03" class="ioc.User">
-        <property name="id" value="9527"></property>
-        <property name="name" value="Tom"></property>
-        <property name="age" value="23"></property>
-        <property name="gender" value="f"></property>
-        <property name="birthday" ref="date"></property>
-    </bean>
+	<!--setter、getter注入-->
+	<bean name="user_03" class="ioc.User">
+		<property name="id" value="9527"></property>
+		<property name="name" value="Tom"></property>
+		<property name="age" value="23"></property>
+		<property name="gender" value="f"></property>
+		<property name="birthday" ref="date"></property>
+	</bean>
 
 </beans>
 ```
@@ -523,11 +522,11 @@ public class TestApplication {
 
 ```java
 public class TestApplication {
-    public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
-        User user_03 = context.getBean("user_03",User.class);
-        System.out.println(user_03.toString());//User(id=9527, name=Tom, age=23, gender=f, birthday=Fri Jun 02 16:30:36)
-    }
+	public static void main(String[] args) {
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
+		User user_03 = context.getBean("user_03",User.class);
+		System.out.println(user_03.toString());//User(id=9527, name=Tom, age=23, gender=f, birthday=Fri Jun 02 16:30:36)
+	}
 }
 ```
 
@@ -545,17 +544,17 @@ import java.io.Serializable;
 @ToString
 @EqualsAndHashCode
 public class Student extends User implements Serializable {
-    private static final long seriaVersionUID = 1723L;
-    /**学号*/
-    private String studentdNumber;
-    /**
-     * 年级
-     */
-    private String gradeLevel;
-    /**
-     * 班级
-     */
-    private String className;
+	private static final long seriaVersionUID = 1723L;
+	/**学号*/
+	private String studentdNumber;
+	/**
+	 * 年级
+	 */
+	private String gradeLevel;
+	/**
+	 * 班级
+	 */
+	private String className;
 }
 ```
 
@@ -570,15 +569,15 @@ import java.math.BigDecimal;
 @ToString
 @EqualsAndHashCode
 public class Teacher extends User implements Serializable {
-    private static final long seriaVersionUID = 1723L;
-    /**
-     * 薪水
-     */
-    private BigDecimal salary;
-    /**
-     * 授课科目
-     */
-    private String subjectName;
+	private static final long seriaVersionUID = 1723L;
+	/**
+	 * 薪水
+	 */
+	private BigDecimal salary;
+	/**
+	 * 授课科目
+	 */
+	private String subjectName;
 }
 ```
 
@@ -593,27 +592,27 @@ import java.util.Date;
 @ToString
 @EqualsAndHashCode
 public class User implements Serializable {
-    private static final long seriaVersionUID = 1723L;
-    /**
-     * 主键
-     */
-    private Integer id;
-    /**
-     * 姓名
-     */
-    private String name;
-    /**
-     * 年龄
-     */
-    private Integer age;
-    /**
-     * 性别
-     */
-    private String gender;
-    /**
-     * 出生日期
-     */
-    private Date birthday;
+	private static final long seriaVersionUID = 1723L;
+	/**
+	 * 主键
+	 */
+	private Integer id;
+	/**
+	 * 姓名
+	 */
+	private String name;
+	/**
+	 * 年龄
+	 */
+	private Integer age;
+	/**
+	 * 性别
+	 */
+	private String gender;
+	/**
+	 * 出生日期
+	 */
+	private Date birthday;
 }
 ```
 
@@ -621,25 +620,25 @@ public class User implements Serializable {
 
 ```java
 public class UserStaticFactory {
-    private static User user = null;
-    /**
-     * 创建用户
-     * @param type
-     * @return
-     */
-    public static User createStaticUser(String type){
-        if(usernull){
-            switch (type){
-                case "student":
-                    return new Student();
-                case "teacher":
-                    return new Teacher();
-                default:
-                    return new User();
-            }
-        }
-        return user;
-    }
+	private static User user = null;
+	/**
+	 * 创建用户
+	 * @param type
+	 * @return
+	 */
+	public static User createStaticUser(String type){
+		if(usernull){
+			switch (type){
+				case "student":
+					return new Student();
+				case "teacher":
+					return new Teacher();
+				default:
+					return new User();
+			}
+		}
+		return user;
+	}
 }
 ```
 
@@ -648,14 +647,14 @@ public class UserStaticFactory {
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:c="http://www.springframework.org/schema/c"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-    <!--静态工厂注入-->
-    <bean name="user_04" class="ioc.UserStaticFactory" factory-method="createStaticUser">
-        <constructor-arg value="teacher"></constructor-arg>
-    </bean>
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:c="http://www.springframework.org/schema/c"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<!--静态工厂注入-->
+	<bean name="user_04" class="ioc.UserStaticFactory" factory-method="createStaticUser">
+		<constructor-arg value="teacher"></constructor-arg>
+	</bean>
 </beans>
 ```
 
@@ -663,31 +662,31 @@ public class UserStaticFactory {
 
 ```java
 public class TestApplication {
-    public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
-        User user_04 = context.getBean("user_04",User.class);
-        System.out.println(user_04.toString());//Teacher(salary=null, subjectName=null)
-    }
+	public static void main(String[] args) {
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
+		User user_04 = context.getBean("user_04",User.class);
+		System.out.println(user_04.toString());//Teacher(salary=null, subjectName=null)
+	}
 }
 ```
 
 <div style="border: 1px solid rgba(255, 165, 0,.1);
-    padding: 10px;
-    border-left: 5px solid rgba(255, 165, 0);
-    background: rgba(255, 165, 0,.1);
-    border-radius: 0 3px 3px 0;
-    color: rgba(255, 165, 0);
-    font-family: menlo;
-    font-size: 12px;
-    margin: 10px 0;
-    display: flex;
-    align-items: center;
-    gap: 8px;">
-    <svg viewBox="0 0 24 24" width="14px" height="14px" fill="none" style="flex-shrink: 0;" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 8.00008V12.0001M12 16.0001H12.01M3 7.94153V16.0586C3 16.4013 3 16.5726 3.05048 16.7254C3.09515 16.8606 3.16816 16.9847 3.26463 17.0893C3.37369 17.2077 3.52345 17.2909 3.82297 17.4573L11.223 21.5684C11.5066 21.726 11.6484 21.8047 11.7985 21.8356C11.9315 21.863 12.0685 21.863 12.2015 21.8356C12.3516 21.8047 12.4934 21.726 12.777 21.5684L20.177 17.4573C20.4766 17.2909 20.6263 17.2077 20.7354 17.0893C20.8318 16.9847 20.9049 16.8606 20.9495 16.7254C21 16.5726 21 16.4013 21 16.0586V7.94153C21 7.59889 21 7.42756 20.9495 7.27477C20.9049 7.13959 20.8318 7.01551 20.7354 6.91082C20.6263 6.79248 20.4766 6.70928 20.177 6.54288L12.777 2.43177C12.4934 2.27421 12.3516 2.19543 12.2015 2.16454C12.0685 2.13721 11.9315 2.13721 11.7985 2.16454C11.6484 2.19543 11.5066 2.27421 11.223 2.43177L3.82297 6.54288C3.52345 6.70928 3.37369 6.79248 3.26463 6.91082C3.16816 7.01551 3.09515 7.13959 3.05048 7.27477C3 7.42756 3 7.59889 3 7.94153Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    </path>
+	padding: 10px;
+	border-left: 5px solid rgba(255, 165, 0);
+	background: rgba(255, 165, 0,.1);
+	border-radius: 0 3px 3px 0;
+	color: rgba(255, 165, 0);
+	font-family: menlo;
+	font-size: 12px;
+	margin: 10px 0;
+	display: flex;
+	align-items: center;
+	gap: 8px;">
+	<svg viewBox="0 0 24 24" width="14px" height="14px" fill="none" style="flex-shrink: 0;" xmlns="http://www.w3.org/2000/svg">
+	<path d="M12 8.00008V12.0001M12 16.0001H12.01M3 7.94153V16.0586C3 16.4013 3 16.5726 3.05048 16.7254C3.09515 16.8606 3.16816 16.9847 3.26463 17.0893C3.37369 17.2077 3.52345 17.2909 3.82297 17.4573L11.223 21.5684C11.5066 21.726 11.6484 21.8047 11.7985 21.8356C11.9315 21.863 12.0685 21.863 12.2015 21.8356C12.3516 21.8047 12.4934 21.726 12.777 21.5684L20.177 17.4573C20.4766 17.2909 20.6263 17.2077 20.7354 17.0893C20.8318 16.9847 20.9049 16.8606 20.9495 16.7254C21 16.5726 21 16.4013 21 16.0586V7.94153C21 7.59889 21 7.42756 20.9495 7.27477C20.9049 7.13959 20.8318 7.01551 20.7354 6.91082C20.6263 6.79248 20.4766 6.70928 20.177 6.54288L12.777 2.43177C12.4934 2.27421 12.3516 2.19543 12.2015 2.16454C12.0685 2.13721 11.9315 2.13721 11.7985 2.16454C11.6484 2.19543 11.5066 2.27421 11.223 2.43177L3.82297 6.54288C3.52345 6.70928 3.37369 6.79248 3.26463 6.91082C3.16816 7.01551 3.09515 7.13959 3.05048 7.27477C3 7.42756 3 7.59889 3 7.94153Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+	</path>
 </svg>
-    <span style="line-height: 12px;">静态工厂注入要求静态工厂方法 createStaticUser 必须被 static 关键字所修饰！</span>
+	<span style="line-height: 12px;">静态工厂注入要求静态工厂方法 createStaticUser 必须被 static 关键字所修饰！</span>
 </div>
 
 
@@ -706,17 +705,17 @@ import java.io.Serializable;
 @ToString
 @EqualsAndHashCode
 public class Student extends User implements Serializable {
-    private static final long seriaVersionUID = 1723L;
-    /**学号*/
-    private String studentdNumber;
-    /**
-     * 年级
-     */
-    private String gradeLevel;
-    /**
-     * 班级
-     */
-    private String className;
+	private static final long seriaVersionUID = 1723L;
+	/**学号*/
+	private String studentdNumber;
+	/**
+	 * 年级
+	 */
+	private String gradeLevel;
+	/**
+	 * 班级
+	 */
+	private String className;
 }
 ```
 
@@ -731,15 +730,15 @@ import java.math.BigDecimal;
 @ToString
 @EqualsAndHashCode
 public class Teacher extends User implements Serializable {
-    private static final long seriaVersionUID = 1723L;
-    /**
-     * 薪水
-     */
-    private BigDecimal salary;
-    /**
-     * 授课科目
-     */
-    private String subjectName;
+	private static final long seriaVersionUID = 1723L;
+	/**
+	 * 薪水
+	 */
+	private BigDecimal salary;
+	/**
+	 * 授课科目
+	 */
+	private String subjectName;
 }
 ```
 
@@ -754,27 +753,27 @@ import java.util.Date;
 @ToString
 @EqualsAndHashCode
 public class User implements Serializable {
-    private static final long seriaVersionUID = 1723L;
-    /**
-     * 主键
-     */
-    private Integer id;
-    /**
-     * 姓名
-     */
-    private String name;
-    /**
-     * 年龄
-     */
-    private Integer age;
-    /**
-     * 性别
-     */
-    private String gender;
-    /**
-     * 出生日期
-     */
-    private Date birthday;
+	private static final long seriaVersionUID = 1723L;
+	/**
+	 * 主键
+	 */
+	private Integer id;
+	/**
+	 * 姓名
+	 */
+	private String name;
+	/**
+	 * 年龄
+	 */
+	private Integer age;
+	/**
+	 * 性别
+	 */
+	private String gender;
+	/**
+	 * 出生日期
+	 */
+	private Date birthday;
 }
 ```
 
@@ -782,27 +781,27 @@ public class User implements Serializable {
 
 ```java
 public class UserInstanceFactory {
-    private static User user = null;
-    /**
-     * 创建用户
-     * @param type
-     * @return
-     */
-    public User createInstanceUser(String type){
-        if(usernull){
-            synchronized (User.class){
-                switch (type){
-                    case "student":
-                        return new Student();
-                    case "teacher":
-                        return new Teacher();
-                    default:
-                        return new User();
-                }
-            }
-        }
-        return user;
-    }
+	private static User user = null;
+	/**
+	 * 创建用户
+	 * @param type
+	 * @return
+	 */
+	public User createInstanceUser(String type){
+		if(usernull){
+			synchronized (User.class){
+				switch (type){
+					case "student":
+						return new Student();
+					case "teacher":
+						return new Teacher();
+					default:
+						return new User();
+				}
+			}
+		}
+		return user;
+	}
 }
 ```
 
@@ -811,15 +810,15 @@ public class UserInstanceFactory {
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:c="http://www.springframework.org/schema/c"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-    <!--实例工厂注入-->
-    <bean name="instanceFactory" class="ioc.UserInstanceFactory"></bean>
-    <bean name="user_05" factory-bean="instanceFactory" factory-method="createInstanceUser">
-        <constructor-arg value="student"></constructor-arg>
-    </bean>
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:c="http://www.springframework.org/schema/c"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<!--实例工厂注入-->
+	<bean name="instanceFactory" class="ioc.UserInstanceFactory"></bean>
+	<bean name="user_05" factory-bean="instanceFactory" factory-method="createInstanceUser">
+		<constructor-arg value="student"></constructor-arg>
+	</bean>
 </beans>
 ```
 
@@ -827,11 +826,11 @@ public class UserInstanceFactory {
 
 ```java
 public class TestApplication {
-    public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
-        User user_05 = context.getBean("user_05",User.class);
-        System.out.println(user_05.toString());//Student(studentdNumber=null, gradeLevel=null, className=null)
-    }
+	public static void main(String[] args) {
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
+		User user_05 = context.getBean("user_05",User.class);
+		System.out.println(user_05.toString());//Student(studentdNumber=null, gradeLevel=null, className=null)
+	}
 }
 ```
 
@@ -844,18 +843,18 @@ p 命名空间是 setter 方式属性注入的一种快捷实现方式。通过�
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:c="http://www.springframework.org/schema/c"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-    <!--p命名空间注入-->
-    <bean name="user_06" class="ioc.User"
-          p:id="9527"
-          p:age="24"
-          p:gender="f"
-          p:name="lucy"
-          p:birthday-ref="date">
-    </bean>
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:c="http://www.springframework.org/schema/c"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<!--p命名空间注入-->
+	<bean name="user_06" class="ioc.User"
+		  p:id="9527"
+		  p:age="24"
+		  p:gender="f"
+		  p:name="lucy"
+		  p:birthday-ref="date">
+	</bean>
 </beans>
 ```
 
@@ -863,11 +862,11 @@ p 命名空间是 setter 方式属性注入的一种快捷实现方式。通过�
 
 ```java
 public class TestApplication {
-    public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
-        User user_06 = context.getBean("user_06",User.class);
-        System.out.println(user_06.toString());//User(id=9527, name=lucy, age=24, gender=f, birthday=Fri Jun 02 16:30:36)
-    }
+	public static void main(String[] args) {
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
+		User user_06 = context.getBean("user_06",User.class);
+		System.out.println(user_06.toString());//User(id=9527, name=lucy, age=24, gender=f, birthday=Fri Jun 02 16:30:36)
+	}
 }
 ```
 
@@ -886,19 +885,19 @@ c 命名空间是构造函数注入的一种快捷实现方式。通过它，我
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:c="http://www.springframework.org/schema/c"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:c="http://www.springframework.org/schema/c"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <!--c命名空间注入-->
-    <bean name="user_07" class="ioc.User"
-          c:id="9528"
-          c:age="27"
-          c:gender="m"
-          c:name="tom"
-          c:birthday-ref="date">
-    </bean>
+	<!--c命名空间注入-->
+	<bean name="user_07" class="ioc.User"
+		  c:id="9528"
+		  c:age="27"
+		  c:gender="m"
+		  c:name="tom"
+		  c:birthday-ref="date">
+	</bean>
 </beans>
 ```
 
@@ -906,11 +905,11 @@ c 命名空间是构造函数注入的一种快捷实现方式。通过它，我
 
 ```java
 public class TestApplication {
-    public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
-        User user_07 = context.getBean("user_07",User.class);
-        System.out.println(user_07.toString());//User(id=9528, name=tom, age=27, gender=m, birthday=Fri Jun 02 16:30:36)
-    }
+	public static void main(String[] args) {
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
+		User user_07 = context.getBean("user_07",User.class);
+		System.out.println(user_07.toString());//User(id=9528, name=tom, age=27, gender=m, birthday=Fri Jun 02 16:30:36)
+	}
 }
 ```
 
@@ -927,32 +926,32 @@ public class TestApplication {
 
 Spring 5 共提供了 6 种 scope 作用域，如下表：
 
-| 作用范围    | 描述                                                         |
+| 作用范围	| 描述														 |
 | ----------- | ------------------------------------------------------------ |
-| singleton   | 默认值，单例模式，表示在 Spring 容器中只有一个 Bean 实例     |
+| singleton   | 默认值，单例模式，表示在 Spring 容器中只有一个 Bean 实例	 |
 | prototype   | 原型模式，表示每次通过 Spring 容器获取 Bean 时，容器都会创建一个新的 Bean 实例。 |
-| request     | 每次 HTTP 请求，容器都会创建一个 Bean 实例。该作用域只在当前 HTTP Request 内有效。 |
-| session     | 同一个 HTTP Session 共享一个 Bean 实例，不同的 Session 使用不同的 Bean 实例。该作用域仅在当前 HTTP Session 内有效。 |
+| request	 | 每次 HTTP 请求，容器都会创建一个 Bean 实例。该作用域只在当前 HTTP Request 内有效。 |
+| session	 | 同一个 HTTP Session 共享一个 Bean 实例，不同的 Session 使用不同的 Bean 实例。该作用域仅在当前 HTTP Session 内有效。 |
 | application | 同一个 Web 应用共享一个 Bean 实例，该作用域在当前 ServletContext 内有效。  与 singleton 类似，但 singleton 表示每个 IoC 容器中仅有一个 Bean 实例，而一个 Web 应用中可能会存在多个 IoC 容器，但一个 Web 应用只会有一个 ServletContext，也可以说 application 才是 Web 应用中货真价实的单例模式。 |
 | websocket   | websocket 的作用域是 WebSocket ，即在整个 WebSocket 中有效。 |
 
 <div style="border: 1px solid rgba(255, 165, 0,.1);
-    padding: 10px;
-    border-left: 5px solid rgba(255, 165, 0);
-    background: rgba(255, 165, 0,.1);
-    border-radius: 0 3px 3px 0;
-    color: rgba(255, 165, 0);
-    font-family: menlo;
-    font-size: 14px;
-    margin: 10px 0;
-    display: flex;
-    align-items: center;
-    gap: 8px;">
-    <svg viewBox="0 0 24 24" width="14px" height="14px" fill="none" style="flex-shrink: 0;" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 8.00008V12.0001M12 16.0001H12.01M3 7.94153V16.0586C3 16.4013 3 16.5726 3.05048 16.7254C3.09515 16.8606 3.16816 16.9847 3.26463 17.0893C3.37369 17.2077 3.52345 17.2909 3.82297 17.4573L11.223 21.5684C11.5066 21.726 11.6484 21.8047 11.7985 21.8356C11.9315 21.863 12.0685 21.863 12.2015 21.8356C12.3516 21.8047 12.4934 21.726 12.777 21.5684L20.177 17.4573C20.4766 17.2909 20.6263 17.2077 20.7354 17.0893C20.8318 16.9847 20.9049 16.8606 20.9495 16.7254C21 16.5726 21 16.4013 21 16.0586V7.94153C21 7.59889 21 7.42756 20.9495 7.27477C20.9049 7.13959 20.8318 7.01551 20.7354 6.91082C20.6263 6.79248 20.4766 6.70928 20.177 6.54288L12.777 2.43177C12.4934 2.27421 12.3516 2.19543 12.2015 2.16454C12.0685 2.13721 11.9315 2.13721 11.7985 2.16454C11.6484 2.19543 11.5066 2.27421 11.223 2.43177L3.82297 6.54288C3.52345 6.70928 3.37369 6.79248 3.26463 6.91082C3.16816 7.01551 3.09515 7.13959 3.05048 7.27477C3 7.42756 3 7.59889 3 7.94153Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    </path>
+	padding: 10px;
+	border-left: 5px solid rgba(255, 165, 0);
+	background: rgba(255, 165, 0,.1);
+	border-radius: 0 3px 3px 0;
+	color: rgba(255, 165, 0);
+	font-family: menlo;
+	font-size: 14px;
+	margin: 10px 0;
+	display: flex;
+	align-items: center;
+	gap: 8px;">
+	<svg viewBox="0 0 24 24" width="14px" height="14px" fill="none" style="flex-shrink: 0;" xmlns="http://www.w3.org/2000/svg">
+	<path d="M12 8.00008V12.0001M12 16.0001H12.01M3 7.94153V16.0586C3 16.4013 3 16.5726 3.05048 16.7254C3.09515 16.8606 3.16816 16.9847 3.26463 17.0893C3.37369 17.2077 3.52345 17.2909 3.82297 17.4573L11.223 21.5684C11.5066 21.726 11.6484 21.8047 11.7985 21.8356C11.9315 21.863 12.0685 21.863 12.2015 21.8356C12.3516 21.8047 12.4934 21.726 12.777 21.5684L20.177 17.4573C20.4766 17.2909 20.6263 17.2077 20.7354 17.0893C20.8318 16.9847 20.9049 16.8606 20.9495 16.7254C21 16.5726 21 16.4013 21 16.0586V7.94153C21 7.59889 21 7.42756 20.9495 7.27477C20.9049 7.13959 20.8318 7.01551 20.7354 6.91082C20.6263 6.79248 20.4766 6.70928 20.177 6.54288L12.777 2.43177C12.4934 2.27421 12.3516 2.19543 12.2015 2.16454C12.0685 2.13721 11.9315 2.13721 11.7985 2.16454C11.6484 2.19543 11.5066 2.27421 11.223 2.43177L3.82297 6.54288C3.52345 6.70928 3.37369 6.79248 3.26463 6.91082C3.16816 7.01551 3.09515 7.13959 3.05048 7.27477C3 7.42756 3 7.59889 3 7.94153Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+	</path>
 </svg>
-    <span style="line-height: 20px;">注意：在以上 6 种 Bean 作用域中，除了 singleton 和 prototype 可以直接在常规的 Spring IoC 容器（例如 ClassPathXmlApplicationContext）中使用外，剩下的都只能在基于 Web 的 ApplicationContext 实现（例如 XmlWebApplicationContext）中才能使用，否则就会抛出一个 IllegalStateException 的异常。</span>
+	<span style="line-height: 20px;">注意：在以上 6 种 Bean 作用域中，除了 singleton 和 prototype 可以直接在常规的 Spring IoC 容器（例如 ClassPathXmlApplicationContext）中使用外，剩下的都只能在基于 Web 的 ApplicationContext 实现（例如 XmlWebApplicationContext）中才能使用，否则就会抛出一个 IllegalStateException 的异常。</span>
 </div>
 
 现在我们就以  `singleton`  和  `prototype`  两种作用域范围：
@@ -966,18 +965,18 @@ Spring 5 共提供了 6 种 scope 作用域，如下表：
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:c="http://www.springframework.org/schema/c"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-    <bean name="date" class="java.util.Date"></bean>
-    <bean name="user_01" class="ioc.User" scope="singleton">
-        <property name="id" value="9527"></property>
-        <property name="name" value="Tom"></property>
-        <property name="age" value="23"></property>
-        <property name="gender" value="f"></property>
-        <property name="birthday" ref="date"></property>
-    </bean>
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:c="http://www.springframework.org/schema/c"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean name="date" class="java.util.Date"></bean>
+	<bean name="user_01" class="ioc.User" scope="singleton">
+		<property name="id" value="9527"></property>
+		<property name="name" value="Tom"></property>
+		<property name="age" value="23"></property>
+		<property name="gender" value="f"></property>
+		<property name="birthday" ref="date"></property>
+	</bean>
 </beans>
 ```
 
@@ -985,13 +984,13 @@ Spring 5 共提供了 6 种 scope 作用域，如下表：
 
 ```java
 public class TestApplication {
-    public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
-        User user_01 = context.getBean("user_01",User.class);
-        User user_02 = context.getBean("user_01",User.class);
-        System.out.println(user_01);//ioc.User@4e096385
-        System.out.println(user_02);//ioc.User@4e096385
-    }
+	public static void main(String[] args) {
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
+		User user_01 = context.getBean("user_01",User.class);
+		User user_02 = context.getBean("user_01",User.class);
+		System.out.println(user_01);//ioc.User@4e096385
+		System.out.println(user_02);//ioc.User@4e096385
+	}
 }
 ```
 
@@ -1006,18 +1005,18 @@ public class TestApplication {
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:c="http://www.springframework.org/schema/c"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-    <bean name="date" class="java.util.Date"></bean>
-    <bean name="user_01" class="ioc.User" scope="prototype">
-        <property name="id" value="9527"></property>
-        <property name="name" value="Tom"></property>
-        <property name="age" value="23"></property>
-        <property name="gender" value="f"></property>
-        <property name="birthday" ref="date"></property>
-    </bean>
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:c="http://www.springframework.org/schema/c"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean name="date" class="java.util.Date"></bean>
+	<bean name="user_01" class="ioc.User" scope="prototype">
+		<property name="id" value="9527"></property>
+		<property name="name" value="Tom"></property>
+		<property name="age" value="23"></property>
+		<property name="gender" value="f"></property>
+		<property name="birthday" ref="date"></property>
+	</bean>
 </beans>
 ```
 
@@ -1025,13 +1024,13 @@ public class TestApplication {
 
 ```java
 public class TestApplication {
-    public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
-        User user_01 = context.getBean("user_01",User.class);
-        User user_02 = context.getBean("user_01",User.class);
-        System.out.println(user_01);//ioc.User@27ff5d15
-        System.out.println(user_02);//ioc.User@4e096385
-    }
+	public static void main(String[] args) {
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
+		User user_01 = context.getBean("user_01",User.class);
+		User user_02 = context.getBean("user_01",User.class);
+		System.out.println(user_01);//ioc.User@27ff5d15
+		System.out.println(user_02);//ioc.User@4e096385
+	}
 }
 ```
 
@@ -1049,11 +1048,11 @@ Spring Bean 的定义中可以包含很多配置信息，例如构造方法参�
 <!--父-->
 <bean name="date" class="java.util.Date"></bean>
 <bean name="user_01" class="ioc.User" scope="prototype">
-    <property name="id" value="9527"></property>
-    <property name="name" value="Tom"></property>
-    <property name="age" value="23"></property>
-    <property name="gender" value="f"></property>
-    <property name="birthday" ref="date"></property>
+	<property name="id" value="9527"></property>
+	<property name="name" value="Tom"></property>
+	<property name="age" value="23"></property>
+	<property name="gender" value="f"></property>
+	<property name="birthday" ref="date"></property>
 </bean>
 
 <!--子-->
@@ -1065,36 +1064,36 @@ Spring Bean 的定义中可以包含很多配置信息，例如构造方法参�
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:c="http://www.springframework.org/schema/c"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:c="http://www.springframework.org/schema/c"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <!--父-->
-    <bean name="date" class="java.util.Date"></bean>
-    <bean name="user_01" class="ioc.User" scope="prototype">
-        <property name="id" value="9527"></property>
-        <property name="name" value="Tom"></property>
-        <property name="age" value="23"></property>
-        <property name="gender" value="f"></property>
-        <property name="birthday" ref="date"></property>
-    </bean>
+	<!--父-->
+	<bean name="date" class="java.util.Date"></bean>
+	<bean name="user_01" class="ioc.User" scope="prototype">
+		<property name="id" value="9527"></property>
+		<property name="name" value="Tom"></property>
+		<property name="age" value="23"></property>
+		<property name="gender" value="f"></property>
+		<property name="birthday" ref="date"></property>
+	</bean>
 
-    <!--子-->
-    <bean name="student_01" class="ioc.Student" parent="user_01"></bean>
+	<!--子-->
+	<bean name="student_01" class="ioc.Student" parent="user_01"></bean>
 </beans>
 ```
 
 ```java
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class TestApplication {
-    public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
-        User user_01 = context.getBean("user_01",User.class);
-        User student_01 = context.getBean("student_01",User.class);
-        System.out.println(user_01.toString());
-        System.out.println(student_01.toString());
-    }
+	public static void main(String[] args) {
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
+		User user_01 = context.getBean("user_01",User.class);
+		User student_01 = context.getBean("student_01",User.class);
+		System.out.println(user_01.toString());
+		System.out.println(student_01.toString());
+	}
 }
 ```
 
@@ -1123,11 +1122,11 @@ public abstract class User implements Serializable
 
 ```java
 public static void main(String[] args) {
-    ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
-    User user_01 = context.getBean("user_01",User.class);
-    User student_01 = context.getBean("student_01",User.class);
-    System.out.println(user_01.toString());
-    System.out.println(student_01.toString());
+	ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
+	User user_01 = context.getBean("user_01",User.class);
+	User student_01 = context.getBean("student_01",User.class);
+	System.out.println(user_01.toString());
+	System.out.println(student_01.toString());
 }
 ```
 
@@ -1147,77 +1146,77 @@ Spring 的 IOC 容器虽然功能强大，但它本身不过只是一个空壳�
 <bean name="date" class="java.util.Date"></bean>
 
 <util:list id="teachers">
-    <ref bean="teacher_1"></ref>
-    <ref bean="teacher_2"></ref>
+	<ref bean="teacher_1"></ref>
+	<ref bean="teacher_2"></ref>
 </util:list>
 
 <!--学生-->
 <bean name="student_1" class="ioc.Student">
-    <property name="id" value="9527"></property>
-    <property name="name" value="Tom"></property>
-    <property name="age" value="23"></property>
-    <property name="gender" value="f"></property>
-    <property name="birthday" ref="date"></property>
+	<property name="id" value="9527"></property>
+	<property name="name" value="Tom"></property>
+	<property name="age" value="23"></property>
+	<property name="gender" value="f"></property>
+	<property name="birthday" ref="date"></property>
 </bean>
 <bean name="student_2" class="ioc.Student">
-    <property name="id" value="9528"></property>
-    <property name="name" value="Tom"></property>
-    <property name="age" value="23"></property>
-    <property name="gender" value="f"></property>
-    <property name="birthday" ref="date"></property>
+	<property name="id" value="9528"></property>
+	<property name="name" value="Tom"></property>
+	<property name="age" value="23"></property>
+	<property name="gender" value="f"></property>
+	<property name="birthday" ref="date"></property>
 </bean>
 <bean name="student_3" class="ioc.Student">
-    <property name="id" value="9529"></property>
-    <property name="name" value="Tom"></property>
-    <property name="age" value="23"></property>
-    <property name="gender" value="f"></property>
-    <property name="birthday" ref="date"></property>
-    <!--集合注入（方法1，借助util标签法，将集合剔除出去）-->
-    <property name="teachers" ref="teachers"></property>
+	<property name="id" value="9529"></property>
+	<property name="name" value="Tom"></property>
+	<property name="age" value="23"></property>
+	<property name="gender" value="f"></property>
+	<property name="birthday" ref="date"></property>
+	<!--集合注入（方法1，借助util标签法，将集合剔除出去）-->
+	<property name="teachers" ref="teachers"></property>
 </bean>
 
 <!--老师-->
 <bean name="teacher_1" class="ioc.Teacher">
-    <property name="id" value="9530"></property>
-    <property name="name" value="Tom"></property>
-    <property name="age" value="23"></property>
-    <property name="gender" value="f"></property>
-    <property name="birthday" ref="date"></property>
-    <property name="salary" value="23.7"></property>
-    <property name="students">
-        <list>
-            <!--也可以直接在这里声明或引用Bean-->
-            <ref bean="student_1"></ref>
-            <ref bean="student_2"></ref>
-            <ref bean="student_3"></ref>
-            <!--也可以直接在这里声明或引用Bean-->
-            <bean name="student_3" class="ioc.Student">
-                <property name="id" value="9529"></property>
-                <property name="name" value="Tom"></property>
-                <property name="age" value="23"></property>
-                <property name="gender" value="f"></property>
-                <property name="birthday" ref="date"></property>
-                <!--集合注入（方法1，借助util标签法，将集合剔除出去）-->
-                <property name="teachers" ref="teachers"></property>
-            </bean>
-        </list>
-    </property>
+	<property name="id" value="9530"></property>
+	<property name="name" value="Tom"></property>
+	<property name="age" value="23"></property>
+	<property name="gender" value="f"></property>
+	<property name="birthday" ref="date"></property>
+	<property name="salary" value="23.7"></property>
+	<property name="students">
+		<list>
+			<!--也可以直接在这里声明或引用Bean-->
+			<ref bean="student_1"></ref>
+			<ref bean="student_2"></ref>
+			<ref bean="student_3"></ref>
+			<!--也可以直接在这里声明或引用Bean-->
+			<bean name="student_3" class="ioc.Student">
+				<property name="id" value="9529"></property>
+				<property name="name" value="Tom"></property>
+				<property name="age" value="23"></property>
+				<property name="gender" value="f"></property>
+				<property name="birthday" ref="date"></property>
+				<!--集合注入（方法1，借助util标签法，将集合剔除出去）-->
+				<property name="teachers" ref="teachers"></property>
+			</bean>
+		</list>
+	</property>
 </bean>
 <bean name="teacher_2" class="ioc.Teacher">
-    <property name="id" value="9531"></property>
-    <property name="name" value="Tom"></property>
-    <property name="age" value="23"></property>
-    <property name="gender" value="f"></property>
-    <property name="birthday" ref="date"></property>
-    <property name="salary" value="23.7"></property>
+	<property name="id" value="9531"></property>
+	<property name="name" value="Tom"></property>
+	<property name="age" value="23"></property>
+	<property name="gender" value="f"></property>
+	<property name="birthday" ref="date"></property>
+	<property name="salary" value="23.7"></property>
 </bean>
 <bean name="teacher_3" class="ioc.Teacher">
-    <property name="id" value="9532"></property>
-    <property name="name" value="Tom"></property>
-    <property name="age" value="23"></property>
-    <property name="gender" value="f"></property>
-    <property name="birthday" ref="date"></property>
-    <property name="salary" value="23.7"></property>
+	<property name="id" value="9532"></property>
+	<property name="name" value="Tom"></property>
+	<property name="age" value="23"></property>
+	<property name="gender" value="f"></property>
+	<property name="birthday" ref="date"></property>
+	<property name="salary" value="23.7"></property>
 </bean>
 ```
 
@@ -1226,23 +1225,23 @@ Spring 的 IOC 容器虽然功能强大，但它本身不过只是一个空壳�
 ```xml
 <!--延伸看看其他几种集合注入-->
 <util:map id="map">
-    <entry key="key1" value="value1" />
-    <entry key="key2" value="value2" />
+	<entry key="key1" value="value1" />
+	<entry key="key2" value="value2" />
 </util:map>
 
 <util:list id="list">
-    <value>value1</value>
-    <value>value2</value>
+	<value>value1</value>
+	<value>value2</value>
 </util:list>
 
 <util:set id="set">
-    <value>value1</value>
-    <value>value2</value>
+	<value>value1</value>
+	<value>value2</value>
 </util:set>
 
 <util:properties id="props">
-    <prop key="key1">value1</prop>
-    <prop key="key2">value2</prop>
+	<prop key="key1">value1</prop>
+	<prop key="key2">value2</prop>
 </util:properties>
 ```
 
@@ -1261,16 +1260,16 @@ Spring 框架式默认不支持自动装配的，要想使用自动装配，则�
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:c="http://www.springframework.org/schema/c" xmlns:util="http://www.springframework.org/schema/util"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:c="http://www.springframework.org/schema/c" xmlns:util="http://www.springframework.org/schema/util"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
 
-    <!--学生-->
-    <bean name="student_1" class="ioc.Student"></bean>
+	<!--学生-->
+	<bean name="student_1" class="ioc.Student"></bean>
 
-    <!--老师-->
-    <bean name="teacher_1" class="ioc.Teacher" autowire="byName"></bean>
+	<!--老师-->
+	<bean name="teacher_1" class="ioc.Teacher" autowire="byName"></bean>
 
 </beans>
 ```
@@ -1281,33 +1280,33 @@ Spring 框架式默认不支持自动装配的，要想使用自动装配，则�
 
 Spring 共提供了 5 中自动装配规则，它们分别与 autowire 属性的 5 个取值对应，具体说明如下表。
 
-| 属性值      | 说明                                                         |
+| 属性值	  | 说明														 |
 | ----------- | ------------------------------------------------------------ |
-| byName      | 按名称自动装配。  Spring 会根据的 Java 类中对象属性的名称，在整个应用的上下文 ApplicationContext（IoC 容器）中查找。若某个 Bean 的 id 或 name 属性值与这个对象属性的名称相同，则获取这个 Bean，并与当前的 Java 类 Bean 建立关联关系。 |
-| byType      | 按类型自动装配。  Spring 会根据 Java 类中的对象属性的类型，在整个应用的上下文 ApplicationContext（IoC 容器）中查找。若某个 Bean 的 class 属性值与这个对象属性的类型相匹配，则获取这个 Bean，并与当前的 Java 类的 Bean 建立关联关系。 |
+| byName	  | 按名称自动装配。  Spring 会根据的 Java 类中对象属性的名称，在整个应用的上下文 ApplicationContext（IoC 容器）中查找。若某个 Bean 的 id 或 name 属性值与这个对象属性的名称相同，则获取这个 Bean，并与当前的 Java 类 Bean 建立关联关系。 |
+| byType	  | 按类型自动装配。  Spring 会根据 Java 类中的对象属性的类型，在整个应用的上下文 ApplicationContext（IoC 容器）中查找。若某个 Bean 的 class 属性值与这个对象属性的类型相匹配，则获取这个 Bean，并与当前的 Java 类的 Bean 建立关联关系。 |
 | constructor | 与 byType 模式相似，不同之处在与它应用于构造器参数（依赖项），如果在容器中没有找到与构造器参数类型一致的 Bean，那么将抛出异常。  其实就是根据构造器参数的数据类型，进行 byType 模式的自动装配。 |
-| default     | 表示默认采用上一级元素 ` <beans> ` 设置的自动装配规则（default-autowire）进行装配。 |
-| no          | 默认值，表示不使用自动装配，Bean 的依赖关系必须通过  `<constructor-arg>` 和  `<property>`  元素的 ref 属性来定义。 |
+| default	 | 表示默认采用上一级元素 ` <beans> ` 设置的自动装配规则（default-autowire）进行装配。 |
+| no		  | 默认值，表示不使用自动装配，Bean 的依赖关系必须通过  `<constructor-arg>` 和  `<property>`  元素的 ref 属性来定义。 |
 
  **基于注解的自动装配** 
 
 <div style="border: 1px solid rgba(255, 165, 0,.1);
-    padding: 10px;
-    border-left: 5px solid rgba(255, 165, 0);
-    background: rgba(255, 165, 0,.1);
-    border-radius: 0 3px 3px 0;
-    color: rgba(255, 165, 0);
-    font-family: menlo;
-    font-size: 14px;
-    margin: 10px 0;
-    display: flex;
-    align-items: center;
-    gap: 8px;">
-    <svg viewBox="0 0 24 24" width="14px" height="14px" fill="none" style="flex-shrink: 0;" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 8.00008V12.0001M12 16.0001H12.01M3 7.94153V16.0586C3 16.4013 3 16.5726 3.05048 16.7254C3.09515 16.8606 3.16816 16.9847 3.26463 17.0893C3.37369 17.2077 3.52345 17.2909 3.82297 17.4573L11.223 21.5684C11.5066 21.726 11.6484 21.8047 11.7985 21.8356C11.9315 21.863 12.0685 21.863 12.2015 21.8356C12.3516 21.8047 12.4934 21.726 12.777 21.5684L20.177 17.4573C20.4766 17.2909 20.6263 17.2077 20.7354 17.0893C20.8318 16.9847 20.9049 16.8606 20.9495 16.7254C21 16.5726 21 16.4013 21 16.0586V7.94153C21 7.59889 21 7.42756 20.9495 7.27477C20.9049 7.13959 20.8318 7.01551 20.7354 6.91082C20.6263 6.79248 20.4766 6.70928 20.177 6.54288L12.777 2.43177C12.4934 2.27421 12.3516 2.19543 12.2015 2.16454C12.0685 2.13721 11.9315 2.13721 11.7985 2.16454C11.6484 2.19543 11.5066 2.27421 11.223 2.43177L3.82297 6.54288C3.52345 6.70928 3.37369 6.79248 3.26463 6.91082C3.16816 7.01551 3.09515 7.13959 3.05048 7.27477C3 7.42756 3 7.59889 3 7.94153Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    </path>
+	padding: 10px;
+	border-left: 5px solid rgba(255, 165, 0);
+	background: rgba(255, 165, 0,.1);
+	border-radius: 0 3px 3px 0;
+	color: rgba(255, 165, 0);
+	font-family: menlo;
+	font-size: 14px;
+	margin: 10px 0;
+	display: flex;
+	align-items: center;
+	gap: 8px;">
+	<svg viewBox="0 0 24 24" width="14px" height="14px" fill="none" style="flex-shrink: 0;" xmlns="http://www.w3.org/2000/svg">
+	<path d="M12 8.00008V12.0001M12 16.0001H12.01M3 7.94153V16.0586C3 16.4013 3 16.5726 3.05048 16.7254C3.09515 16.8606 3.16816 16.9847 3.26463 17.0893C3.37369 17.2077 3.52345 17.2909 3.82297 17.4573L11.223 21.5684C11.5066 21.726 11.6484 21.8047 11.7985 21.8356C11.9315 21.863 12.0685 21.863 12.2015 21.8356C12.3516 21.8047 12.4934 21.726 12.777 21.5684L20.177 17.4573C20.4766 17.2909 20.6263 17.2077 20.7354 17.0893C20.8318 16.9847 20.9049 16.8606 20.9495 16.7254C21 16.5726 21 16.4013 21 16.0586V7.94153C21 7.59889 21 7.42756 20.9495 7.27477C20.9049 7.13959 20.8318 7.01551 20.7354 6.91082C20.6263 6.79248 20.4766 6.70928 20.177 6.54288L12.777 2.43177C12.4934 2.27421 12.3516 2.19543 12.2015 2.16454C12.0685 2.13721 11.9315 2.13721 11.7985 2.16454C11.6484 2.19543 11.5066 2.27421 11.223 2.43177L3.82297 6.54288C3.52345 6.70928 3.37369 6.79248 3.26463 6.91082C3.16816 7.01551 3.09515 7.13959 3.05048 7.27477C3 7.42756 3 7.59889 3 7.94153Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+	</path>
 </svg>
-    <span style="line-height: 20px;">其实，在上面使用传统的 XML 去装配 Bean，我们不太能清晰的看出来 5 种装配规则到底有什么不一样的。所以，我们还是通过注解的方式，去进一步的理解自动装配。</span>
+	<span style="line-height: 20px;">其实，在上面使用传统的 XML 去装配 Bean，我们不太能清晰的看出来 5 种装配规则到底有什么不一样的。所以，我们还是通过注解的方式，去进一步的理解自动装配。</span>
 </div>
 
 从 Java 5 开始，Java 增加了对注解（Annotation）的支持，它是代码中的一种特殊标记，可以在编译、类加载和运行时被读取，执行相应的处理。
@@ -1326,13 +1325,13 @@ Spring 通过注解实现自动装配的步骤如下：
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:c="http://www.springframework.org/schema/c" xmlns:util="http://www.springframework.org/schema/util"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:c="http://www.springframework.org/schema/c" xmlns:util="http://www.springframework.org/schema/util"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="ioc"></context:component-scan>
+	<context:component-scan base-package="ioc"></context:component-scan>
 
 </beans>
 ```
@@ -1341,18 +1340,18 @@ Spring 通过注解实现自动装配的步骤如下：
 
 Spring 提供了以下多个注解，这些注解可以直接标注在 Java 类上，将它们定义成 Spring Bean。
 
-| 注解        | 说明                                                         |
+| 注解		| 说明														 |
 | ----------- | ------------------------------------------------------------ |
 | @Component  | 该注解用于描述 Spring 中的 Bean，它是一个泛化的概念，仅仅表示容器中的一个组件（Bean），并且可以作用在应用的任何层次，例如 Service 层、Dao 层等。  使用时只需将该注解标注在相应类上即可。 |
 | @Repository | 该注解用于将数据访问层（Dao 层）的类标识为 Spring 中的 Bean，其功能与 @Component 相同。 |
-| @Service    | 该注解通常作用在业务层（Service 层），用于将业务层的类标识为 Spring 中的 Bean，其功能与 @Component 相同。 |
+| @Service	| 该注解通常作用在业务层（Service 层），用于将业务层的类标识为 Spring 中的 Bean，其功能与 @Component 相同。 |
 | @Controller | 该注解通常作用在控制层（如 Struts2 的 Action、SpringMVC 的 Controller），用于将控制层的类标识为 Spring 中的 Bean，其功能与 @Component 相同。 |
 
  **3、依赖注入（DI）** 
 
 常用的注解如下：
 
-| 注解       | 说明                                                         |
+| 注解	   | 说明														 |
 | ---------- | ------------------------------------------------------------ |
 | @Autowired | 可以应用到 Bean 的属性变量、setter 方法、非 setter 方法及构造函数等，默认按照 Bean 的类型进行装配。  @Autowired 注解默认按照 Bean 的类型进行装配，默认情况下它要求依赖对象必须存在，如果允许 null 值，可以设置它的 required 属性为 false。如果我们想使用按照名称（byName）来装配，可以结合 @Qualifier 注解一起使用 |
 | @Resource  | 作用与 Autowired 相同，区别在于 @Autowired 默认按照 Bean 类型装配，而 @Resource 默认按照 Bean 的名称进行装配。  @Resource 中有两个重要属性：name 和 type。 Spring 将 name 属性解析为 Bean 的实例名称，type 属性解析为 Bean 的实例类型。如果指定 name 属性，则按实例名称进行装配；如果指定 type 属性，则按 Bean 类型进行装配；如果都不指定，则先按 Bean 实例名称装配，如果不能匹配，则再按照 Bean 类型进行装配；如果都无法匹配，则抛出 NoSuchBeanDefinitionException 异常。 |
@@ -1371,9 +1370,9 @@ public class Student implements Serializable{}
 
 ```java
 public static void main(String[] args) {
-    ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
-    Student student = context.getBean(Student.class);
-    System.out.println(student.toString());
+	ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
+	Student student = context.getBean(Student.class);
+	System.out.println(student.toString());
 }
 ```
 
@@ -1396,7 +1395,7 @@ Spring 在运行期会为目标对象生成一个动态代理对象，并在代�
 
 Spring AOP 的底层是通过以下 2 种动态代理机制，为目标对象（Target Bean）执行横向织入的。
 
-| 代理技术       | 描述                                                         |
+| 代理技术	   | 描述														 |
 | -------------- | ------------------------------------------------------------ |
 | JDK 动态代理   | Spring AOP 默认的动态代理方式，若目标对象实现了若干接口，Spring 使用 JDK 的 java.lang.reflect.Proxy 类进行代理。 |
 | CGLIB 动态代理 | 若目标对象没有实现任何接口，Spring 则使用 CGLIB 库生成目标对象的子类，以实现对目标对象的代理。 |
@@ -1415,14 +1414,14 @@ AOP 联盟为通知（Advice）定义了一个 ` org.aopalliance.aop.Interface.A
 
 Spring AOP 按照通知（Advice）织入到目标类方法的连接点位置，为 Advice 接口提供了 6 个子接口，如下表。
 
-| 通知类型     | 接口                                            | 描述                                             |
+| 通知类型	 | 接口											| 描述											 |
 | ------------ | ----------------------------------------------- | ------------------------------------------------ |
-| 前置通知     | org.springframework.aop.MethodBeforeAdvice      | 在目标方法执行前实施增强。                       |
-| 后置通知     | org.springframework.aop.AfterAdvice             | 在目标方法执行后实施增强。                       |
-| 后置返回通知 | org.springframework.aop.AfterReturningAdvice    | 在目标方法执行完成，并返回一个返回值后实施增强。 |
-| 环绕通知     | org.aopalliance.intercept.MethodInterceptor     | 在目标方法执行前后实施增强。                     |
-| 异常通知     | org.springframework.aop.ThrowsAdvice            | 在方法抛出异常后实施增强。                       |
-| 引入通知     | org.springframework.aop.IntroductionInterceptor | 在目标类中添加一些新的方法和属性。               |
+| 前置通知	 | org.springframework.aop.MethodBeforeAdvice	  | 在目标方法执行前实施增强。					   |
+| 后置通知	 | org.springframework.aop.AfterAdvice			 | 在目标方法执行后实施增强。					   |
+| 后置返回通知 | org.springframework.aop.AfterReturningAdvice	| 在目标方法执行完成，并返回一个返回值后实施增强。 |
+| 环绕通知	 | org.aopalliance.intercept.MethodInterceptor	 | 在目标方法执行前后实施增强。					 |
+| 异常通知	 | org.springframework.aop.ThrowsAdvice			| 在方法抛出异常后实施增强。					   |
+| 引入通知	 | org.springframework.aop.IntroductionInterceptor | 在目标类中添加一些新的方法和属性。			   |
 
  **AOP 切面类型** 
 
@@ -1430,10 +1429,10 @@ Spring 使用 org.springframework.aop.Advisor 接口表示切面的概念，实�
 
 在 Spring AOP 中，切面可以分为三类：一般切面、切点切面和引介切面。
 
-| 切面类型 | 接口                                        | 描述                                                         |
+| 切面类型 | 接口										| 描述														 |
 | :------- | ------------------------------------------- | ------------------------------------------------------------ |
-| 一般切面 | org.springframework.aop.Advisor             | Spring AOP 默认的切面类型。  由于 Advisor 接口仅包含一个 Advice（通知）类型的属性，而没有定义 PointCut（切入点），因此它表示一个不带切点的简单切面。  这样的切面会对目标对象（Target）中的所有方法进行拦截并织入增强代码。由于这个切面太过宽泛，因此我们一般不会直接使用。 |
-| 切点切面 | org.springframework.aop.PointcutAdvisor     | Advisor 的子接口，用来表示带切点的切面，该接口在 Advisor 的基础上还维护了一个 PointCut（切点）类型的属性。  使用它，我们可以通过包名、类名、方法名等信息更加灵活的定义切面中的切入点，提供更具有适用性的切面。 |
+| 一般切面 | org.springframework.aop.Advisor			 | Spring AOP 默认的切面类型。  由于 Advisor 接口仅包含一个 Advice（通知）类型的属性，而没有定义 PointCut（切入点），因此它表示一个不带切点的简单切面。  这样的切面会对目标对象（Target）中的所有方法进行拦截并织入增强代码。由于这个切面太过宽泛，因此我们一般不会直接使用。 |
+| 切点切面 | org.springframework.aop.PointcutAdvisor	 | Advisor 的子接口，用来表示带切点的切面，该接口在 Advisor 的基础上还维护了一个 PointCut（切点）类型的属性。  使用它，我们可以通过包名、类名、方法名等信息更加灵活的定义切面中的切入点，提供更具有适用性的切面。 |
 | 引介切面 | org.springframework.aop.IntroductionAdvisor | Advisor 的子接口，用来代表引介切面，引介切面是对应引介增强的特殊的切面，它应用于类层面上，所以引介切面适用 ClassFilter 进行定义。 |
 
 ### 一般切面
@@ -1443,10 +1442,10 @@ Spring 使用 org.springframework.aop.Advisor 接口表示切面的概念，实�
 ```java
 @Component(value = "beforeAdvice")
 public class OperateBefore implements MethodBeforeAdvice {
-    @Override
-    public void before(Method method, Object[] args, Object target) throws Throwable {
-        System.out.println("Oh hhhhhh~ before!");
-    }
+	@Override
+	public void before(Method method, Object[] args, Object target) throws Throwable {
+		System.out.println("Oh hhhhhh~ before!");
+	}
 }
 ```
 
@@ -1455,9 +1454,9 @@ public class OperateBefore implements MethodBeforeAdvice {
 ```java
 @Component(value = "student")
 public class Student implements Serializable {
-    void play(){
-        System.out.println("play play");
-    }
+	void play(){
+		System.out.println("play play");
+	}
 }
 ```
 
@@ -1466,23 +1465,23 @@ public class Student implements Serializable {
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:c="http://www.springframework.org/schema/c" xmlns:util="http://www.springframework.org/schema/util"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
-    <!--注解扫描-->
-    <context:component-scan base-package="ioc"></context:component-scan>
-    <!--代理-->
-    <bean id="proxyFactoryBean" class="org.springframework.aop.framework.ProxyFactoryBean">
-        <property name="target" ref="student"></property>
-        <!--多种增强方式，逗号分割（,）-->
-        <property name="interceptorNames" value="beforeAdvice"></property>
-        <!--若为true,表示代理的不是接口类，采用cglib代理-->
-        <property name="proxyTargetClass" value="true"></property>
-        <!--如果代理的是接口类，使用下面这个-->
-        <!--<property name="proxyInterfaces" value="*.*Dao"/>-->
-    </bean>
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:c="http://www.springframework.org/schema/c" xmlns:util="http://www.springframework.org/schema/util"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+	<!--注解扫描-->
+	<context:component-scan base-package="ioc"></context:component-scan>
+	<!--代理-->
+	<bean id="proxyFactoryBean" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="student"></property>
+		<!--多种增强方式，逗号分割（,）-->
+		<property name="interceptorNames" value="beforeAdvice"></property>
+		<!--若为true,表示代理的不是接口类，采用cglib代理-->
+		<property name="proxyTargetClass" value="true"></property>
+		<!--如果代理的是接口类，使用下面这个-->
+		<!--<property name="proxyInterfaces" value="*.*Dao"/>-->
+	</bean>
 </beans>
 ```
 
@@ -1490,9 +1489,9 @@ public class Student implements Serializable {
 
 ```java
 public static void main(String[] args) {
-    ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
-    Student student = context.getBean("proxyFactoryBean", Student.class);
-    student.play();
+	ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
+	Student student = context.getBean("proxyFactoryBean", Student.class);
+	student.play();
 }
 ```
 
@@ -1514,12 +1513,12 @@ play play
 ```java
 @Component(value = "student")
 public class Student implements Serializable{
-    public void play(){
-        System.out.println("play play");
-    }
-    public void jump(){
-        System.out.println("jump jump");
-    }
+	public void play(){
+		System.out.println("play play");
+	}
+	public void jump(){
+		System.out.println("jump jump");
+	}
 }
 ```
 
@@ -1528,10 +1527,10 @@ public class Student implements Serializable{
 ```java
 @Component(value = "beforeAdvice")
 public class OperateBefore implements MethodBeforeAdvice {
-    @Override
-    public void before(Method method, Object[] args, Object target) throws Throwable {
-        System.out.println("Oh hhhhhh~ before!");
-    }
+	@Override
+	public void before(Method method, Object[] args, Object target) throws Throwable {
+		System.out.println("Oh hhhhhh~ before!");
+	}
 }
 ```
 
@@ -1542,40 +1541,40 @@ public class OperateBefore implements MethodBeforeAdvice {
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:c="http://www.springframework.org/schema/c" xmlns:util="http://www.springframework.org/schema/util"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
-    <!--注解扫描-->
-    <context:component-scan base-package="ioc"></context:component-scan>
-    <!--代理（一般切面）-->
-    <!--<bean id="proxyFactoryBean" class="org.springframework.aop.framework.ProxyFactoryBean">
-        <property name="target" ref="student"></property>
-        &lt;!&ndash;多种增强方式，逗号分割（,）&ndash;&gt;
-        <property name="interceptorNames" value="beforeAdvice"></property>
-        &lt;!&ndash;若为true,表示代理的不是接口类，采用cglib代理&ndash;&gt;
-        <property name="proxyTargetClass" value="true"></property>
-        &lt;!&ndash;如果代理的是接口类，使用下面这个&ndash;&gt;
-        &lt;!&ndash;<property name="proxyInterfaces" value="*.*Dao"/>&ndash;&gt;
-    </bean>-->
-    <!--切点切面-->
-    <bean name="pointCutAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
-        <!--匹配规则表达式  .*表示所有方法-->
-        <!--<property name="patterns" value=".*"></property>-->
-        <property name="patterns" value="ioc.Student.jump.*"></property>
-        <!--多种增强方式，逗号分割（,）-->
-        <property name="advice" ref="beforeAdvice"></property>
-    </bean>
-    <bean id="proxyFactoryBean" class="org.springframework.aop.framework.ProxyFactoryBean">
-        <property name="target" ref="student"></property>
-        <!--若为true,表示代理的不是接口类，采用cglib代理-->
-        <property name="proxyTargetClass" value="true"></property>
-        <!--如果代理的是接口类，使用下面这个-->
-        <!--<property name="proxyInterfaces" value="*.*Dao"/>-->
-        <!--目标类应用增强-->
-        <property name="interceptorNames" value="pointCutAdvisor"></property>
-    </bean>
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:c="http://www.springframework.org/schema/c" xmlns:util="http://www.springframework.org/schema/util"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+	<!--注解扫描-->
+	<context:component-scan base-package="ioc"></context:component-scan>
+	<!--代理（一般切面）-->
+	<!--<bean id="proxyFactoryBean" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="student"></property>
+		&lt;!&ndash;多种增强方式，逗号分割（,）&ndash;&gt;
+		<property name="interceptorNames" value="beforeAdvice"></property>
+		&lt;!&ndash;若为true,表示代理的不是接口类，采用cglib代理&ndash;&gt;
+		<property name="proxyTargetClass" value="true"></property>
+		&lt;!&ndash;如果代理的是接口类，使用下面这个&ndash;&gt;
+		&lt;!&ndash;<property name="proxyInterfaces" value="*.*Dao"/>&ndash;&gt;
+	</bean>-->
+	<!--切点切面-->
+	<bean name="pointCutAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+		<!--匹配规则表达式  .*表示所有方法-->
+		<!--<property name="patterns" value=".*"></property>-->
+		<property name="patterns" value="ioc.Student.jump.*"></property>
+		<!--多种增强方式，逗号分割（,）-->
+		<property name="advice" ref="beforeAdvice"></property>
+	</bean>
+	<bean id="proxyFactoryBean" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="student"></property>
+		<!--若为true,表示代理的不是接口类，采用cglib代理-->
+		<property name="proxyTargetClass" value="true"></property>
+		<!--如果代理的是接口类，使用下面这个-->
+		<!--<property name="proxyInterfaces" value="*.*Dao"/>-->
+		<!--目标类应用增强-->
+		<property name="interceptorNames" value="pointCutAdvisor"></property>
+	</bean>
 </beans>
 ```
 
@@ -1583,12 +1582,12 @@ public class OperateBefore implements MethodBeforeAdvice {
 
 ```java
 public class TestApplication {
-    public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
-        Student student = context.getBean("proxyFactoryBean", Student.class);
-        student.play();
-        student.jump();
-    }
+	public static void main(String[] args) {
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
+		Student student = context.getBean("proxyFactoryBean", Student.class);
+		student.play();
+		student.jump();
+	}
 }
 ```
 
@@ -1649,17 +1648,17 @@ AspectJ 也有一些新的概念我们需要去理解一下。
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:c="http://www.springframework.org/schema/c" xmlns:util="http://www.springframework.org/schema/util"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:aop="http://www.springframework.org/schema/aop"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
-    <!--注解扫描-->
-    <context:component-scan base-package="ioc"></context:component-scan>
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:c="http://www.springframework.org/schema/c" xmlns:util="http://www.springframework.org/schema/util"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+	<!--注解扫描-->
+	<context:component-scan base-package="ioc"></context:component-scan>
 
-    <!--开启@AspectJ注解支持，打开自动代理模式-->
-    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	<!--开启@AspectJ注解支持，打开自动代理模式-->
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 
 </beans>
 ```
@@ -1669,13 +1668,13 @@ AspectJ 也有一些新的概念我们需要去理解一下。
 ```java
 @Component(value = "student")
 public class Student implements Serializable {
-    public void play() {
-        System.out.println("play play");
-    }
+	public void play() {
+		System.out.println("play play");
+	}
 
-    public void jump() {
-        System.out.println("jump jump");
-    }
+	public void jump() {
+		System.out.println("jump jump");
+	}
 }
 ```
 
@@ -1685,15 +1684,15 @@ public class Student implements Serializable {
 @Aspect
 @Component
 public class AspectAdvice{
-    @Before(value = "execution(* ioc.Student.*(..)) ")
-    public void before(){
-        System.out.println("前置通知=");
-    }
+	@Before(value = "execution(* ioc.Student.*(..)) ")
+	public void before(){
+		System.out.println("前置通知=");
+	}
 
-    @After(value = "execution(* ioc.Student.*(..)) ")
-    public void after(){
-        System.out.println("后置通知=");
-    }
+	@After(value = "execution(* ioc.Student.*(..)) ")
+	public void after(){
+		System.out.println("后置通知=");
+	}
 }
 ```
 
@@ -1701,10 +1700,10 @@ public class AspectAdvice{
 
 ```java
 public static void main(String[] args) {
-    ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
-    Student student = context.getBean("student",Student.class);
-    student.play();
-    student.jump();
+	ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
+	Student student = context.getBean("student",Student.class);
+	student.play();
+	student.jump();
 }
 ```
 
@@ -1729,10 +1728,10 @@ jump jump
 @Component("aspectAdvice")
 public class AspectAdvice implements MethodBeforeAdvice {
 
-    @Override
-    public void before(Method method, Object[] args, Object target) throws Throwable {
-        System.out.println("前置通知=");
-    }
+	@Override
+	public void before(Method method, Object[] args, Object target) throws Throwable {
+		System.out.println("前置通知=");
+	}
 }
 ```
 
@@ -1741,13 +1740,13 @@ public class AspectAdvice implements MethodBeforeAdvice {
 ```java
 @Component(value = "student")
 public class Student implements Serializable {
-    public void play() {
-        System.out.println("play play");
-    }
+	public void play() {
+		System.out.println("play play");
+	}
 
-    public void jump() {
-        System.out.println("jump jump");
-    }
+	public void jump() {
+		System.out.println("jump jump");
+	}
 }
 ```
 
@@ -1756,19 +1755,19 @@ public class Student implements Serializable {
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:c="http://www.springframework.org/schema/c" xmlns:util="http://www.springframework.org/schema/util"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:aop="http://www.springframework.org/schema/aop"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
-    <!--注解扫描-->
-    <context:component-scan base-package="ioc"></context:component-scan>
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:c="http://www.springframework.org/schema/c" xmlns:util="http://www.springframework.org/schema/util"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+	<!--注解扫描-->
+	<context:component-scan base-package="ioc"></context:component-scan>
 
-    <aop:config proxy-target-class="true">
-        <aop:pointcut id="pointCut" expression="execution(* ioc.Student.*(..))"/>
-        <aop:advisor advice-ref="aspectAdvice" pointcut-ref="pointCut"></aop:advisor>
-    </aop:config>
+	<aop:config proxy-target-class="true">
+		<aop:pointcut id="pointCut" expression="execution(* ioc.Student.*(..))"/>
+		<aop:advisor advice-ref="aspectAdvice" pointcut-ref="pointCut"></aop:advisor>
+	</aop:config>
 </beans>
 ```
 
@@ -1776,12 +1775,12 @@ public class Student implements Serializable {
 
 ```java
 public class TestApplication {
-    public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
-        Student student = context.getBean("student",Student.class);
-        student.play();
-        student.jump();
-    }
+	public static void main(String[] args) {
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
+		Student student = context.getBean("student",Student.class);
+		student.play();
+		student.jump();
+	}
 }
 ```
 
@@ -1803,13 +1802,13 @@ import org.springframework.stereotype.Component;
 @Component("aspectAdvice")
 public class AspectAdvice{
 
-    public void before(){
-        System.out.println("前置通知=");
-    }
+	public void before(){
+		System.out.println("前置通知=");
+	}
 
-    public void after() {
-        System.out.println("后置通知=");
-    }
+	public void after() {
+		System.out.println("后置通知=");
+	}
 }
 
 ```
@@ -1819,24 +1818,24 @@ public class AspectAdvice{
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:c="http://www.springframework.org/schema/c" xmlns:util="http://www.springframework.org/schema/util"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:aop="http://www.springframework.org/schema/aop"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
-    <!--注解扫描-->
-    <context:component-scan base-package="ioc"></context:component-scan>
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:c="http://www.springframework.org/schema/c" xmlns:util="http://www.springframework.org/schema/util"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+	<!--注解扫描-->
+	<context:component-scan base-package="ioc"></context:component-scan>
 
-    <aop:config proxy-target-class="true">
-        <!--切入点-->
-        <aop:pointcut id="pointCut" expression="execution(* ioc.Student.*(..))"/>
-        <!--切面——将普通的Bean注册成增强类-->
-        <aop:aspect ref="aspectAdvice">
-            <aop:before method="before" pointcut-ref="pointCut"></aop:before>
-            <aop:after method="after" pointcut-ref="pointCut"></aop:after>
-        </aop:aspect>
-    </aop:config>
+	<aop:config proxy-target-class="true">
+		<!--切入点-->
+		<aop:pointcut id="pointCut" expression="execution(* ioc.Student.*(..))"/>
+		<!--切面——将普通的Bean注册成增强类-->
+		<aop:aspect ref="aspectAdvice">
+			<aop:before method="before" pointcut-ref="pointCut"></aop:before>
+			<aop:after method="after" pointcut-ref="pointCut"></aop:after>
+		</aop:aspect>
+	</aop:config>
 </beans>
 ```
 
@@ -1867,11 +1866,11 @@ JdbcTemplate 是 Spring JDBC 核心包（core）中的核心类，它可以通�
 
 JdbcTemplate 的全限定命名为 ` org.springframework.jdbc.core.JdbcTemplate` ，它提供了大量的查询和更新数据库的方法，如下表所示。
 
-| 方法                                                         | 说明                                                         |
+| 方法														 | 说明														 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| public int update(String sql)                                | 用于执行新增、更新、删除等语句；sql：需要执行的 SQL 语句；args 表示需要传入到 SQL 语句中的参数。 |
-| public int update(String sql,Object... args)                 | 用于执行新增、更新、删除等语句；sql：需要执行的 SQL 语句；args 表示需要传入到 SQL 语句中的参数。 |
-| public void execute(String sql)                              | 可以执行任意 SQL，一般用于执行 DDL 语句； sql：需要执行的 SQL 语句；action 表示执行完 SQL 语句后，要调用的函数。 |
+| public int update(String sql)								| 用于执行新增、更新、删除等语句；sql：需要执行的 SQL 语句；args 表示需要传入到 SQL 语句中的参数。 |
+| public int update(String sql,Object... args)				 | 用于执行新增、更新、删除等语句；sql：需要执行的 SQL 语句；args 表示需要传入到 SQL 语句中的参数。 |
+| public void execute(String sql)							  | 可以执行任意 SQL，一般用于执行 DDL 语句； sql：需要执行的 SQL 语句；action 表示执行完 SQL 语句后，要调用的函数。 |
 | public T execute(String sql, PreparedStatementCallback action) | 可以执行任意 SQL，一般用于执行 DDL 语句； sql：需要执行的 SQL 语句；action 表示执行完 SQL 语句后，要调用的函数。 |
 | public <T> List<T> query(String sql, RowMapper<T> rowMapper, @Nullable Object... args) | 用于执行查询语句；sql：需要执行的 SQL 语句；rowMapper：用于确定返回的集合（List）的类型；args：表示需要传入到 SQL 语句的参数。 |
 | public <T> T queryForObject(String sql, RowMapper<T> rowMapper, @Nullable Object... args) | 用于执行查询语句；sql：需要执行的 SQL 语句；rowMapper：用于确定返回的集合（List）的类型；args：表示需要传入到 SQL 语句的参数。 |
@@ -1883,9 +1882,9 @@ JdbcTemplate 的全限定命名为 ` org.springframework.jdbc.core.JdbcTemplate`
 
 ```sql
 create table student(
-    id   bigint primary key auto_increment,
-    name varchar(20),
-    age  int
+	id   bigint primary key auto_increment,
+	name varchar(20),
+	age  int
 );
 ```
 
@@ -1895,9 +1894,9 @@ create table student(
 @Component(value = "student")
 @Data
 public class Student implements Serializable {
-    private BigInteger id;
-    private String name;
-    private Integer age;
+	private BigInteger id;
+	private String name;
+	private Integer age;
 }
 ```
 
@@ -1906,33 +1905,33 @@ public class Student implements Serializable {
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:c="http://www.springframework.org/schema/c" xmlns:util="http://www.springframework.org/schema/util"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:aop="http://www.springframework.org/schema/aop"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
-    <!--注解扫描-->
-    <context:component-scan base-package="ioc"></context:component-scan>
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:c="http://www.springframework.org/schema/c" xmlns:util="http://www.springframework.org/schema/util"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+	<!--注解扫描-->
+	<context:component-scan base-package="ioc"></context:component-scan>
 
-    <!--数据源配置-->
-    <bean name="dataSoure" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="url" value="jdbc:mysql://127.0.0.1:3306/spring_test"></property>
-        <property name="username" value="root"></property>
-        <property name="password" value="NJI(mko0"></property>
-        <!--注意版本-->
-        <!--5.x-->
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-        <!--8.x-->
-        <!--<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>-->
-    </bean>
+	<!--数据源配置-->
+	<bean name="dataSoure" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="url" value="jdbc:mysql://127.0.0.1:3306/spring_test"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="NJI(mko0"></property>
+		<!--注意版本-->
+		<!--5.x-->
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+		<!--8.x-->
+		<!--<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>-->
+	</bean>
 
-    <!--JdbcTemplate-->
-    <bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
-        <property name="dataSource" ref="dataSoure"></property>
-        <!--懒加载-->
-        <property name="lazyInit" value="true"></property>
-    </bean>
+	<!--JdbcTemplate-->
+	<bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSoure"></property>
+		<!--懒加载-->
+		<property name="lazyInit" value="true"></property>
+	</bean>
 </beans>
 ```
 
@@ -1940,16 +1939,16 @@ public class Student implements Serializable {
 
 ```java
 public class TestApplication {
-    public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
-        JdbcTemplate template = context.getBean(JdbcTemplate.class);
-        Student student = context.getBean("student",Student.class);
-        String sql = "select * from student";
-        List<Map<String, Object>> list = template.queryForList(sql);
-        list.forEach(item->{
-            System.out.println(item.toString());
-        });
-    }
+	public static void main(String[] args) {
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
+		JdbcTemplate template = context.getBean(JdbcTemplate.class);
+		Student student = context.getBean("student",Student.class);
+		String sql = "select * from student";
+		List<Map<String, Object>> list = template.queryForList(sql);
+		list.forEach(item->{
+			System.out.println(item.toString());
+		});
+	}
 }
 ```
 
@@ -1978,36 +1977,36 @@ password= ****
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:c="http://www.springframework.org/schema/c" xmlns:util="http://www.springframework.org/schema/util"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:aop="http://www.springframework.org/schema/aop"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
-    <!--注解扫描-->
-    <context:component-scan base-package="ioc"></context:component-scan>
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:c="http://www.springframework.org/schema/c" xmlns:util="http://www.springframework.org/schema/util"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+	<!--注解扫描-->
+	<context:component-scan base-package="ioc"></context:component-scan>
 
-    <!--加载properties配置-->
-    <context:property-placeholder location="classpath:config/mysql.properties"></context:property-placeholder>
+	<!--加载properties配置-->
+	<context:property-placeholder location="classpath:config/mysql.properties"></context:property-placeholder>
 
-    <!--数据源配置-->
-    <bean name="dataSoure" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="url" value="${url}"></property>
-        <property name="username" value="${user}"></property>
-        <property name="password" value="${password}"></property>
-        <!--注意版本-->
-        <!--5.x-->
-        <property name="driverClassName" value="${driver5}"></property>
-        <!--8.x-->
-        <!--<property name="driverClassName" value="${driver8}"></property>-->
-    </bean>
+	<!--数据源配置-->
+	<bean name="dataSoure" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="url" value="${url}"></property>
+		<property name="username" value="${user}"></property>
+		<property name="password" value="${password}"></property>
+		<!--注意版本-->
+		<!--5.x-->
+		<property name="driverClassName" value="${driver5}"></property>
+		<!--8.x-->
+		<!--<property name="driverClassName" value="${driver8}"></property>-->
+	</bean>
 
-    <!--JdbcTemplate-->
-    <bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
-        <property name="dataSource" ref="dataSoure"></property>
-        <!--懒加载-->
-        <property name="lazyInit" value="true"></property>
-    </bean>
+	<!--JdbcTemplate-->
+	<bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSoure"></property>
+		<!--懒加载-->
+		<property name="lazyInit" value="true"></property>
+	</bean>
 </beans>
 ```
 
@@ -2031,7 +2030,7 @@ password= ****
 
 Spring 支持以下 2 种事务管理方式：
 
-| 事务管理方式   | 说明                                                         |
+| 事务管理方式   | 说明														 |
 | -------------- | ------------------------------------------------------------ |
 | 编程式事务管理 | 编程式事务管理是通过编写代码实现的事务管理。  这种方式能够在代码中精确地定义事务的边界，我们可以根据需求规定事务从哪里开始，到哪里结束。 |
 | 声明式事务管理 | Spring 声明式事务管理在底层采用了 AOP 技术，其最大的优点在于无须通过编程的方式管理事务，只需要在配置文件中进行相关的规则声明，就可以将事务规则应用到业务逻辑中。 |
@@ -2046,13 +2045,13 @@ Spring 支持以下 2 种事务管理方式：
 
 Spring 为不同的持久化框架或平台（例如 JDBC、Hibernate、JPA 以及 JTA 等）提供了不同的 PlatformTransactionManager 接口实现，这些实现类被称为事务管理器实现。
 
-| 实现类                                                       | 说明                                                         |
+| 实现类													   | 说明														 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| org.springframework.jdbc.datasource.DataSourceTransactionManager | 使用 Spring JDBC 或 iBatis 进行持久化数据时使用。            |
-| org.springframework.orm.hibernate3.HibernateTransactionManager | 使用 Hibernate 3.0 及以上版本进行持久化数据时使用。          |
-| org.springframework.orm.jpa.JpaTransactionManager            | 使用 JPA 进行持久化时使用。                                  |
-| org.springframework.jdo.JdoTransactionManager                | 当持久化机制是 Jdo 时使用。                                  |
-| org.springframework.transaction.jta.JtaTransactionManager    | 使用 JTA 来实现事务管理，在一个事务跨越多个不同的资源（即分布式事务）使用该实现。 |
+| org.springframework.jdbc.datasource.DataSourceTransactionManager | 使用 Spring JDBC 或 iBatis 进行持久化数据时使用。			|
+| org.springframework.orm.hibernate3.HibernateTransactionManager | 使用 Hibernate 3.0 及以上版本进行持久化数据时使用。		  |
+| org.springframework.orm.jpa.JpaTransactionManager			| 使用 JPA 进行持久化时使用。								  |
+| org.springframework.jdo.JdoTransactionManager				| 当持久化机制是 Jdo 时使用。								  |
+| org.springframework.transaction.jta.JtaTransactionManager	| 使用 JTA 来实现事务管理，在一个事务跨越多个不同的资源（即分布式事务）使用该实现。 |
 
 
 这些事务管理器的使用方式十分简单，我们只要根据持久化框架（或平台）选用相应的事务管理器实现，即可实现对事物的管理，而不必关心实际事务实现到底是什么。
@@ -2067,13 +2066,13 @@ Spring 为不同的持久化框架或平台（例如 JDBC、Hibernate、JPA 以�
 
 Spring 中提供了以下隔离级别，我们可以根据自身的需求自行选择合适的隔离级别。
 
-| 方法                       | 说明                                                         |
+| 方法					   | 说明														 |
 | -------------------------- | ------------------------------------------------------------ |
-| ISOLATION_DEFAULT          | 使用后端数据库默认的隔离级别                                 |
-| ISOLATION_READ_UNCOMMITTED | 允许读取尚未提交的更改，可能导致脏读、幻读和不可重复读       |
+| ISOLATION_DEFAULT		  | 使用后端数据库默认的隔离级别								 |
+| ISOLATION_READ_UNCOMMITTED | 允许读取尚未提交的更改，可能导致脏读、幻读和不可重复读	   |
 | ISOLATION_READ_COMMITTED   | Oracle 默认级别，允许读取已提交的并发事务，防止脏读，可能出现幻读和不可重复读 |
 | ISOLATION_REPEATABLE_READ  | MySQL 默认级别，多次读取相同字段的结果是一致的，防止脏读和不可重复读，可能出现幻读 |
-| ISOLATION_SERIALIZABLE     | 完全服从 ACID 的隔离级别，防止脏读、不可重复读和幻读         |
+| ISOLATION_SERIALIZABLE	 | 完全服从 ACID 的隔离级别，防止脏读、不可重复读和幻读		 |
 
  **事务传播行为** 
 
@@ -2083,15 +2082,15 @@ Spring 中提供了以下隔离级别，我们可以根据自身的需求自行�
 
 Spring 提供了以下 7 种不同的事务传播行为。
 
-| 名称                      | 说明                                                         |
+| 名称					  | 说明														 |
 | ------------------------- | ------------------------------------------------------------ |
-| PROPAGATION_MANDATORY     | 支持当前事务，如果不存在当前事务，则引发异常。               |
-| PROPAGATION_NESTED        | 如果当前事务存在，则在嵌套事务中执行。                       |
-| PROPAGATION_NEVER         | 不支持当前事务，如果当前事务存在，则引发异常。               |
-| PROPAGATION_NOT_SUPPORTED | 不支持当前事务，始终以非事务方式执行。                       |
-| PROPAGATION_REQUIRED      | 默认传播行为，如果存在当前事务，则当前方法就在当前事务中运行，如果不存在，则创建一个新的事务，并在这个新建的事务中运行。 |
-| PROPAGATION_REQUIRES_NEW  | 创建新事务，如果已经存在事务则暂停当前事务。                 |
-| PROPAGATION_SUPPORTS      | 支持当前事务，如果不存在事务，则以非事务方式执行。           |
+| PROPAGATION_MANDATORY	 | 支持当前事务，如果不存在当前事务，则引发异常。			   |
+| PROPAGATION_NESTED		| 如果当前事务存在，则在嵌套事务中执行。					   |
+| PROPAGATION_NEVER		 | 不支持当前事务，如果当前事务存在，则引发异常。			   |
+| PROPAGATION_NOT_SUPPORTED | 不支持当前事务，始终以非事务方式执行。					   |
+| PROPAGATION_REQUIRED	  | 默认传播行为，如果存在当前事务，则当前方法就在当前事务中运行，如果不存在，则创建一个新的事务，并在这个新建的事务中运行。 |
+| PROPAGATION_REQUIRES_NEW  | 创建新事务，如果已经存在事务则暂停当前事务。				 |
+| PROPAGATION_SUPPORTS	  | 支持当前事务，如果不存在事务，则以非事务方式执行。		   |
 
 ♨️  **题外话** 
 
@@ -2105,16 +2104,16 @@ Spring 提供了以下 7 种不同的事务传播行为。
 
 ```java
 public static DBOperTransaction getDBOperTransaction(GetConnection getConn,String DBID){
-    if (getConnnull){
-        getConn=(GetConnection)ObjFactory.getInstance().getObjectByKey(GetConnection.DEFAULT_KEYNAME);
-    }
-    ConnectionCfg connCfg=getConn.getConnectionCfg(DBID);
-    switch (connCfg.getCtrlTransMode()) {
-        case ConnectionCfg.TRANSMODE_NONE:return NoneTransaction.instance;
-        case ConnectionCfg.TRANSMODE_JDBC:return new JdbcTransaction(getConn,connCfg);
-        case ConnectionCfg.TRANSMODE_JTA:return new JtaTransaction(connCfg);
-        default: throw new IllegalArgumentException("unsupported transmode:"+connCfg.getCtrlTransMode());
-    }
+	if (getConnnull){
+		getConn=(GetConnection)ObjFactory.getInstance().getObjectByKey(GetConnection.DEFAULT_KEYNAME);
+	}
+	ConnectionCfg connCfg=getConn.getConnectionCfg(DBID);
+	switch (connCfg.getCtrlTransMode()) {
+		case ConnectionCfg.TRANSMODE_NONE:return NoneTransaction.instance;
+		case ConnectionCfg.TRANSMODE_JDBC:return new JdbcTransaction(getConn,connCfg);
+		case ConnectionCfg.TRANSMODE_JTA:return new JtaTransaction(connCfg);
+		default: throw new IllegalArgumentException("unsupported transmode:"+connCfg.getCtrlTransMode());
+	}
 }
 ```
 
@@ -2123,13 +2122,13 @@ public static DBOperTransaction getDBOperTransaction(GetConnection getConn,Strin
 ```java
 // 我当时的想法是直接用java的编程事务
 public static UserTransaction getTransaction() throws ApplicationException, NamingException, SystemException{
-    UserTransaction transaction = null;
-    context = getInitialContext();
-    transaction = (UserTransaction) context.lookup("javax.transaction.UserTransaction");
-    if(transaction!=null){
-        transaction.setTransactionTimeout(360000);
-    }
-    return transaction;
+	UserTransaction transaction = null;
+	context = getInitialContext();
+	transaction = (UserTransaction) context.lookup("javax.transaction.UserTransaction");
+	if(transaction!=null){
+		transaction.setTransactionTimeout(360000);
+	}
+	return transaction;
 }
 ```
 
@@ -2138,12 +2137,12 @@ public static UserTransaction getTransaction() throws ApplicationException, Nami
 ```java
 // 直接获取JTA事务
 public static DBOperTransaction getGlobalTransaction() throws ApplicationException, NamingException, SystemException{
-    GetConnection getConn=(GetConnection)ObjFactory.getInstance().getObjectByKey(GetConnection.DEFAULT_KEYNAME);
-    DBOperTransaction trans = null;
-    if(transnull){
-        trans = DBOperTransaction.getDBOperTransaction(getConn, null);
-    }
-    return trans;
+	GetConnection getConn=(GetConnection)ObjFactory.getInstance().getObjectByKey(GetConnection.DEFAULT_KEYNAME);
+	DBOperTransaction trans = null;
+	if(transnull){
+		trans = DBOperTransaction.getDBOperTransaction(getConn, null);
+	}
+	return trans;
 }
 ```
 
@@ -2171,21 +2170,21 @@ Spring 实现声明式事务管理主要有 2 种方式：
 
 <!--数据源配置-->
 <bean name="dataSoure" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-    <property name="url" value="${url}"></property>
-    <property name="username" value="${user}"></property>
-    <property name="password" value="${password}"></property>
-    <!--注意版本-->
-    <!--5.x-->
-    <property name="driverClassName" value="${driver5}"></property>
-    <!--8.x-->
-    <!--<property name="driverClassName" value="${driver8}"></property>-->
+	<property name="url" value="${url}"></property>
+	<property name="username" value="${user}"></property>
+	<property name="password" value="${password}"></property>
+	<!--注意版本-->
+	<!--5.x-->
+	<property name="driverClassName" value="${driver5}"></property>
+	<!--8.x-->
+	<!--<property name="driverClassName" value="${driver8}"></property>-->
 </bean>
 
 <!--JdbcTemplate-->
 <bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
-    <property name="dataSource" ref="dataSoure"></property>
-    <!--懒加载-->
-    <property name="lazyInit" value="true"></property>
+	<property name="dataSource" ref="dataSoure"></property>
+	<!--懒加载-->
+	<property name="lazyInit" value="true"></property>
 </bean>
 ```
 
@@ -2194,7 +2193,7 @@ Spring 实现声明式事务管理主要有 2 种方式：
 ```xml
 <!--配置事务管理器-->
 <bean name="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-    <property name="dataSource" ref="dataSoure"></property>
+	<property name="dataSource" ref="dataSoure"></property>
 </bean>
 ```
 
@@ -2203,11 +2202,11 @@ Spring 实现声明式事务管理主要有 2 种方式：
 ```xml
 <!--事务通知-->
 <tx:advice id="tx-advice" transaction-manager="transactionManager">
-    <!--事务参数-->
-    <tx:attributes>
-        <!--事务参数，那些方法启用事务 create*开头-->
-        <tx:method name="create*" isolation="DEFAULT" read-only="false" timeout="10" propagation="REQUIRED"/>
-    </tx:attributes>
+	<!--事务参数-->
+	<tx:attributes>
+		<!--事务参数，那些方法启用事务 create*开头-->
+		<tx:method name="create*" isolation="DEFAULT" read-only="false" timeout="10" propagation="REQUIRED"/>
+	</tx:attributes>
 </tx:advice>
 ```
 
@@ -2215,24 +2214,24 @@ Spring 实现声明式事务管理主要有 2 种方式：
 
  `<tx:method> ` 元素包含多个属性参数，可以为某个或某些指定的方法（name 属性定义的方法）定义事务属性，如下表所示。
 
-| 事务属性        | 说明                                                         |
+| 事务属性		| 说明														 |
 | --------------- | ------------------------------------------------------------ |
-| propagation     | 指定事务的传播行为。                                         |
-| isolation       | 指定事务的隔离级别。                                         |
-| read-only       | 指定是否为只读事务。                                         |
-| timeout         | 表示超时时间，单位为“秒”；声明的事务在指定的超时时间后，自动回滚，避免事务长时间不提交会回滚导致的数据库资源的占用。 |
-| rollback-for    | 指定事务对于那些类型的异常应当回滚，而不提交。               |
-| no-rollback-for | 指定事务对于那些异常应当继续运行，而不回滚。                 |
+| propagation	 | 指定事务的传播行为。										 |
+| isolation	   | 指定事务的隔离级别。										 |
+| read-only	   | 指定是否为只读事务。										 |
+| timeout		 | 表示超时时间，单位为“秒”；声明的事务在指定的超时时间后，自动回滚，避免事务长时间不提交会回滚导致的数据库资源的占用。 |
+| rollback-for	| 指定事务对于那些类型的异常应当回滚，而不提交。			   |
+| no-rollback-for | 指定事务对于那些异常应当继续运行，而不回滚。				 |
 
 - 切面，告诉容器对哪些方法启用事务
 
 ```xml
 <!--配置事务的切面-->
 <aop:config>
-    <!--切点-->
-    <aop:pointcut id="tx-point" expression="execution(* ioc.Student.*(..))"/>
-    <!--切面-->
-    <aop:advisor advice-ref="tx-advice" pointcut-ref="tx-point"></aop:advisor>
+	<!--切点-->
+	<aop:pointcut id="tx-point" expression="execution(* ioc.Student.*(..))"/>
+	<!--切面-->
+	<aop:advisor advice-ref="tx-advice" pointcut-ref="tx-point"></aop:advisor>
 </aop:config>
 ```
 
@@ -2241,57 +2240,57 @@ Spring 实现声明式事务管理主要有 2 种方式：
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:c="http://www.springframework.org/schema/c" xmlns:util="http://www.springframework.org/schema/util"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
-    <!--注解扫描-->
-    <context:component-scan base-package="ioc"></context:component-scan>
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:c="http://www.springframework.org/schema/c" xmlns:util="http://www.springframework.org/schema/util"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+	<!--注解扫描-->
+	<context:component-scan base-package="ioc"></context:component-scan>
 
-    <!--加载properties配置-->
-    <context:property-placeholder location="classpath:config/mysql.properties"></context:property-placeholder>
+	<!--加载properties配置-->
+	<context:property-placeholder location="classpath:config/mysql.properties"></context:property-placeholder>
 
-    <!--数据源配置-->
-    <bean name="dataSoure" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="url" value="${url}"></property>
-        <property name="username" value="${user}"></property>
-        <property name="password" value="${password}"></property>
-        <!--注意版本-->
-        <!--5.x-->
-        <property name="driverClassName" value="${driver5}"></property>
-        <!--8.x-->
-        <!--<property name="driverClassName" value="${driver8}"></property>-->
-    </bean>
+	<!--数据源配置-->
+	<bean name="dataSoure" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="url" value="${url}"></property>
+		<property name="username" value="${user}"></property>
+		<property name="password" value="${password}"></property>
+		<!--注意版本-->
+		<!--5.x-->
+		<property name="driverClassName" value="${driver5}"></property>
+		<!--8.x-->
+		<!--<property name="driverClassName" value="${driver8}"></property>-->
+	</bean>
 
-    <!--JdbcTemplate-->
-    <bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
-        <property name="dataSource" ref="dataSoure"></property>
-        <!--懒加载-->
-        <property name="lazyInit" value="true"></property>
-    </bean>
+	<!--JdbcTemplate-->
+	<bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSoure"></property>
+		<!--懒加载-->
+		<property name="lazyInit" value="true"></property>
+	</bean>
 
-    <!--配置事务管理器-->
-    <bean name="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSoure"></property>
-    </bean>
+	<!--配置事务管理器-->
+	<bean name="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSoure"></property>
+	</bean>
 
-    <!--事务通知-->
-    <tx:advice id="tx-advice" transaction-manager="transactionManager">
-        <!--事务参数，那些方法启用事务 create*开头-->
-        <tx:attributes>
-            <tx:method name="insert*" isolation="DEFAULT" read-only="false" timeout="10" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
-        </tx:attributes>
-    </tx:advice>
+	<!--事务通知-->
+	<tx:advice id="tx-advice" transaction-manager="transactionManager">
+		<!--事务参数，那些方法启用事务 create*开头-->
+		<tx:attributes>
+			<tx:method name="insert*" isolation="DEFAULT" read-only="false" timeout="10" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+		</tx:attributes>
+	</tx:advice>
 
-    <!--配置事务的切面-->
-    <aop:config>
-        <!--切点-->
-        <aop:pointcut id="tx-point" expression="execution(* ioc.Student.insert*(..))"/>
-        <!--切面-->
-        <aop:advisor advice-ref="tx-advice" pointcut-ref="tx-point"></aop:advisor>
-    </aop:config>
+	<!--配置事务的切面-->
+	<aop:config>
+		<!--切点-->
+		<aop:pointcut id="tx-point" expression="execution(* ioc.Student.insert*(..))"/>
+		<!--切面-->
+		<aop:advisor advice-ref="tx-advice" pointcut-ref="tx-point"></aop:advisor>
+	</aop:config>
 
 </beans>
 ```
@@ -2302,23 +2301,23 @@ Spring 实现声明式事务管理主要有 2 种方式：
 @Component(value = "student")
 @Data
 public class Student implements Serializable {
-    private BigInteger id;
-    private String name;
-    private Integer age;
+	private BigInteger id;
+	private String name;
+	private Integer age;
 
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
 
-    public void insertStudent() throws Exception {
-        String sql1 = "insert into student(name,age) values('caicai',23)";
-        String sql2 = "insert into student(name,age) values('hh',24)";
-        jdbcTemplate.execute(sql1);
-        // 这里为了测试是否会回滚失败前的sql1数据是否插入！
-        if(true){
-            throw new RuntimeException("roll back!");
-        }
-        jdbcTemplate.execute(sql2);
-    }
+	public void insertStudent() throws Exception {
+		String sql1 = "insert into student(name,age) values('caicai',23)";
+		String sql2 = "insert into student(name,age) values('hh',24)";
+		jdbcTemplate.execute(sql1);
+		// 这里为了测试是否会回滚失败前的sql1数据是否插入！
+		if(true){
+			throw new RuntimeException("roll back!");
+		}
+		jdbcTemplate.execute(sql2);
+	}
 }
 ```
 
@@ -2326,11 +2325,11 @@ public class Student implements Serializable {
 
 ```java
 public class TestApplication {
-    public static void main(String[] args) throws Exception {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
-        Student student = context.getBean("student",Student.class);
-        student.insertStudent();
-    }
+	public static void main(String[] args) throws Exception {
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/spring-applictionContext.xml");
+		Student student = context.getBean("student",Student.class);
+		student.insertStudent();
+	}
 }
 ```
 
@@ -2343,44 +2342,44 @@ public class TestApplication {
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:c="http://www.springframework.org/schema/c" xmlns:util="http://www.springframework.org/schema/util"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
-    <!--注解扫描-->
-    <context:component-scan base-package="ioc"></context:component-scan>
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:c="http://www.springframework.org/schema/c" xmlns:util="http://www.springframework.org/schema/util"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+	<!--注解扫描-->
+	<context:component-scan base-package="ioc"></context:component-scan>
 
-    <!--加载properties配置-->
-    <context:property-placeholder location="classpath:config/mysql.properties"></context:property-placeholder>
+	<!--加载properties配置-->
+	<context:property-placeholder location="classpath:config/mysql.properties"></context:property-placeholder>
 
-    <!--数据源配置-->
-    <bean name="dataSoure" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="url" value="${url}"></property>
-        <property name="username" value="${user}"></property>
-        <property name="password" value="${password}"></property>
-        <!--注意版本-->
-        <!--5.x-->
-        <property name="driverClassName" value="${driver5}"></property>
-        <!--8.x-->
-        <!--<property name="driverClassName" value="${driver8}"></property>-->
-    </bean>
+	<!--数据源配置-->
+	<bean name="dataSoure" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="url" value="${url}"></property>
+		<property name="username" value="${user}"></property>
+		<property name="password" value="${password}"></property>
+		<!--注意版本-->
+		<!--5.x-->
+		<property name="driverClassName" value="${driver5}"></property>
+		<!--8.x-->
+		<!--<property name="driverClassName" value="${driver8}"></property>-->
+	</bean>
 
-    <!--JdbcTemplate-->
-    <bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
-        <property name="dataSource" ref="dataSoure"></property>
-        <!--懒加载-->
-        <property name="lazyInit" value="true"></property>
-    </bean>
+	<!--JdbcTemplate-->
+	<bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSoure"></property>
+		<!--懒加载-->
+		<property name="lazyInit" value="true"></property>
+	</bean>
 
-    <!--配置事务管理器-->
-    <bean name="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSoure"></property>
-    </bean>
+	<!--配置事务管理器-->
+	<bean name="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSoure"></property>
+	</bean>
 
-    <!--开启事务注解的支持-->
-    <tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>
+	<!--开启事务注解的支持-->
+	<tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>
 
 </beans>
 ```
@@ -2391,23 +2390,23 @@ public class TestApplication {
 @Component(value = "student")
 @Data
 public class Student implements Serializable {
-    private BigInteger id;
-    private String name;
-    private Integer age;
+	private BigInteger id;
+	private String name;
+	private Integer age;
 
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
 
-    @Transactional(readOnly = false,rollbackForClassName = "java.lang.Exception")
-    public void insertStudent() throws Exception {
-        String sql1 = "insert into student(name,age) values('caicai',23)";
-        String sql2 = "insert into student(name,age) values('hh',24)";
-        jdbcTemplate.execute(sql1);
-        if(true){
-            throw new RuntimeException("roll back!");
-        }
-        jdbcTemplate.execute(sql2);
-    }
+	@Transactional(readOnly = false,rollbackForClassName = "java.lang.Exception")
+	public void insertStudent() throws Exception {
+		String sql1 = "insert into student(name,age) values('caicai',23)";
+		String sql2 = "insert into student(name,age) values('hh',24)";
+		jdbcTemplate.execute(sql1);
+		if(true){
+			throw new RuntimeException("roll back!");
+		}
+		jdbcTemplate.execute(sql2);
+	}
 }
 ```
 
