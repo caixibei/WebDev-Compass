@@ -1,0 +1,479 @@
+<!DOCTYPE html><html><head>
+      <title>02.SpringCloud Ribbon入门教程</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\caixi\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.20\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="springcloud-ribbon负载均衡">SpringCloud Ribbon负载均衡 </h1>
+<h2 id="学习目标">学习目标 </h2>
+<img src="assets/image-20251208162610613.png" alt="image-20251208162610613" style="zoom:80%;">
+<h2 id="什么是-ribbon">什么是 Ribbon </h2>
+<p>Ribbon是一个基于HTTP和TCP的客户端负载均衡工具，他是基于 Netflix Ribbon 实现的。它不像 Spring Cloud 服务注册中心，配置中心、API网关那样独立部署，它几乎存在于每个Spring Cloud 微服务中，包括Feign提供的声明式服务调用也是基于 Netfix Ribbon 实现的。</p>
+<p>Ribbon默认提供很多种负载均衡算法，比如说： <code>轮询策略</code> 、 <code>随机策略</code> ...等等。甚至包含自定义的负载均衡算法。</p>
+<h2 id="ribbon-解决了什么问题">Ribbon 解决了什么问题 </h2>
+<blockquote>
+<p>Ribbon 提供了一套微服务的负载均衡解决方案。</p>
+</blockquote>
+<p>负载均衡是在同一应用的不同实例之间分配流量的过程。为了容错，每个应用通常都要运行多个实例。因此，当一个服务需要与另一个服务通信时，它需要选择一个特定的实例来发送请求。负载均衡，有很多算法：</p>
+<ul>
+<li>随机选择：随机选择一个实例</li>
+<li>循环：每次按相同顺序选择实例</li>
+<li>最少连接：选择当前连接最少的实例</li>
+<li>权重指标：使用权重指标选择最佳实例（例如 CPU 或内存使用率）</li>
+<li>IP 哈希（Hash）：使用客户端 IP 的哈希值映射到实例</li>
+</ul>
+<p>以上只是负载均衡算法的几个例子，每种算法都有其优缺点。</p>
+<p>随机选择和轮循很容易实现，但可能无法优化服务的使用。相反，最少连接和权重指标比较复杂，但通常能创造更优化的服务利用率。IP 哈希可以保证客户端每次都命中同一台实例，意味着实例可以保存一些客户端的状态信息，但它的容错性不强。</p>
+<h2 id="负载均衡不同方案的区别">负载均衡不同方案的区别 </h2>
+<p>目前业界主流的负载均衡方案可分为两类：</p>
+<ul>
+<li>集中式负载均衡（服务器负载均衡），即在 consumer（消费者）和 provider（服务提供者）之间使用独立的负载均衡设施（可以是硬件，如F5，也可以是软件，如nginx），由该设施负责将访问的请求通过某种策略转发至服务提供者。</li>
+<li>进程内负载均衡（客户端负载均衡），将负载均衡逻辑集成到consumer（消费者），消费者从服务注册中心获知有哪些地址可用，然后自己再从这些地址种选择一个合适的provider（服务提供者）。<span style="color:#F97A27">Ribbon属于后者，它只是一个类库，集成于消费者进程，消费者通过Ribbon来获取服务提供者的地址。</span></li>
+</ul>
+<h3 id="集中式负载均衡">集中式负载均衡 </h3>
+<img src="./assets/image-20241010154030809.png" alt="image-20241010154030809" style="zoom:77%;">
+<h3 id="进程内负载均衡">进程内负载均衡 </h3>
+<img src="./assets/image-20241010154226336-17285461474291.png" alt="image-20241010154226336" style="zoom:80%;">
+<h2 id="ribbon-负载均衡策略">Ribbon 负载均衡策略 </h2>
+<h3 id="轮询策略默认">轮询策略（默认） </h3>
+<p>策略对应类名：<span style="color:#F97A27"> <code>RoundRobinRule</code> </span></p>
+<p>实现原理：轮询策略表示每次都顺序取下一个provider，比如有5个provider，第1次取第1个，第2次取第2个，第3次取第3个，依此类推。</p>
+<h3 id="权重轮询策略">权重轮询策略 </h3>
+<p>策略对应类名：<span style="color:#F97A27"> <code>WeightedResponseTimeRule</code> </span></p>
+<p>实现原理：</p>
+<ul>
+<li>根据 provider 的响应时间分配一个权重，响应时间越长，权重越小，被选中的可能性越低；</li>
+<li>一开始为轮询策略，并开启一个计时器，每30s收集一次每个 provider 的平均响应时长，当信息足够时，给每一个 provider 附上一个权重，并按照权重随机选择 provider ，高权重的 provider 会被高概率选中。</li>
+</ul>
+<h3 id="随机策略">随机策略 </h3>
+<p>策略对应类名：<span style="color:#F97A27"> <code>RandomRule</code> </span></p>
+<p>实现原理：从provider中随机选择一个。</p>
+<h3 id="最少并发数策略">最少并发数策略 </h3>
+<p>策略对应类名：<span style="color:#F97A27"> <code>BestAvailableRule</code> </span></p>
+<p>实现原理：选择正在请求中的并发数量最小的provider，除非这个provider在熔断中。</p>
+<h3 id="重试策略">重试策略 </h3>
+<p>策略对应类名：<span style="color:#F97A27"> <code>RetryRule</code> </span></p>
+<p>实现原理：其实就是轮询策略的增强版，轮询策略在服务不可用时不做处理，重试策略会在服务不可用的时候重新尝试集群中的其他节点。</p>
+<h3 id="可用敏感性策略">可用敏感性策略 </h3>
+<p>策略对应类名：<span style="color:#F97A27"> <code>AvailabilityFilteringRule</code> </span></p>
+<p>实现原理：过滤性能差的provider。</p>
+<ul>
+<li>第一种：过滤掉在Eureka中一直处于连接失败的provider。</li>
+<li>第二种：过滤掉高并发（繁忙）的provider。</li>
+</ul>
+<h3 id="区域敏感性策略">区域敏感性策略 </h3>
+<p>策略对应类名：<span style="color:#F97A27"> <code>ZoneAvoidanceRule</code> </span></p>
+<p>实现原理：</p>
+<ul>
+<li>以一个区域为单位考察可用性，对于不可用的区域整个丢弃，从剩下区域中选择可用的provider。</li>
+<li>如果这个IP区域内有一个或者多个实例不可达 或者 响应变慢，都会降低该IP区域中其他IP被选中的权重。</li>
+</ul>
+<h2 id="ribbon-入门案例">Ribbon 入门案例 </h2>
+<blockquote>
+<p>Ribbon 中对于集群中的服务采用的负载均衡策略默认为轮询策略。</p>
+</blockquote>
+<h3 id="创建项目">创建项目 </h3>
+<p>还是使用我们在学习Eureka时使用的项目案例，在该项目下面我们继续创建  <code>bettytsai-system-slave</code>  模块作为服务提供者，具体项目结构如下：</p>
+<img src="./assets/image-20241020125937507-17294003789551.png" alt="image-20241020125937507" style="zoom:80%;">
+<p>应该还记得我们在学习 Eureka 的时候，其实我们就已经写过一个负载均衡的调用案例，只不过那时候我们只是为了去了解服务调用的几种方案，并没有去深入了解负载均衡的几个策略。</p>
+<h3 id="服务提供者">服务提供者 </h3>
+<p>创建两个相同的服务提供者是为了模拟分布式多节点部署，所以下面我们就只展示其中一个提供者的配置及代码。</p>
+<h4 id="配置文件">配置文件 </h4>
+<pre data-role="codeBlock" data-info="yml" class="language-yaml yml"><code><span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">9000</span>
+
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> bettytsai<span class="token punctuation">-</span>system
+  <span class="token key atrule">profiles</span><span class="token punctuation">:</span>
+    <span class="token comment"># 以逗号分隔的活动配置文件列表。可由命令行开关覆盖。</span>
+    <span class="token key atrule">active</span><span class="token punctuation">:</span> dev
+  <span class="token key atrule">config</span><span class="token punctuation">:</span>
+    <span class="token comment"># 是否启用配置数据处理旧模式</span>
+    <span class="token key atrule">use-legacy-processing</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+
+<span class="token key atrule">logging</span><span class="token punctuation">:</span>
+  <span class="token key atrule">file</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span>spring.application.name<span class="token punctuation">}</span><span class="token punctuation">-</span>$<span class="token punctuation">{</span>server.port<span class="token punctuation">}</span>
+    <span class="token key atrule">path</span><span class="token punctuation">:</span> /tlogs/$<span class="token punctuation">{</span>spring.application.name<span class="token punctuation">}</span>
+    
+<span class="token key atrule">eureka</span><span class="token punctuation">:</span>
+  <span class="token key atrule">client</span><span class="token punctuation">:</span>
+    <span class="token comment"># 指示此客户端是否应从 eureka 服务器获取 eureka 注册表信息。</span>
+    <span class="token key atrule">fetch-registry</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token comment"># 指示此实例是否应将其信息注册到 eureka 服务器以供其他人发现。在某些情况下，您不希望发现您的实例，而您只想发现其他实例。</span>
+    <span class="token key atrule">register-with-eureka</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token comment"># 指示从 eureka 服务器获取注册表信息的频率（以秒为单位）。</span>
+    <span class="token key atrule">registry-fetch-interval-seconds</span><span class="token punctuation">:</span> <span class="token number">30</span>
+    <span class="token comment"># 将可用区映射到用于与 eureka 服务器通信的完全限定 URL 列表。</span>
+    <span class="token comment"># 每个值可以是单个 URL 或逗号分隔的备用位置列表。</span>
+    <span class="token comment"># 通常，eureka 服务器 URL 携带协议、主机、端口、上下文和版本信息（如果有）。</span>
+    <span class="token comment"># 示例：https://ec2-256-156-243-129.compute-1.amazonaws.com:7001/eureka/</span>
+    <span class="token comment"># 更改在运行时在 eurekaServiceUrlPollIntervalSeconds 指定的下一个服务 url 刷新周期生效。</span>
+    <span class="token key atrule">service-url</span><span class="token punctuation">:</span>
+      <span class="token key atrule">defaultZone</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//admin<span class="token punctuation">:</span>123456@127.0.0.1<span class="token punctuation">:</span>8761/eureka/<span class="token punctuation">,</span>http<span class="token punctuation">:</span>//admin<span class="token punctuation">:</span>123456@127.0.0.1<span class="token punctuation">:</span>8762/eureka
+  <span class="token key atrule">instance</span><span class="token punctuation">:</span>
+    <span class="token comment"># 标志表示，在猜测主机名时，应优先使用服务器的 IP 地址，而不是操作系统报告的主机名。</span>
+    <span class="token key atrule">prefer-ip-address</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token comment"># 获取要向 eureka 注册的此实例的唯一 ID（在 appName 范围内）</span>
+    <span class="token key atrule">instance-id</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span>spring.cloud.client.ip<span class="token punctuation">-</span>address<span class="token punctuation">}</span><span class="token punctuation">:</span>$<span class="token punctuation">{</span>server.port<span class="token punctuation">}</span>
+    <span class="token comment"># 指示 eureka 客户端需要向 eureka 服务器发送心跳以指示它仍然处于活动状态的频率（以秒为单位）。</span>
+    <span class="token comment"># 如果在 leaseExpirationDurationInSeconds 中指定的时间段内未收到心跳，则 eureka 服务器将从其视图中删除该实例，</span>
+    <span class="token comment"># 从而禁止流向此实例的流量。请注意，如果实例实现 HealthCheckCallback，然后决定使自身不可用，则实例仍然无法获取流量。</span>
+    <span class="token key atrule">lease-renewal-interval-in-seconds</span><span class="token punctuation">:</span> <span class="token number">10</span>
+    <span class="token comment"># 必须与Docker容器名保持一致</span>
+    <span class="token key atrule">hostname</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span>spring.application.name<span class="token punctuation">}</span>
+</code></pre><h4 id="服务提供者接口">服务提供者接口 </h4>
+<ul>
+<li>服务接口</li>
+</ul>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token keyword keyword-public">public</span> <span class="token keyword keyword-interface">interface</span> <span class="token class-name">TestService</span> <span class="token punctuation">{</span>
+
+    <span class="token doc-comment comment">/**
+     * 获取默认标签
+     * <span class="token keyword keyword-@return">@return</span> <span class="token punctuation">{</span><span class="token keyword keyword-@link">@link</span> <span class="token reference"><span class="token class-name">String</span></span><span class="token punctuation">}</span>
+     */</span>
+    <span class="token class-name">String</span> <span class="token function">getDefaultLabel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><ul>
+<li>服务实现类</li>
+</ul>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token annotation punctuation">@Service</span>
+<span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">TestServiceImpl</span> <span class="token keyword keyword-implements">implements</span> <span class="token class-name">TestService</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword keyword-public">public</span> <span class="token class-name">String</span> <span class="token function">getDefaultLabel</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword keyword-return">return</span> <span class="token string">"hello eureka,I'm system master module."</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><ul>
+<li>接口类</li>
+</ul>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token annotation punctuation">@RestController</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"/system/test"</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@SuppressWarnings</span><span class="token punctuation">(</span><span class="token class-name">WarningsConstants</span><span class="token punctuation">.</span><span class="token constant">SPRING_JAVA_AUTOWIRED_FIELDS_WARNING_INSPECTION</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">TestController</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword keyword-private">private</span> <span class="token class-name">TestService</span> testService<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"/getDefaultString"</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-public">public</span> <span class="token class-name">String</span> <span class="token function">getDefaultString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword keyword-return">return</span> testService<span class="token punctuation">.</span><span class="token function">getDefaultLabel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><ul>
+<li>启动类</li>
+</ul>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token annotation punctuation">@Slf4j</span>
+<span class="token annotation punctuation">@SpringBootApplication</span>
+<span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">SystemMasterApplication</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-static">static</span> <span class="token keyword keyword-void">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">ApplicationContext</span> context <span class="token operator">=</span> <span class="token class-name">SpringApplication</span><span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token class-name">SystemMasterApplication</span><span class="token punctuation">.</span><span class="token keyword keyword-class">class</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Environment</span> environment <span class="token operator">=</span> context<span class="token punctuation">.</span><span class="token function">getEnvironment</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> port <span class="token operator">=</span> environment<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">"server.port"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">":::系统启动成功....端口号::: %s"</span><span class="token punctuation">,</span>port<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><h4 id="启动服务">启动服务 </h4>
+<p>启动两个服务提供者之后，我们打开注册中心，可以看到服务提供者以集群模式部署了两个节点。</p>
+<img src="./assets/image-20241020151603695.png" alt="image-20241020151603695" style="zoom:100%;">
+<h3 id="服务消费者">服务消费者 </h3>
+<h4 id="配置文件-1">配置文件 </h4>
+<pre data-role="codeBlock" data-info="yml" class="language-yaml yml"><code><span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">9002</span>
+
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> bettytsai<span class="token punctuation">-</span>test
+  <span class="token key atrule">profiles</span><span class="token punctuation">:</span>
+    <span class="token comment"># 以逗号分隔的活动配置文件列表。可由命令行开关覆盖。</span>
+    <span class="token key atrule">active</span><span class="token punctuation">:</span> dev
+  <span class="token key atrule">config</span><span class="token punctuation">:</span>
+    <span class="token comment"># 是否启用配置数据处理旧模式</span>
+    <span class="token key atrule">use-legacy-processing</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+
+<span class="token key atrule">logging</span><span class="token punctuation">:</span>
+  <span class="token key atrule">file</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span>spring.application.name<span class="token punctuation">}</span><span class="token punctuation">-</span>$<span class="token punctuation">{</span>server.port<span class="token punctuation">}</span>
+    <span class="token key atrule">path</span><span class="token punctuation">:</span> /tlogs/$<span class="token punctuation">{</span>spring.application.name<span class="token punctuation">}</span>
+
+<span class="token key atrule">eureka</span><span class="token punctuation">:</span>
+  <span class="token key atrule">client</span><span class="token punctuation">:</span>
+    <span class="token comment"># 指示此客户端是否应从 eureka 服务器获取 eureka 注册表信息。</span>
+    <span class="token key atrule">fetch-registry</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token comment"># 指示此实例是否应将其信息注册到 eureka 服务器以供其他人发现。在某些情况下，您不希望发现您的实例，而您只想发现其他实例。</span>
+    <span class="token key atrule">register-with-eureka</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token comment"># 指示从 eureka 服务器获取注册表信息的频率（以秒为单位）。</span>
+    <span class="token key atrule">registry-fetch-interval-seconds</span><span class="token punctuation">:</span> <span class="token number">30</span>
+    <span class="token comment"># 将可用区映射到用于与 eureka 服务器通信的完全限定 URL 列表。</span>
+    <span class="token comment"># 每个值可以是单个 URL 或逗号分隔的备用位置列表。</span>
+    <span class="token comment"># 通常，eureka 服务器 URL 携带协议、主机、端口、上下文和版本信息（如果有）。</span>
+    <span class="token comment"># 示例：https://ec2-256-156-243-129.compute-1.amazonaws.com:7001/eureka/</span>
+    <span class="token comment"># 更改在运行时在 eurekaServiceUrlPollIntervalSeconds 指定的下一个服务 url 刷新周期生效。</span>
+    <span class="token key atrule">service-url</span><span class="token punctuation">:</span>
+      <span class="token key atrule">defaultZone</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//admin<span class="token punctuation">:</span>123456@127.0.0.1<span class="token punctuation">:</span>8761/eureka/<span class="token punctuation">,</span>http<span class="token punctuation">:</span>//admin<span class="token punctuation">:</span>123456@127.0.0.1<span class="token punctuation">:</span>8762/eureka
+  <span class="token key atrule">instance</span><span class="token punctuation">:</span>
+    <span class="token comment"># 标志表示，在猜测主机名时，应优先使用服务器的 IP 地址，而不是操作系统报告的主机名。</span>
+    <span class="token key atrule">prefer-ip-address</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token comment"># 获取要向 eureka 注册的此实例的唯一 ID（在 appName 范围内）</span>
+    <span class="token key atrule">instance-id</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span>spring.cloud.client.ip<span class="token punctuation">-</span>address<span class="token punctuation">}</span><span class="token punctuation">:</span>$<span class="token punctuation">{</span>server.port<span class="token punctuation">}</span>
+    <span class="token comment"># 指示 eureka 客户端需要向 eureka 服务器发送心跳以指示它仍然处于活动状态的频率（以秒为单位）。</span>
+    <span class="token comment"># 如果在 leaseExpirationDurationInSeconds 中指定的时间段内未收到心跳，则 eureka 服务器将从其视图中删除该实例，</span>
+    <span class="token comment"># 从而禁止流向此实例的流量。请注意，如果实例实现 HealthCheckCallback，然后决定使自身不可用，则实例仍然无法获取流量。</span>
+    <span class="token key atrule">lease-renewal-interval-in-seconds</span><span class="token punctuation">:</span> <span class="token number">10</span>
+    <span class="token comment"># 必须与Docker容器名保持一致</span>
+    <span class="token key atrule">hostname</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span>spring.application.name<span class="token punctuation">}</span>
+</code></pre><h4 id="服务消费者接口">服务消费者接口 </h4>
+<ul>
+<li>接口类</li>
+</ul>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token annotation punctuation">@Slf4j</span>
+<span class="token annotation punctuation">@RestController</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"/test/test"</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@SuppressWarnings</span><span class="token punctuation">(</span><span class="token class-name">WarningsConstants</span><span class="token punctuation">.</span><span class="token constant">SPRING_JAVA_AUTOWIRED_FIELDS_WARNING_INSPECTION</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">DemoController</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword keyword-private">private</span> <span class="token class-name">RestTemplate</span> restTemplate<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword keyword-private">private</span> <span class="token class-name">LoadBalancerClient</span> loadBalancerClient<span class="token punctuation">;</span>
+    
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"/test2"</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-public">public</span> <span class="token class-name">String</span> <span class="token function">getTest2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 根据服务名称获取服务</span>
+        <span class="token class-name">String</span> serviceName <span class="token operator">=</span> <span class="token string">"bettytsai-system"</span><span class="token punctuation">;</span>
+        <span class="token class-name">ServiceInstance</span> instance <span class="token operator">=</span> loadBalancerClient<span class="token punctuation">.</span><span class="token function">choose</span><span class="token punctuation">(</span>serviceName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">ExceptionUtil</span><span class="token punctuation">.</span><span class="token function">throwException</span><span class="token punctuation">(</span><span class="token class-name">ObjectUtil</span><span class="token punctuation">.</span><span class="token function">isNull</span><span class="token punctuation">(</span>instance<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">"获取服务实例失败!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 调用服务接口，ResponseEntity封装了返回数据</span>
+        <span class="token class-name">String</span> url <span class="token operator">=</span> <span class="token string">"http://"</span> <span class="token operator">+</span> instance<span class="token punctuation">.</span><span class="token function">getHost</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">":"</span> <span class="token operator">+</span> instance<span class="token punctuation">.</span><span class="token function">getPort</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"/system/test/getDefaultString"</span><span class="token punctuation">;</span>
+        log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"服务调用地址::: {}"</span><span class="token punctuation">,</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">ResponseEntity</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> response <span class="token operator">=</span> restTemplate<span class="token punctuation">.</span><span class="token function">exchange</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> <span class="token class-name">HttpMethod</span><span class="token punctuation">.</span><span class="token constant">GET</span><span class="token punctuation">,</span> <span class="token keyword keyword-null">null</span><span class="token punctuation">,</span>
+                <span class="token keyword keyword-new">new</span> <span class="token class-name">ParameterizedTypeReference</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-return">return</span> response<span class="token punctuation">.</span><span class="token function">getBody</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><ul>
+<li>配置类</li>
+</ul>
+<p>我们通过&nbsp; <code>LoadBalancerClient</code> &nbsp;类实现服务的远程调用，不使用&nbsp; <code>@LoadBalanced</code> &nbsp;负载均衡注解，这样我们可以很直观的看到所调用的服务地址，方便我们验证。</p>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token annotation punctuation">@Configuration</span>
+<span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">RestConfig</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword keyword-public">public</span> <span class="token class-name">RestTemplate</span> <span class="token function">restTemplate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword keyword-return">return</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">RestTemplate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><h4 id="启动服务-1">启动服务 </h4>
+<p>我们通过多次访问接口 <a href="http://127.0.0.1:9002/test/test/test2">http://127.0.0.1:9002/test/test/test2</a> 进行测试，可以看到控制台输出内容如下所示，由此可见，默认是采用的轮询策略。</p>
+<p><img src="./assets/image-20241020154224743-17294101484113.png" alt="image-20241020154224743"></p>
+<h2 id="ribbon-负载均衡策略设置">Ribbon 负载均衡策略设置 </h2>
+<p>在上一节中，我们通过入门案例了解到默认的负载均衡策略就是轮询策略，那么这一节中，我们就来看看如何调整负载均衡策略。</p>
+<h3 id="全局设置">全局设置 </h3>
+<blockquote>
+<p>Spring Cloud 2020 版本以后，默认移除了对 Netflix 的依赖，其中就包括 Ribbon，官方默认推荐使用 Spring Cloud Loadbalancer 正式替换 Ribbon，并成为了 Spring Cloud 负载均衡器的唯一实现。</p>
+</blockquote>
+<p>这里为了学习 Ribbon 负载均衡，所以我们还是统一将版本设置为 <span style="color:rgba(247, 167, 184)">Spring Cloud 2020.0.0</span> 之前的版本：</p>
+<pre data-role="codeBlock" data-info="xml" class="language-xml xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>properties</span><span class="token punctuation">&gt;</span></span>
+	<span class="token comment">&lt;!--...其他组件版本版本号不展示--&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>spring-boot.version</span><span class="token punctuation">&gt;</span></span>2.3.3.RELEASE<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>spring-boot.version</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>spring-cloud.version</span><span class="token punctuation">&gt;</span></span>Hoxton.SR12<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>spring-cloud.version</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>spring-cloud-alibaba.version</span><span class="token punctuation">&gt;</span></span>2.2.7.RELEASE<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>spring-cloud-alibaba.version</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>properties</span><span class="token punctuation">&gt;</span></span>
+</code></pre><p>然后在启动类或者配置类中注入负载均衡策略对象。所有服务请求均使用该策略。</p>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token annotation punctuation">@Bean</span>
+<span class="token keyword keyword-public">public</span> <span class="token class-name">IRule</span> <span class="token function">randomRule</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token class-name">IRule</span> rule<span class="token punctuation">;</span>
+    <span class="token comment">// 轮询策略（默认）</span>
+    rule <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">RoundRobinRule</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 随机策略</span>
+    <span class="token comment">// rule = new RandomRule();</span>
+    <span class="token comment">// 权重轮询策略</span>
+    <span class="token comment">// rule = new WeightedResponseTimeRule();</span>
+    <span class="token comment">// 最少并发策略</span>
+    <span class="token comment">// rule = new BestAvailableRule();</span>
+    <span class="token comment">// 重试策略</span>
+    <span class="token comment">// rule = new RetryRule();</span>
+    <span class="token comment">// 可用敏感性策略</span>
+    <span class="token comment">// rule = new AvailabilityFilteringRule();</span>
+    <span class="token comment">// 区域敏感性策略</span>
+    <span class="token comment">// rule = new ZoneAvoidanceRule();</span>
+    <span class="token keyword keyword-return">return</span> rule<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>启动我们的消费者服务，我们通过多次访问接口 <a href="http://127.0.0.1:9002/test/test/test2">http://127.0.0.1:9002/test/test/test2</a> 进行测试，可以看到控制台输出内容如下所示，由此可见，默认是采用的随机策略。</p>
+<p><img src="./assets/image-20241022145002537-17295798042602.png" alt="image-20241022145002537"></p>
+<h3 id="局部设置">局部设置 </h3>
+<p>删除全局配置，然后修改配置文件，指定所调用的某一个服务的负载均衡策略。格式：<span style="color:#FEA60B">服务应用名.ribbon.NFLoadBalancerRuleClassName</span></p>
+<pre data-role="codeBlock" data-info="yml" class="language-yaml yml"><code><span class="token comment"># 负载均衡策略</span>
+<span class="token comment"># bettytsai-system 为所调用的服务名称</span>
+<span class="token key atrule">bettytsai-system</span><span class="token punctuation">:</span>
+  <span class="token key atrule">ribbon</span><span class="token punctuation">:</span>
+    <span class="token key atrule">NFLoadBalancerRuleClassName</span><span class="token punctuation">:</span> com.netflix.loadbalancer.RandomRule
+</code></pre><p>启动我们的消费者服务，我们通过多次访问接口 <a href="http://127.0.0.1:9002/test/test/test2">http://127.0.0.1:9002/test/test/test2</a> 进行测试，可以看到控制台输出内容如下所示，由此可见，默认是采用的随机策略。</p>
+<p><img src="./assets/image-20241022145847573-17295803295373.png" alt="image-20241022145847573"></p>
+<h2 id="ribbon-点对点直连">Ribbon 点对点直连 </h2>
+<blockquote>
+<p>Ribbon 点对点直连是指绕过注册中心，直接连接服务提供者获取服务，一般在测试阶段使用比较多。</p>
+</blockquote>
+<h3 id="添加依赖">添加依赖 </h3>
+<p>要使用点对点直连，那么我们需要消费者剔除 Eureka 依赖及相关配置之后，添加 Ribbon依赖。</p>
+<pre data-role="codeBlock" data-info="xml" class="language-xml xml"><code><span class="token comment">&lt;!-- 剔除Eureka依赖 --&gt;</span>
+<span class="token comment">&lt;!--&lt;dependency&gt;
+	&lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-client&lt;/artifactId&gt;
+&lt;/dependency&gt;--&gt;</span>
+<span class="token comment">&lt;!-- 添加Ribbon依赖 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-cloud-starter-netflix-ribbon<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+</code></pre><h3 id="配置直连">配置直连 </h3>
+<p>配置文件中关闭 Eureka ，添加直连服务地址。如果不设置负载均衡策略默认使用轮询策略。</p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token comment"># bettytsai-system 为所调用的服务名称</span>
+<span class="token key atrule">bettytsai-system</span><span class="token punctuation">:</span>
+  <span class="token key atrule">ribbon</span><span class="token punctuation">:</span>
+    <span class="token comment"># 负载均衡策略</span>
+    <span class="token key atrule">NFLoadBalancerRuleClassName</span><span class="token punctuation">:</span> com.netflix.loadbalancer.RandomRule
+    <span class="token comment"># 指定具体的服务列表，多个以,分隔</span>
+    <span class="token key atrule">listOfServers</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//127.0.0.1<span class="token punctuation">:</span>9000/<span class="token punctuation">,</span>http<span class="token punctuation">:</span>//127.0.0.1<span class="token punctuation">:</span>9001/
+
+<span class="token comment"># 关闭eureka，实现点对点直连</span>
+<span class="token key atrule">ribbon</span><span class="token punctuation">:</span>
+  <span class="token key atrule">eureka</span><span class="token punctuation">:</span>
+    <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+</code></pre><p>然后我们只启动服务提供者和服务消费者，不启动注册中心，可能会看到服务提供者连接注册中心报错，但是服务是可正常消费的，我们只不过是通过点对点直连方式调用。多次访问接口 <a href="http://127.0.0.1:9002/test/test/test2">http://127.0.0.1:9002/test/test/test2</a> 进行测试，可以看到控制台输出内容如下所示，实现了点对点直连。</p>
+<p><img src="./assets/image-20241022161931476-17295851725934.png" alt="image-20241022161931476"></p>
+<h2 id="loadbalancer负载均衡器">LoadBalancer负载均衡器 </h2>
+<h3 id="为什么要学习-spring-cloud-balancer">为什么要学习 Spring Cloud Balancer? </h3>
+<p>随着微服务架构越来越流行，在不同服务器上运行多个服务变得越来越普遍。Ribbon 作为早期的客户端负载均衡工具，在 Spring Cloud 2020.0.0 版本之后已经被移除了，取而代之的是 Spring Cloud LoadBalancer，而且 Ribbon 也已经不再维护，所以它也是 Spring 官方推荐的负载均衡解决方案。</p>
+<p>Spring Cloud Balancer还有着一些其他的优势：</p>
+<ul>
+<li>
+<p>更好的兼容性：LoadBalancer就像一个全新的配件，它与Spring Cloud的其他组件搭配得更好。</p>
+</li>
+<li>
+<p>支持响应式编程：现在编程界有一种新的编程方式叫做“响应式编程”，LoadBalancer能很好地支持这种现代编程风格。</p>
+</li>
+<li>
+<p>易于使用和维护：LoadBalancer的设计易于拼装和修改，这对于开发者来说，维护和定制起来更加方便。</p>
+</li>
+<li>
+<p>多功能：LoadBalancer有很多内置功能，比如自动帮你挑选服务器，就像购物网站帮你推荐商品一样聪明。</p>
+</li>
+</ul>
+<h3 id="添加依赖-1">添加依赖 </h3>
+<p>配置文件中引入loadbalancer依赖，如果是微服务项目，请跳过该步骤。可以将  <code>spring.cloud.loadbalancer.enabled</code> &nbsp;的值设置为&nbsp; <code>false</code> &nbsp;以禁用 Spring Cloud LoadBalancer 。</p>
+<pre data-role="codeBlock" data-info="xml" class="language-xml xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-cloud-starter-loadbalancer<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>xxx.xx.xx<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+</code></pre><h3 id="启用负载均衡">启用负载均衡 </h3>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token annotation punctuation">@Bean</span>
+<span class="token annotation punctuation">@LoadBalanced</span>  <span class="token comment">// 启用负载均衡</span>
+<span class="token keyword keyword-public">public</span> <span class="token class-name">RestTemplate</span> <span class="token function">restTemplate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword keyword-return">return</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">RestTemplate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 或者，如果使用 WebClient</span>
+<span class="token comment">// @Bean</span>
+<span class="token comment">// @LoadBalanced</span>
+<span class="token comment">// public WebClient.Builder loadBalancedWebClientBuilder() {  </span>
+<span class="token comment">//     return WebClient.builder().filter(new LoadBalancerClientFilter());  </span>
+<span class="token comment">// }  </span>
+</code></pre><h3 id="服务调用">服务调用 </h3>
+<p>服务调用还是同我们在Eureka学习中一样，使用<span style="color:#F3AD61;"> RestTemplate</span> 进行服务的调用，如下所示。</p>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">DemoController</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword keyword-private">private</span> <span class="token class-name">RestTemplate</span> restTemplate<span class="token punctuation">;</span>
+    
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"/test3"</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-public">public</span> <span class="token class-name">String</span> <span class="token function">getTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">String</span> serviceName <span class="token operator">=</span> <span class="token string">"bettytsai-system"</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> url <span class="token operator">=</span> <span class="token string">"http://"</span> <span class="token operator">+</span> serviceName <span class="token operator">+</span> <span class="token string">"/system/test/getDefaultString"</span><span class="token punctuation">;</span>
+        <span class="token class-name">ResponseEntity</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> response <span class="token operator">=</span> restTemplate<span class="token punctuation">.</span><span class="token function">exchange</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> <span class="token class-name">HttpMethod</span><span class="token punctuation">.</span><span class="token constant">GET</span><span class="token punctuation">,</span> <span class="token keyword keyword-null">null</span><span class="token punctuation">,</span><span class="token keyword keyword-new">new</span> <span class="token class-name">ParameterizedTypeReference</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"服务调用结果::: {}"</span><span class="token punctuation">,</span>response<span class="token punctuation">.</span><span class="token function">getBody</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-return">return</span> response<span class="token punctuation">.</span><span class="token function">getBody</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><p>依次启动注册中心、服务提供者和服务消费者，多次访问接口 <a href="http://127.0.0.1:9002/test/test/test2">http://127.0.0.1:9002/test/test/test2</a> 进行测试，可以看到控制台输出内容如下所示，由此可见，默认是采用的随机策略。</p>
+<p><img src="./assets/image-20241023225841147.png" alt="image-20241023225841147"></p>
+<h3 id="在负载均衡算法之间切换">在负载均衡算法之间切换 </h3>
+<p>默认使用的&nbsp; <code>ReactiveLoadBalancer</code> &nbsp;实现是&nbsp; <code>RoundRobinLoadBalancer</code> （轮询策略） 。如果要切换到其他实现，无论是针对所选服务还是所有服务，您可以使用<a href="https://docs.spring.io/spring-cloud-commons/docs/3.1.8/reference/html/#custom-loadbalancer-configuration">自定义 LoadBalancer 配置机制</a>。</p>
+<p>比如说，下面的配置可以通过&nbsp; <code>@LoadBalancerClient</code> &nbsp;注解来切换到  <code>RandomLoadBalancer</code> （随机策略）。</p>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">CustomLoadBalancerConfiguration</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token class-name">ReactorLoadBalancer</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">ServiceInstance</span><span class="token punctuation">&gt;</span></span> <span class="token function">randomLoadBalancer</span><span class="token punctuation">(</span><span class="token class-name">Environment</span> environment<span class="token punctuation">,</span>
+            <span class="token class-name">LoadBalancerClientFactory</span> loadBalancerClientFactory<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">String</span> name <span class="token operator">=</span> environment<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token class-name">LoadBalancerClientFactory</span><span class="token punctuation">.</span><span class="token constant">PROPERTY_NAME</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-return">return</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">RandomLoadBalancer</span><span class="token punctuation">(</span>loadBalancerClientFactory
+                <span class="token punctuation">.</span><span class="token function">getLazyProvider</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> <span class="token class-name">ServiceInstanceListSupplier</span><span class="token punctuation">.</span><span class="token keyword keyword-class">class</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><blockquote>
+<p>作为 @LoadBalancerClient 、 @LoadBalancerClients 注解的配置参数传递的类不应被 @Configuration 注解所标注，更不应该超出组件的扫描范围。</p>
+</blockquote>
+<p>具体什么意思呢？你可能看到这句话有点迷惑，直接看看示例代码：</p>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token keyword keyword-import">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cloud<span class="token punctuation">.</span>client<span class="token punctuation">.</span></span><span class="token class-name">ServiceInstance</span></span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cloud<span class="token punctuation">.</span>loadbalancer<span class="token punctuation">.</span>core<span class="token punctuation">.</span></span><span class="token class-name">RandomLoadBalancer</span></span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cloud<span class="token punctuation">.</span>loadbalancer<span class="token punctuation">.</span>core<span class="token punctuation">.</span></span><span class="token class-name">ReactorLoadBalancer</span></span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cloud<span class="token punctuation">.</span>loadbalancer<span class="token punctuation">.</span>core<span class="token punctuation">.</span></span><span class="token class-name">ServiceInstanceListSupplier</span></span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cloud<span class="token punctuation">.</span>loadbalancer<span class="token punctuation">.</span>support<span class="token punctuation">.</span></span><span class="token class-name">LoadBalancerClientFactory</span></span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Bean</span></span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>core<span class="token punctuation">.</span>env<span class="token punctuation">.</span></span><span class="token class-name">Environment</span></span><span class="token punctuation">;</span>
+<span class="token comment">// 这里不能使用 @Configuration 进行标注！！</span>
+<span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">LoadBalancerConfig</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword keyword-public">public</span> <span class="token class-name">ReactorLoadBalancer</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">ServiceInstance</span><span class="token punctuation">&gt;</span></span> <span class="token function">randomLoadBalancer</span><span class="token punctuation">(</span><span class="token class-name">Environment</span> environment<span class="token punctuation">,</span><span class="token class-name">LoadBalancerClientFactory</span> loadBalancerClientFactory<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">String</span> name <span class="token operator">=</span> environment<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token class-name">LoadBalancerClientFactory</span><span class="token punctuation">.</span><span class="token constant">PROPERTY_NAME</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-return">return</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">RandomLoadBalancer</span><span class="token punctuation">(</span>loadBalancerClientFactory<span class="token punctuation">.</span><span class="token function">getLazyProvider</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> <span class="token class-name">ServiceInstanceListSupplier</span><span class="token punctuation">.</span><span class="token keyword keyword-class">class</span><span class="token punctuation">)</span><span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token annotation punctuation">@Configuration</span>
+<span class="token comment">// 上面的类作为 @LoadBalancerClient 注解的配置参数进行传递~</span>
+<span class="token annotation punctuation">@LoadBalancerClients</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token annotation punctuation">@LoadBalancerClient</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"bettytsai-system"</span><span class="token punctuation">,</span> configuration <span class="token operator">=</span> <span class="token class-name">LoadBalancerConfig</span><span class="token punctuation">.</span><span class="token keyword keyword-class">class</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">RestTemplateConfig</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token annotation punctuation">@LoadBalanced</span>
+    <span class="token keyword keyword-public">public</span> <span class="token class-name">RestTemplate</span> <span class="token function">restTemplate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword keyword-return">return</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">RestTemplate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><p>大概就是这个意思。现在我们再来多次访问接口 <a href="http://127.0.0.1:9002/test/test/test2">http://127.0.0.1:9002/test/test/test2</a> 进行测试，可以看到控制台输出内容如下所示。</p>
+<p><img src="./assets/image-20241023231650756.png" alt="image-20241023231650756"></p>
+<p>可见，负载均衡算法现在就是随机算法了。</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
