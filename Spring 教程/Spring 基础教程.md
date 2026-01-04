@@ -1,3 +1,5 @@
+[TOC]
+
 # Spring 基础篇
 
 ## 第一章 概述
@@ -24,21 +26,7 @@ Rod Johnson 在其 2004 年编著的畅销书《Expert One-on-One J2EE Developme
 
 #### 广义的 Spring: Spring 技术栈
 
-<div style="border: 1px solid #1d63edb5;
-	padding: 10px;	
-	border-left: 5px solid #1d63edb5;
-	background: #bed2fa63;
-	border-radius: 0 3px 3px 0;
-	color: #1d63ed;
-	font-family: menlo;
-	font-size: 12px;
-	margin: 10px 0;
-	display: flex;
-	align-items: center;
-	gap: 8px;">
-	<svg viewBox="0 0 24 24" style="flex-shrink: 0;" width="14px" height="14px" fill="none" xmlns="http://www.w3.org/2000/svg" class="MuiSvgIcon-root MuiSvgIcon-colorInfo MuiSvgIcon-fontSizeSmall css-1bqouqa" focusable="false" aria-hidden="true" data-testid="InfoCircleIcon"><path d="M12 16V12M12 8H12.01M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-	<span style="line-height: 16px;">广义上的 Spring 泛指以 Spring Framework 为核心的 Spring 技术栈。</span>
-</div>
+> 广义上的 Spring 泛指以 Spring Framework 为核心的 Spring 技术栈。
 
 经过十多年的发展，Spring 已经不再是一个单纯的应用框架，而是逐渐发展成为一个由多个不同子项目（模块）组成的成熟技术，例如 Spring Framework、Spring MVC、SpringBoot、Spring Cloud、Spring Data、Spring Security 等，其中 Spring Framework 是其他子项目的基础。这些子项目涵盖了从企业级应用开发到云计算等各方面的内容，能够帮助开发人员解决软件发展过程中不断产生的各种实际问题，给开发人员带来了更好的开发体验。
 
@@ -53,21 +41,7 @@ Rod Johnson 在其 2004 年编著的畅销书《Expert One-on-One J2EE Developme
 
 #### 狭义的 Spring: Spring 框架
 
-<div style="border: 1px solid #1d63edb5;
-	padding: 10px;
-	border-left: 5px solid #1d63edb5;
-	background: #bed2fa63;
-	border-radius: 0 3px 3px 0;
-	color: #1d63ed;
-	font-family: menlo;
-	font-size: 12px;
-	margin: 10px 0;
-	display: flex;
-	align-items: center;
-	gap: 8px;">
-	<svg viewBox="0 0 24 24" style="flex-shrink: 0;" width="14px" height="14px" fill="none" xmlns="http://www.w3.org/2000/svg" class="MuiSvgIcon-root MuiSvgIcon-colorInfo MuiSvgIcon-fontSizeSmall css-1bqouqa" focusable="false" aria-hidden="true" data-testid="InfoCircleIcon"><path d="M12 16V12M12 8H12.01M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-	<span style="line-height: 16px;">狭义的 Spring 特指 Spring Framework，通常我们将它称为 Spring 框架。Spring 框架是一个分层的、面向切面的 Java 应用程序的一站式轻量级解决方案，它是 Spring 技术栈的核心和基础，是为了解决企业级应用开发的复杂性而创建的。</span>
-</div>
+> 狭义的 Spring 特指 Spring Framework，通常我们将它称为 Spring 框架。Spring 框架是一个分层的、面向切面的 Java 应用程序的一站式轻量级解决方案，它是 Spring 技术栈的核心和基础，是为了解决企业级应用开发的复杂性而创建的。
 
 Spring 两大核心部分：
 
@@ -179,21 +153,7 @@ Spring 的核心容器是其他模块建立的基础，由 Beans 模块、Core �
 
 ## 第三章 开发环境搭建
 
-<div style="border: 1px solid #1d63edb5;
-	padding: 10px;
-	border-left: 5px solid #1d63edb5;
-	background: #bed2fa63;
-	border-radius: 0 3px 3px 0;
-	color: #1d63ed;
-	font-family: menlo;
-	font-size: 12px;
-	margin: 10px 0;
-	display: flex;
-	align-items: center;
-	gap: 8px;">
-	<svg viewBox="0 0 24 24" style="flex-shrink: 0;" width="14px" height="14px" fill="none" xmlns="http://www.w3.org/2000/svg" class="MuiSvgIcon-root MuiSvgIcon-colorInfo MuiSvgIcon-fontSizeSmall css-1bqouqa" focusable="false" aria-hidden="true" data-testid="InfoCircleIcon"><path d="M12 16V12M12 8H12.01M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-	<span style="line-height: 16px;">本节主要介绍如何搭建 Spring 开发环境。</span>
-</div>
+> 本节主要介绍如何搭建 Spring 开发环境。
 
 首先，需要确认 JDK 版本的信息，顺带检查环境变量是否配置正确：
 
@@ -335,24 +295,7 @@ IoC 带来的最大改变不是代码层面的，而是从思想层面上发生�
 
 ### 依赖注入（DI）
 
-<div style="border: 1px solid rgba(255, 165, 0,.1);
-	padding: 10px;
-	border-left: 5px solid rgba(255, 165, 0);
-	background: rgba(255, 165, 0,.1);
-	border-radius: 0 3px 3px 0;
-	color: rgba(255, 165, 0);
-	font-family: menlo;
-	font-size: 12px;
-	margin: 10px 0;
-	display: flex;
-	align-items: center;
-	gap: 8px;">
-	<svg viewBox="0 0 24 24" width="14px" height="14px" fill="none" style="flex-shrink: 0;" xmlns="http://www.w3.org/2000/svg">
-	<path d="M12 8.00008V12.0001M12 16.0001H12.01M3 7.94153V16.0586C3 16.4013 3 16.5726 3.05048 16.7254C3.09515 16.8606 3.16816 16.9847 3.26463 17.0893C3.37369 17.2077 3.52345 17.2909 3.82297 17.4573L11.223 21.5684C11.5066 21.726 11.6484 21.8047 11.7985 21.8356C11.9315 21.863 12.0685 21.863 12.2015 21.8356C12.3516 21.8047 12.4934 21.726 12.777 21.5684L20.177 17.4573C20.4766 17.2909 20.6263 17.2077 20.7354 17.0893C20.8318 16.9847 20.9049 16.8606 20.9495 16.7254C21 16.5726 21 16.4013 21 16.0586V7.94153C21 7.59889 21 7.42756 20.9495 7.27477C20.9049 7.13959 20.8318 7.01551 20.7354 6.91082C20.6263 6.79248 20.4766 6.70928 20.177 6.54288L12.777 2.43177C12.4934 2.27421 12.3516 2.19543 12.2015 2.16454C12.0685 2.13721 11.9315 2.13721 11.7985 2.16454C11.6484 2.19543 11.5066 2.27421 11.223 2.43177L3.82297 6.54288C3.52345 6.70928 3.37369 6.79248 3.26463 6.91082C3.16816 7.01551 3.09515 7.13959 3.05048 7.27477C3 7.42756 3 7.59889 3 7.94153Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-	</path>
-</svg>
-	<span style="line-height: 12px;">在了解了 IoC 之后，我们还需要了解另外一个非常重要的概念：依赖注入</span>
-</div>
+> 在了解了 IoC 之后，我们还需要了解另外一个非常重要的概念：依赖注入。
 
 依赖注入（Denpendency Injection，简写为 DI）是 Martin Fowler 在 2004 年在对“控制反转”进行解释时提出的。Martin Fowler 认为“控制反转”一词很晦涩，无法让人很直接的理解“到底是哪里反转了”，因此他建议使用 “ 依赖注入” 来代替 “ 控制反转 ”。
 
@@ -670,26 +613,7 @@ public class TestApplication {
 }
 ```
 
-<div style="border: 1px solid rgba(255, 165, 0,.1);
-	padding: 10px;
-	border-left: 5px solid rgba(255, 165, 0);
-	background: rgba(255, 165, 0,.1);
-	border-radius: 0 3px 3px 0;
-	color: rgba(255, 165, 0);
-	font-family: menlo;
-	font-size: 12px;
-	margin: 10px 0;
-	display: flex;
-	align-items: center;
-	gap: 8px;">
-	<svg viewBox="0 0 24 24" width="14px" height="14px" fill="none" style="flex-shrink: 0;" xmlns="http://www.w3.org/2000/svg">
-	<path d="M12 8.00008V12.0001M12 16.0001H12.01M3 7.94153V16.0586C3 16.4013 3 16.5726 3.05048 16.7254C3.09515 16.8606 3.16816 16.9847 3.26463 17.0893C3.37369 17.2077 3.52345 17.2909 3.82297 17.4573L11.223 21.5684C11.5066 21.726 11.6484 21.8047 11.7985 21.8356C11.9315 21.863 12.0685 21.863 12.2015 21.8356C12.3516 21.8047 12.4934 21.726 12.777 21.5684L20.177 17.4573C20.4766 17.2909 20.6263 17.2077 20.7354 17.0893C20.8318 16.9847 20.9049 16.8606 20.9495 16.7254C21 16.5726 21 16.4013 21 16.0586V7.94153C21 7.59889 21 7.42756 20.9495 7.27477C20.9049 7.13959 20.8318 7.01551 20.7354 6.91082C20.6263 6.79248 20.4766 6.70928 20.177 6.54288L12.777 2.43177C12.4934 2.27421 12.3516 2.19543 12.2015 2.16454C12.0685 2.13721 11.9315 2.13721 11.7985 2.16454C11.6484 2.19543 11.5066 2.27421 11.223 2.43177L3.82297 6.54288C3.52345 6.70928 3.37369 6.79248 3.26463 6.91082C3.16816 7.01551 3.09515 7.13959 3.05048 7.27477C3 7.42756 3 7.59889 3 7.94153Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-	</path>
-</svg>
-	<span style="line-height: 12px;">静态工厂注入要求静态工厂方法 createStaticUser 必须被 static 关键字所修饰！</span>
-</div>
-
-
+<span style="color:#f28577;font-size:12px;">注意，静态工厂注入要求静态工厂方法 `createStaticUser` 必须被 `static` 关键字所修饰！</span>
 
 ### 实例工厂注入
 
@@ -935,24 +859,7 @@ Spring 5 共提供了 6 种 scope 作用域，如下表：
 | application | 同一个 Web 应用共享一个 Bean 实例，该作用域在当前 ServletContext 内有效。  与 singleton 类似，但 singleton 表示每个 IoC 容器中仅有一个 Bean 实例，而一个 Web 应用中可能会存在多个 IoC 容器，但一个 Web 应用只会有一个 ServletContext，也可以说 application 才是 Web 应用中货真价实的单例模式。 |
 | websocket   | websocket 的作用域是 WebSocket ，即在整个 WebSocket 中有效。 |
 
-<div style="border: 1px solid rgba(255, 165, 0,.1);
-	padding: 10px;
-	border-left: 5px solid rgba(255, 165, 0);
-	background: rgba(255, 165, 0,.1);
-	border-radius: 0 3px 3px 0;
-	color: rgba(255, 165, 0);
-	font-family: menlo;
-	font-size: 14px;
-	margin: 10px 0;
-	display: flex;
-	align-items: center;
-	gap: 8px;">
-	<svg viewBox="0 0 24 24" width="14px" height="14px" fill="none" style="flex-shrink: 0;" xmlns="http://www.w3.org/2000/svg">
-	<path d="M12 8.00008V12.0001M12 16.0001H12.01M3 7.94153V16.0586C3 16.4013 3 16.5726 3.05048 16.7254C3.09515 16.8606 3.16816 16.9847 3.26463 17.0893C3.37369 17.2077 3.52345 17.2909 3.82297 17.4573L11.223 21.5684C11.5066 21.726 11.6484 21.8047 11.7985 21.8356C11.9315 21.863 12.0685 21.863 12.2015 21.8356C12.3516 21.8047 12.4934 21.726 12.777 21.5684L20.177 17.4573C20.4766 17.2909 20.6263 17.2077 20.7354 17.0893C20.8318 16.9847 20.9049 16.8606 20.9495 16.7254C21 16.5726 21 16.4013 21 16.0586V7.94153C21 7.59889 21 7.42756 20.9495 7.27477C20.9049 7.13959 20.8318 7.01551 20.7354 6.91082C20.6263 6.79248 20.4766 6.70928 20.177 6.54288L12.777 2.43177C12.4934 2.27421 12.3516 2.19543 12.2015 2.16454C12.0685 2.13721 11.9315 2.13721 11.7985 2.16454C11.6484 2.19543 11.5066 2.27421 11.223 2.43177L3.82297 6.54288C3.52345 6.70928 3.37369 6.79248 3.26463 6.91082C3.16816 7.01551 3.09515 7.13959 3.05048 7.27477C3 7.42756 3 7.59889 3 7.94153Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-	</path>
-</svg>
-	<span style="line-height: 20px;">注意：在以上 6 种 Bean 作用域中，除了 singleton 和 prototype 可以直接在常规的 Spring IoC 容器（例如 ClassPathXmlApplicationContext）中使用外，剩下的都只能在基于 Web 的 ApplicationContext 实现（例如 XmlWebApplicationContext）中才能使用，否则就会抛出一个 IllegalStateException 的异常。</span>
-</div>
+<span style="line-height: 20px;color:#e8646d;font-size:12px;">注意：在以上 6 种 Bean 作用域中，除了 `singleton` 和 `prototype` 可以直接在常规的 Spring IoC 容器（例如  `ClassPathXmlApplicationContext` ）中使用外，剩下的都只能在基于 Web 的 `ApplicationContext` 实现（例如 `XmlWebApplicationContext` ）中才能使用，否则就会抛出一个 `IllegalStateException` 的异常。</span>
 
 现在我们就以  `singleton`  和  `prototype`  两种作用域范围：
 
@@ -1290,24 +1197,7 @@ Spring 共提供了 5 中自动装配规则，它们分别与 autowire 属性的
 
  **基于注解的自动装配** 
 
-<div style="border: 1px solid rgba(255, 165, 0,.1);
-	padding: 10px;
-	border-left: 5px solid rgba(255, 165, 0);
-	background: rgba(255, 165, 0,.1);
-	border-radius: 0 3px 3px 0;
-	color: rgba(255, 165, 0);
-	font-family: menlo;
-	font-size: 14px;
-	margin: 10px 0;
-	display: flex;
-	align-items: center;
-	gap: 8px;">
-	<svg viewBox="0 0 24 24" width="14px" height="14px" fill="none" style="flex-shrink: 0;" xmlns="http://www.w3.org/2000/svg">
-	<path d="M12 8.00008V12.0001M12 16.0001H12.01M3 7.94153V16.0586C3 16.4013 3 16.5726 3.05048 16.7254C3.09515 16.8606 3.16816 16.9847 3.26463 17.0893C3.37369 17.2077 3.52345 17.2909 3.82297 17.4573L11.223 21.5684C11.5066 21.726 11.6484 21.8047 11.7985 21.8356C11.9315 21.863 12.0685 21.863 12.2015 21.8356C12.3516 21.8047 12.4934 21.726 12.777 21.5684L20.177 17.4573C20.4766 17.2909 20.6263 17.2077 20.7354 17.0893C20.8318 16.9847 20.9049 16.8606 20.9495 16.7254C21 16.5726 21 16.4013 21 16.0586V7.94153C21 7.59889 21 7.42756 20.9495 7.27477C20.9049 7.13959 20.8318 7.01551 20.7354 6.91082C20.6263 6.79248 20.4766 6.70928 20.177 6.54288L12.777 2.43177C12.4934 2.27421 12.3516 2.19543 12.2015 2.16454C12.0685 2.13721 11.9315 2.13721 11.7985 2.16454C11.6484 2.19543 11.5066 2.27421 11.223 2.43177L3.82297 6.54288C3.52345 6.70928 3.37369 6.79248 3.26463 6.91082C3.16816 7.01551 3.09515 7.13959 3.05048 7.27477C3 7.42756 3 7.59889 3 7.94153Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-	</path>
-</svg>
-	<span style="line-height: 20px;">其实，在上面使用传统的 XML 去装配 Bean，我们不太能清晰的看出来 5 种装配规则到底有什么不一样的。所以，我们还是通过注解的方式，去进一步的理解自动装配。</span>
-</div>
+> 其实，在上面使用传统的 XML 去装配 Bean，我们不太能清晰的看出来 5 种装配规则到底有什么不一样的。所以，我们还是通过注解的方式，去进一步的理解自动装配。
 
 从 Java 5 开始，Java 增加了对注解（Annotation）的支持，它是代码中的一种特殊标记，可以在编译、类加载和运行时被读取，执行相应的处理。
 
