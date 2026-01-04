@@ -1,5 +1,3 @@
-[TOC]
-
 # Spring 基础篇
 
 ## 第一章 概述
@@ -269,7 +267,7 @@ public class TestApplication {
 
 控制台打印结果如下：
 
-```powershell
+```bash
 User(id=null, name=null, age=null, gender=null, birthday=null)
 ```
 
@@ -1006,7 +1004,7 @@ public class TestApplication {
 
 打印输出：（可以注意到， `student` 继承了 `user` 声明的属性值）
 
-```powershell
+```bash
 User(id=9527, name=Tom, age=23, gender=f, birthday=Mon Jun 05 10:51:52 CST 2023)
 Student(id=9527, name=Tom, age=23, gender=f, birthday=Mon Jun 05 10:51:52 CST 2023, studentdNumber=null, gradeLevel=null, className=null)
 ```
@@ -1387,7 +1385,7 @@ public static void main(String[] args) {
 
 打印结果：
 
-```powershell
+```bash
 Oh hhhhhh~ before!
 play play
 ```
@@ -1599,7 +1597,7 @@ public static void main(String[] args) {
 
 输出结果：
 
-```powershell
+```bash
 前置通知=
 play play
 后置通知=
@@ -1676,7 +1674,7 @@ public class TestApplication {
 
 输出结果：
 
-```powershell
+```bash
 前置通知=
 play play
 前置通知=
@@ -1731,7 +1729,7 @@ public class AspectAdvice{
 
 测试类、目标类不做调整，输出结果：
 
-```powershell
+```bash
 前置通知=
 play play
 后置通知=
@@ -1844,7 +1842,7 @@ public class TestApplication {
 
 输出结果
 
-```powershell
+```bash
 {id=1, name=caixibei, age=12}
 {id=2, name=zhangjunhao, age=23}
 {id=3, name=renzhenyu, age=22}
@@ -2312,7 +2310,7 @@ Log4j(log for java)是 Apache 的一个开源项目，通过使用Log4j，我们
 
 既然我们要使用Log4J，那我们就需要导入相应的依赖包。导入依赖文件 `log4j-***.jar` 后直接启动测试类，我们会看到控制台报错：
 
-```powershell
+```bash
 log4j:WARN No appenders could be found for logger (org.springframework.context.support.ClassPathXmlApplicationContext).
 log4j:WARN Please initialize the log4j system properly.
 log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
